@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="csrf-token" content="i624eTqoVe6ZwH9VVC01LOasaaMOTELOQccJ6MNu">
+
+        <title>Work — The Welcome</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+        <link rel="preload" as="style" href="https://jorgegbellos.github.io/the-welcome-preview/build/assets/app-gI3td0ts.css" /><link rel="modulepreload" as="script" href="https://jorgegbellos.github.io/the-welcome-preview/build/assets/app-Bwn9szyo.js" /><link rel="stylesheet" href="https://jorgegbellos.github.io/the-welcome-preview/build/assets/app-gI3td0ts.css" data-navigate-track="reload" /><script type="module" src="https://jorgegbellos.github.io/the-welcome-preview/build/assets/app-Bwn9szyo.js" data-navigate-track="reload"></script>        
+        <script>
+    try {
+        if (sessionStorage.getItem('tw-welcomed') === '1') {
+            document.documentElement.classList.add('tw-entered');
+        }
+    } catch (e) {}
+</script>
+            <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js"></script>
+    </head>
+    <body class="min-h-screen bg-paper-100 font-sans text-black-500 antialiased">
+        <div
+    class="welcome-gate"
+    x-data="{
+        open: true,
+        hover: 0,
+        markEntered() {
+            try { sessionStorage.setItem('tw-welcomed', '1') } catch (e) {}
+            document.body.style.overflow = ''
+            this.open = false
+            setTimeout(() => {
+                document.documentElement.classList.add('tw-entered')
+            }, 700)
+        },
+        goPractice(id) {
+            this.markEntered()
+            const el = document.getElementById(id)
+            if (el) {
+                this.$nextTick(() => el.scrollIntoView({ behavior: 'smooth', block: 'start' }))
+                return
+            }
+            window.location.href = 'https:\/\/jorgegbellos.github.io\/the-welcome-preview' + '#' + id
+        },
+        goHome() {
+            this.markEntered()
+            if (! false) {
+                window.location.href = 'https:\/\/jorgegbellos.github.io\/the-welcome-preview'            }
+        },
+        goContact() {
+            this.markEntered()
+            window.location.href = 'https:\/\/jorgegbellos.github.io\/the-welcome-preview\/contact'        },
+    }"
+    x-init="
+        let seen = document.documentElement.classList.contains('tw-entered')
+        try { seen = seen || sessionStorage.getItem('tw-welcomed') === '1' } catch (e) {}
+        if (seen) {
+            document.documentElement.classList.add('tw-entered')
+            open = false
+            document.body.style.overflow = ''
+        } else {
+            document.body.style.overflow = 'hidden'
+        }
+    "
+    x-show="open"
+    x-transition:leave="transition ease-out duration-700"
+    x-transition:leave-start="opacity-100"
+    x-transition:leave-end="opacity-0"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="welcome-title"
+>
+    <img
+        src="https://jorgegbellos.github.io/the-welcome-preview/images/home/welcome-gate.png"
+        alt=""
+        class="welcome-gate__image"
+    >
+
+    <div class="relative flex min-h-dvh flex-col px-5 py-6 sm:px-8 sm:py-8">
+        <div class="flex justify-end">
+            <button
+                type="button"
+                class="inline-flex size-11 items-center justify-center rounded-full transition-opacity hover:opacity-70"
+                aria-label="Language"
+            >
+                <img
+                    src="https://jorgegbellos.github.io/the-welcome-preview/images/svg/Idioma_B.svg"
+                    alt=""
+                    class="size-9 brightness-0 invert"
+                >
+            </button>
+        </div>
+
+        <div class="mx-auto flex w-full max-w-lg flex-1 flex-col items-center justify-center py-8 text-center">
+            <img
+                src="https://jorgegbellos.github.io/the-welcome-preview/images/svg/Escudos.svg"
+                alt=""
+                class="h-24 w-auto sm:h-28"
+                style="filter: brightness(0) invert(1);"
+                width="187"
+                height="141"
+            >
+
+            <h1 id="welcome-title" class="type-h4 mt-8 text-[#FFFFFF] sm:mt-10">
+                Welcome. It’s good to have you here
+            </h1>
+            <p class="type-b2 mt-3 text-[#FFFFFF]/70">
+                Before we begin, how can we help?
+            </p>
+
+            <div class="mt-8 w-full max-w-sm" role="list">
+                                    <button
+                        type="button"
+                        role="listitem"
+                        class="welcome-option type-b2"
+                        :class="hover === 0 && 'is-active'"
+                        @mouseenter="hover = 0"
+                        @focus="hover = 0"
+                        @click="goPractice('practice-consulting')"
+                    >
+                        <span>
+                            <span class="text-[#FFFFFF]/45">01</span>
+                            <span class="ml-2">Consulting &amp; Strategy</span>
+                        </span>
+                        <span class="welcome-option-arrow" aria-hidden="true">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.75" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                            </svg>
+                        </span>
+                    </button>
+                                    <button
+                        type="button"
+                        role="listitem"
+                        class="welcome-option type-b2"
+                        :class="hover === 1 && 'is-active'"
+                        @mouseenter="hover = 1"
+                        @focus="hover = 1"
+                        @click="goPractice('practice-identity')"
+                    >
+                        <span>
+                            <span class="text-[#FFFFFF]/45">02</span>
+                            <span class="ml-2">Identity &amp; Experience</span>
+                        </span>
+                        <span class="welcome-option-arrow" aria-hidden="true">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.75" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                            </svg>
+                        </span>
+                    </button>
+                                    <button
+                        type="button"
+                        role="listitem"
+                        class="welcome-option type-b2"
+                        :class="hover === 2 && 'is-active'"
+                        @mouseenter="hover = 2"
+                        @focus="hover = 2"
+                        @click="goPractice('practice-technology')"
+                    >
+                        <span>
+                            <span class="text-[#FFFFFF]/45">03</span>
+                            <span class="ml-2">Technology &amp; Digital Systems</span>
+                        </span>
+                        <span class="welcome-option-arrow" aria-hidden="true">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.75" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                            </svg>
+                        </span>
+                    </button>
+                                    <button
+                        type="button"
+                        role="listitem"
+                        class="welcome-option type-b2"
+                        :class="hover === 3 && 'is-active'"
+                        @mouseenter="hover = 3"
+                        @focus="hover = 3"
+                        @click="goPractice('practice-commerce')"
+                    >
+                        <span>
+                            <span class="text-[#FFFFFF]/45">04</span>
+                            <span class="ml-2">Commerce &amp; Growth</span>
+                        </span>
+                        <span class="welcome-option-arrow" aria-hidden="true">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.75" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                            </svg>
+                        </span>
+                    </button>
+                            </div>
+
+            <p class="type-label-s mt-10 tracking-[0.18em] text-[#FFFFFF]/45">
+                NOT SURE YET?
+            </p>
+
+            <div class="mt-4 flex w-full max-w-sm flex-col gap-3">
+                <button
+        type="button"
+        class="btn btn-2 btn-solid-white w-full rounded-xl" @click="goContact()"
+    >
+        
+        <span>Let’s talk</span>
+
+            </button>
+
+                <button
+        type="button"
+        class="btn btn-2 btn-outline-white w-full rounded-xl" @click="goHome()"
+    >
+        
+        <span>Explore the full site</span>
+
+                    <span class="btn-icon">    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+    </svg></span>
+            </button>
+            </div>
+        </div>
+
+        <p class="type-b3 pb-2 text-center text-[#FFFFFF]/40">
+            &copy; 2026 The Welcome
+            <span class="mx-2">·</span>
+            Privacy Policy
+            <span class="mx-2">·</span>
+            All Rights Reserved
+        </p>
+    </div>
+</div>
+
+        <main>
+            <div wire:snapshot="{&quot;data&quot;:[],&quot;memo&quot;:{&quot;id&quot;:&quot;hxteIZxvVGQsnT7Mzf0G&quot;,&quot;name&quot;:&quot;pages.projects&quot;,&quot;path&quot;:&quot;projects&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;release&quot;:&quot;a-a-a&quot;,&quot;children&quot;:[],&quot;scripts&quot;:[],&quot;assets&quot;:[],&quot;errors&quot;:[],&quot;locale&quot;:&quot;en&quot;,&quot;islands&quot;:[]},&quot;checksum&quot;:&quot;b156ea8affa5b4c7ff53e75867ca63ca321c1c7e6f19c47fc77a3bb2e100939e&quot;}" wire:effects="{&quot;partials&quot;:[]}" wire:id="hxteIZxvVGQsnT7Mzf0G" wire:name="pages.projects" class="min-h-screen bg-beige-100">
+    <header
+    class="fixed inset-x-0 top-0 z-[200] px-4 pt-4 sm:px-5 sm:pt-5 animate-[fade-in_0.6s_ease-out]"
+    x-data="{
+        open: false,
+        scrolled: false,
+        onScroll() {
+            this.scrolled = window.scrollY > 8
+        },
+    }"
+    x-init="onScroll(); window.addEventListener('scroll', () => onScroll(), { passive: true })"
+>
+    <div
+        class="site-header-bar box-border grid h-20 grid-cols-[1fr_auto_1fr] items-center gap-4 rounded-2xl px-10 py-4 shadow-sm"
+        :class="scrolled && 'is-frosted'"
+    >
+        <a href="https://jorgegbellos.github.io/the-welcome-preview/" class="justify-self-start shrink-0" aria-label="The Welcome">
+            <img
+                src="https://jorgegbellos.github.io/the-welcome-preview/images/svg/Logotipo.svg"
+                alt="The Welcome"
+                class="h-6 w-auto"
+            >
+        </a>
+
+        <nav class="hidden items-center gap-6 lg:flex xl:gap-8" aria-label="Primary">
+            <!--[if BLOCK]><![endif]-->                <a
+                    href="https://jorgegbellos.github.io/the-welcome-preview/services/"
+                    class="type-button-3 transition-colors text-black-500 hover:text-orange-500"
+                >
+                    Expertise
+                </a>
+                            <a
+                    href="https://jorgegbellos.github.io/the-welcome-preview/projects/"
+                    class="type-button-3 transition-colors text-orange-500"
+                >
+                    Work
+                </a>
+                            <a
+                    href="https://jorgegbellos.github.io/the-welcome-preview/about/"
+                    class="type-button-3 transition-colors text-black-500 hover:text-orange-500"
+                >
+                    About us
+                </a>
+                            <a
+                    href="https://jorgegbellos.github.io/the-welcome-preview/contact/"
+                    class="type-button-3 transition-colors text-black-500 hover:text-orange-500"
+                >
+                    Contact
+                </a>
+            <!--[if ENDBLOCK]><![endif]-->        </nav>
+
+        <div class="flex items-center justify-self-end gap-3 sm:gap-5">
+            <button
+                type="button"
+                class="inline-flex size-11 shrink-0 items-center justify-center rounded-full transition-opacity hover:opacity-70"
+                aria-label="Language"
+            >
+                <img
+                    src="https://jorgegbellos.github.io/the-welcome-preview/images/svg/Idioma_B.svg"
+                    alt=""
+                    class="size-10"
+                >
+            </button>
+
+            <div class="hidden sm:block">
+                <!--[if BLOCK]><![endif]-->    <a
+        href="https://jorgegbellos.github.io/the-welcome-preview/contact/"
+        class="btn btn-2 btn-solid-black !h-12 !rounded-xl !py-0"=""
+    >
+        <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->
+        <span>Let's talk</span>
+
+        <!--[if BLOCK]><![endif]-->            <span class="btn-icon">    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+    </svg></span>
+        <!--[if ENDBLOCK]><![endif]-->    </a>
+<!--[if ENDBLOCK]><![endif]-->            </div>
+
+            <button
+                type="button"
+                class="type-button-3 inline-flex items-center justify-center rounded-lg border border-paper-200 px-3 py-2 text-black-500 lg:hidden"
+                @click="open = ! open"
+                :aria-expanded="open.toString()"
+                aria-controls="mobile-nav"
+            >
+                Menu
+            </button>
+        </div>
+    </div>
+
+    <nav
+        id="mobile-nav"
+        class="site-header-panel mt-2 rounded-2xl px-4 py-4 shadow-sm lg:hidden"
+        :class="scrolled && 'is-frosted'"
+        x-show="open"
+        x-cloak
+        x-transition
+        aria-label="Mobile"
+    >
+        <div class="flex flex-col gap-4">
+            <!--[if BLOCK]><![endif]-->                <a
+                    href="https://jorgegbellos.github.io/the-welcome-preview/services/"
+                    class="type-button-3 text-black-500"
+                    @click="open = false"
+                >
+                    Expertise
+                </a>
+                            <a
+                    href="https://jorgegbellos.github.io/the-welcome-preview/projects/"
+                    class="type-button-3 text-black-500"
+                    @click="open = false"
+                >
+                    Work
+                </a>
+                            <a
+                    href="https://jorgegbellos.github.io/the-welcome-preview/about/"
+                    class="type-button-3 text-black-500"
+                    @click="open = false"
+                >
+                    About us
+                </a>
+                            <a
+                    href="https://jorgegbellos.github.io/the-welcome-preview/contact/"
+                    class="type-button-3 text-black-500"
+                    @click="open = false"
+                >
+                    Contact
+                </a>
+            <!--[if ENDBLOCK]><![endif]-->
+            <!--[if BLOCK]><![endif]-->    <a
+        href="https://jorgegbellos.github.io/the-welcome-preview/contact/"
+        class="btn btn-2 btn-solid-black rounded-xl sm:hidden"=""
+    >
+        <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->
+        <span>Let's talk</span>
+
+        <!--[if BLOCK]><![endif]-->            <span class="btn-icon">    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+    </svg></span>
+        <!--[if ENDBLOCK]><![endif]-->    </a>
+<!--[if ENDBLOCK]><![endif]-->        </div>
+    </nav>
+</header>
+
+<!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->
+    <section class="px-4 sm:px-5">
+        <div class="site-header-spacer" aria-hidden="true"></div>
+
+        <div class="flex min-h-[20rem] items-start justify-between gap-8 px-10 pb-24 pt-8 sm:min-h-[24rem] lg:min-h-[28rem] lg:pb-32 lg:pt-10">
+            <div class="max-w-xl">
+                <p class="type-label-l text-black-500">OUR WORK</p>
+                <h1 class="type-h3 mt-2 text-black-500">
+                    A selection of projects where strategy, design and technology worked together
+                </h1>
+            </div>
+
+            <img
+                src="https://jorgegbellos.github.io/the-welcome-preview/images/svg/Escudos.svg"
+                alt=""
+                class="hidden h-[4.5rem] w-auto shrink-0 sm:block lg:h-20"
+            >
+        </div>
+    </section>
+
+    <section
+        class="px-4 pb-16 sm:px-5 sm:pb-20 lg:pb-24"
+        x-data="{ filter: 'all' }"
+    >
+        <div class="flex flex-col gap-8 px-10 lg:flex-row lg:items-start lg:gap-10 xl:gap-14">
+            <aside class="lg:w-44 lg:shrink-0 xl:w-52">
+                <nav
+                    class="flex gap-2 overflow-x-auto pb-1 lg:sticky lg:top-32 lg:flex-col lg:gap-1 lg:overflow-visible lg:pb-0"
+                    aria-label="Filter work"
+                >
+                    <button
+                        type="button"
+                        class="work-filter type-b2 shrink-0"
+                        :class="{ 'is-active': filter === 'all' }"
+                        :aria-pressed="(filter === 'all').toString()"
+                        @click="filter = 'all'"
+                    >
+                        View All
+                    </button>
+
+                    <!--[if BLOCK]><![endif]-->                        <button
+                            type="button"
+                            class="work-filter type-b2 shrink-0"
+                            :class="{ 'is-active': filter === 'hospitality' }"
+                            :aria-pressed="(filter === 'hospitality').toString()"
+                            @click="filter = 'hospitality'"
+                        >
+                            Hospitality
+                        </button>
+                                            <button
+                            type="button"
+                            class="work-filter type-b2 shrink-0"
+                            :class="{ 'is-active': filter === 'food' }"
+                            :aria-pressed="(filter === 'food').toString()"
+                            @click="filter = 'food'"
+                        >
+                            Food &amp; Beverage
+                        </button>
+                                            <button
+                            type="button"
+                            class="work-filter type-b2 shrink-0"
+                            :class="{ 'is-active': filter === 'tourism' }"
+                            :aria-pressed="(filter === 'tourism').toString()"
+                            @click="filter = 'tourism'"
+                        >
+                            Tourism &amp; Experiences
+                        </button>
+                                            <button
+                            type="button"
+                            class="work-filter type-b2 shrink-0"
+                            :class="{ 'is-active': filter === 'lifestyle' }"
+                            :aria-pressed="(filter === 'lifestyle').toString()"
+                            @click="filter = 'lifestyle'"
+                        >
+                            Lifestyle
+                        </button>
+                    <!--[if ENDBLOCK]><![endif]-->
+                    <!--[if BLOCK]><![endif]-->                        <button
+                            type="button"
+                            class="work-filter type-b2 shrink-0"
+                            :class="{ 'is-active': filter === 'consulting' }"
+                            :aria-pressed="(filter === 'consulting').toString()"
+                            @click="filter = 'consulting'"
+                        >
+                            Consulting &amp; Strategy
+                        </button>
+                                            <button
+                            type="button"
+                            class="work-filter type-b2 shrink-0"
+                            :class="{ 'is-active': filter === 'identity' }"
+                            :aria-pressed="(filter === 'identity').toString()"
+                            @click="filter = 'identity'"
+                        >
+                            Identity &amp; Experience
+                        </button>
+                                            <button
+                            type="button"
+                            class="work-filter type-b2 shrink-0"
+                            :class="{ 'is-active': filter === 'technology' }"
+                            :aria-pressed="(filter === 'technology').toString()"
+                            @click="filter = 'technology'"
+                        >
+                            Technology &amp; Digital Systems
+                        </button>
+                                            <button
+                            type="button"
+                            class="work-filter type-b2 shrink-0"
+                            :class="{ 'is-active': filter === 'commerce' }"
+                            :aria-pressed="(filter === 'commerce').toString()"
+                            @click="filter = 'commerce'"
+                        >
+                            Commerce &amp; Growth
+                        </button>
+                    <!--[if ENDBLOCK]><![endif]-->                </nav>
+            </aside>
+
+            <div class="min-w-0 flex-1">
+                <div class="work-masonry">
+                    <!--[if BLOCK]><![endif]-->                        <a
+                            href="#"
+                            class="work-masonry-item work-masonry-item--landscape"
+                            x-show="filter === 'all' || JSON.parse('[\u0022hospitality\u0022,\u0022identity\u0022]').includes(filter)"
+                            aria-label="Tótem interiors — View case studio"
+                        >
+                            <img src="https://jorgegbellos.github.io/the-welcome-preview/images/work/shelves.png" alt="">
+                            <span class="work-masonry-overlay" aria-hidden="true"></span>
+                            <div class="work-masonry-hover">
+                                <p class="type-s3">Tótem interiors</p>
+                                <span class="work-masonry-cta type-b2">
+                                    View case studio
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                                    </svg>
+                                </span>
+                            </div>
+                        </a>
+                                            <a
+                            href="#"
+                            class="work-masonry-item work-masonry-item--square"
+                            x-show="filter === 'all' || JSON.parse('[\u0022hospitality\u0022,\u0022lifestyle\u0022]').includes(filter)"
+                            aria-label="Water club — View case studio"
+                        >
+                            <img src="https://jorgegbellos.github.io/the-welcome-preview/images/work/swimmer.png" alt="">
+                            <span class="work-masonry-overlay" aria-hidden="true"></span>
+                            <div class="work-masonry-hover">
+                                <p class="type-s3">Water club</p>
+                                <span class="work-masonry-cta type-b2">
+                                    View case studio
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                                    </svg>
+                                </span>
+                            </div>
+                        </a>
+                                            <a
+                            href="#"
+                            class="work-masonry-item work-masonry-item--portrait"
+                            x-show="filter === 'all' || JSON.parse('[\u0022lifestyle\u0022,\u0022identity\u0022]').includes(filter)"
+                            aria-label="Pink house — View case studio"
+                        >
+                            <img src="https://jorgegbellos.github.io/the-welcome-preview/images/work/hammock.png" alt="">
+                            <span class="work-masonry-overlay" aria-hidden="true"></span>
+                            <div class="work-masonry-hover">
+                                <p class="type-s3">Pink house</p>
+                                <span class="work-masonry-cta type-b2">
+                                    View case studio
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                                    </svg>
+                                </span>
+                            </div>
+                        </a>
+                                            <a
+                            href="#"
+                            class="work-masonry-item work-masonry-item--square"
+                            x-show="filter === 'all' || JSON.parse('[\u0022food\u0022,\u0022identity\u0022]').includes(filter)"
+                            aria-label="Anata kitchen — View case studio"
+                        >
+                            <img src="https://jorgegbellos.github.io/the-welcome-preview/images/work/pasta.png" alt="">
+                            <span class="work-masonry-overlay" aria-hidden="true"></span>
+                            <div class="work-masonry-hover">
+                                <p class="type-s3">Anata kitchen</p>
+                                <span class="work-masonry-cta type-b2">
+                                    View case studio
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                                    </svg>
+                                </span>
+                            </div>
+                        </a>
+                                            <a
+                            href="#"
+                            class="work-masonry-item work-masonry-item--portrait"
+                            x-show="filter === 'all' || JSON.parse('[\u0022hospitality\u0022,\u0022consulting\u0022]').includes(filter)"
+                            aria-label="Guest experience — View case studio"
+                        >
+                            <img src="https://jorgegbellos.github.io/the-welcome-preview/images/work/bed.png" alt="">
+                            <span class="work-masonry-overlay" aria-hidden="true"></span>
+                            <div class="work-masonry-hover">
+                                <p class="type-s3">Guest experience</p>
+                                <span class="work-masonry-cta type-b2">
+                                    View case studio
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                                    </svg>
+                                </span>
+                            </div>
+                        </a>
+                                            <a
+                            href="#"
+                            class="work-masonry-item work-masonry-item--tall"
+                            x-show="filter === 'all' || JSON.parse('[\u0022food\u0022,\u0022identity\u0022]').includes(filter)"
+                            aria-label="Anata Vin Bar — View case studio"
+                        >
+                            <img src="https://jorgegbellos.github.io/the-welcome-preview/images/work/pasta.png" alt="">
+                            <span class="work-masonry-overlay" aria-hidden="true"></span>
+                            <div class="work-masonry-hover">
+                                <p class="type-s3">Anata Vin Bar</p>
+                                <span class="work-masonry-cta type-b2">
+                                    View case studio
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                                    </svg>
+                                </span>
+                            </div>
+                        </a>
+                                            <a
+                            href="#"
+                            class="work-masonry-item work-masonry-item--landscape"
+                            x-show="filter === 'all' || JSON.parse('[\u0022hospitality\u0022,\u0022identity\u0022]').includes(filter)"
+                            aria-label="Hotel Kahal — View case studio"
+                        >
+                            <img src="https://jorgegbellos.github.io/the-welcome-preview/images/work/bed.png" alt="">
+                            <span class="work-masonry-overlay" aria-hidden="true"></span>
+                            <div class="work-masonry-hover">
+                                <p class="type-s3">Hotel Kahal</p>
+                                <span class="work-masonry-cta type-b2">
+                                    View case studio
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                                    </svg>
+                                </span>
+                            </div>
+                        </a>
+                                            <a
+                            href="#"
+                            class="work-masonry-item work-masonry-item--square"
+                            x-show="filter === 'all' || JSON.parse('[\u0022food\u0022,\u0022identity\u0022,\u0022commerce\u0022]').includes(filter)"
+                            aria-label="Anata identity — View case studio"
+                        >
+                            <img src="https://jorgegbellos.github.io/the-welcome-preview/images/work/anata.png" alt="">
+                            <span class="work-masonry-overlay" aria-hidden="true"></span>
+                            <div class="work-masonry-hover">
+                                <p class="type-s3">Anata identity</p>
+                                <span class="work-masonry-cta type-b2">
+                                    View case studio
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                                    </svg>
+                                </span>
+                            </div>
+                        </a>
+                                            <a
+                            href="#"
+                            class="work-masonry-item work-masonry-item--landscape"
+                            x-show="filter === 'all' || JSON.parse('[\u0022tourism\u0022,\u0022lifestyle\u0022]').includes(filter)"
+                            aria-label="Coastal lodging — View case studio"
+                        >
+                            <img src="https://jorgegbellos.github.io/the-welcome-preview/images/work/sunset.png" alt="">
+                            <span class="work-masonry-overlay" aria-hidden="true"></span>
+                            <div class="work-masonry-hover">
+                                <p class="type-s3">Coastal lodging</p>
+                                <span class="work-masonry-cta type-b2">
+                                    View case studio
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                                    </svg>
+                                </span>
+                            </div>
+                        </a>
+                                            <a
+                            href="#"
+                            class="work-masonry-item work-masonry-item--landscape"
+                            x-show="filter === 'all' || JSON.parse('[\u0022hospitality\u0022,\u0022commerce\u0022]').includes(filter)"
+                            aria-label="Pool terrace — View case studio"
+                        >
+                            <img src="https://jorgegbellos.github.io/the-welcome-preview/images/work/pool.png" alt="">
+                            <span class="work-masonry-overlay" aria-hidden="true"></span>
+                            <div class="work-masonry-hover">
+                                <p class="type-s3">Pool terrace</p>
+                                <span class="work-masonry-cta type-b2">
+                                    View case studio
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                                    </svg>
+                                </span>
+                            </div>
+                        </a>
+                                            <a
+                            href="#"
+                            class="work-masonry-item work-masonry-item--landscape"
+                            x-show="filter === 'all' || JSON.parse('[\u0022tourism\u0022,\u0022consulting\u0022]').includes(filter)"
+                            aria-label="Destino Yucatán — View case studio"
+                        >
+                            <img src="https://jorgegbellos.github.io/the-welcome-preview/images/work/sunset.png" alt="">
+                            <span class="work-masonry-overlay" aria-hidden="true"></span>
+                            <div class="work-masonry-hover">
+                                <p class="type-s3">Destino Yucatán</p>
+                                <span class="work-masonry-cta type-b2">
+                                    View case studio
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                                    </svg>
+                                </span>
+                            </div>
+                        </a>
+                                            <a
+                            href="#"
+                            class="work-masonry-item work-masonry-item--portrait"
+                            x-show="filter === 'all' || JSON.parse('[\u0022hospitality\u0022,\u0022lifestyle\u0022]').includes(filter)"
+                            aria-label="Cigno Hotel — View case studio"
+                        >
+                            <img src="https://jorgegbellos.github.io/the-welcome-preview/images/work/pool.png" alt="">
+                            <span class="work-masonry-overlay" aria-hidden="true"></span>
+                            <div class="work-masonry-hover">
+                                <p class="type-s3">Cigno Hotel</p>
+                                <span class="work-masonry-cta type-b2">
+                                    View case studio
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                                    </svg>
+                                </span>
+                            </div>
+                        </a>
+                                            <a
+                            href="#"
+                            class="work-masonry-item work-masonry-item--square"
+                            x-show="filter === 'all' || JSON.parse('[\u0022tourism\u0022,\u0022consulting\u0022]').includes(filter)"
+                            aria-label="Uxmal — View case studio"
+                        >
+                            <img src="https://jorgegbellos.github.io/the-welcome-preview/images/work/pyramid.png" alt="">
+                            <span class="work-masonry-overlay" aria-hidden="true"></span>
+                            <div class="work-masonry-hover">
+                                <p class="type-s3">Uxmal</p>
+                                <span class="work-masonry-cta type-b2">
+                                    View case studio
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                                    </svg>
+                                </span>
+                            </div>
+                        </a>
+                                            <a
+                            href="#"
+                            class="work-masonry-item work-masonry-item--square"
+                            x-show="filter === 'all' || JSON.parse('[\u0022hospitality\u0022,\u0022consulting\u0022,\u0022identity\u0022]').includes(filter)"
+                            aria-label="Tótem Hotel &amp; Club de Playa — View case studio"
+                        >
+                            <img src="https://jorgegbellos.github.io/the-welcome-preview/images/work/shelves.png" alt="">
+                            <span class="work-masonry-overlay" aria-hidden="true"></span>
+                            <div class="work-masonry-hover">
+                                <p class="type-s3">Tótem Hotel &amp; Club de Playa</p>
+                                <span class="work-masonry-cta type-b2">
+                                    View case studio
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                                    </svg>
+                                </span>
+                            </div>
+                        </a>
+                                            <a
+                            href="#"
+                            class="work-masonry-item work-masonry-item--square"
+                            x-show="filter === 'all' || JSON.parse('[\u0022lifestyle\u0022,\u0022hospitality\u0022]').includes(filter)"
+                            aria-label="Casa Lecanda — View case studio"
+                        >
+                            <img src="https://jorgegbellos.github.io/the-welcome-preview/images/work/swimmer.png" alt="">
+                            <span class="work-masonry-overlay" aria-hidden="true"></span>
+                            <div class="work-masonry-hover">
+                                <p class="type-s3">Casa Lecanda</p>
+                                <span class="work-masonry-cta type-b2">
+                                    View case studio
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                                    </svg>
+                                </span>
+                            </div>
+                        </a>
+                                            <a
+                            href="#"
+                            class="work-masonry-item work-masonry-item--landscape"
+                            x-show="filter === 'all' || JSON.parse('[\u0022hospitality\u0022,\u0022technology\u0022]').includes(filter)"
+                            aria-label="Grupo Oliva — View case studio"
+                        >
+                            <img src="https://jorgegbellos.github.io/the-welcome-preview/images/work/hammock.png" alt="">
+                            <span class="work-masonry-overlay" aria-hidden="true"></span>
+                            <div class="work-masonry-hover">
+                                <p class="type-s3">Grupo Oliva</p>
+                                <span class="work-masonry-cta type-b2">
+                                    View case studio
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                                    </svg>
+                                </span>
+                            </div>
+                        </a>
+                    <!--[if ENDBLOCK]><![endif]-->                </div>
+            </div>
+        </div>
+    </section>
+</div>
+        </main>
+
+        <footer class="bg-paper-100">
+    
+        <div class="px-4 py-16 sm:px-5 sm:py-20 lg:py-24">
+        <div class="mx-auto flex max-w-2xl flex-col items-center px-10 text-center">
+            <h2 class="type-h3 text-black-500">Let’s build what comes next</h2>
+            <p class="type-b2 mt-3 max-w-md text-black-400 sm:mt-4">
+                Every project begins by understanding the business, its challenges and its possibilities.
+            </p>
+
+            <a
+        href="https://jorgegbellos.github.io/the-welcome-preview/contact/"
+        class="btn btn-2 btn-solid-orange mt-8 shrink-0 rounded-xl sm:mt-10"=""
+    >
+        
+        <span>Schedule a Meeting</span>
+
+                    <span class="btn-icon">    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+    </svg></span>
+            </a>
+        </div>
+    </div>
+    
+    
+    <div class="px-4 pb-4 sm:px-5 sm:pb-5">
+        <div class="site-footer-panel px-8 py-10 sm:px-10 lg:py-10">
+
+            
+            <div class="site-footer-desktop hidden h-full lg:grid">
+                
+                <div class="site-footer-brand">
+                    <img
+                        src="https://jorgegbellos.github.io/the-welcome-preview/images/svg/Escudos.svg"
+                        alt=""
+                        class="site-footer-crest"
+                        width="186"
+                        height="140"
+                    >
+
+                    <div>
+                        <p class="type-s1 text-[#F9F6F5]">The Welcome</p>
+                        <p class="type-b2 mt-1 text-[#F9F6F5]/65">Hospitality Intelligence Services</p>
+                    </div>
+                </div>
+
+                
+                <div class="site-footer-discover">
+                    <div>
+                        <p class="type-b3 text-[#F9F6F5]/55">Discover</p>
+                        <ul class="mt-3 flex flex-col gap-2.5">
+                                                            <li>
+                                    <a
+                                        href="https://jorgegbellos.github.io/the-welcome-preview/"
+                                        class="type-b2 text-[#F9F6F5] transition-opacity hover:opacity-70"
+                                    >
+                                        Home
+                                    </a>
+                                </li>
+                                                            <li>
+                                    <a
+                                        href="https://jorgegbellos.github.io/the-welcome-preview/services/"
+                                        class="type-b2 text-[#F9F6F5] transition-opacity hover:opacity-70"
+                                    >
+                                        Expertise
+                                    </a>
+                                </li>
+                                                            <li>
+                                    <a
+                                        href="https://jorgegbellos.github.io/the-welcome-preview/projects/"
+                                        class="type-b2 text-[#F9F6F5] transition-opacity hover:opacity-70"
+                                    >
+                                        Works
+                                    </a>
+                                </li>
+                                                            <li>
+                                    <a
+                                        href="https://jorgegbellos.github.io/the-welcome-preview/about/"
+                                        class="type-b2 text-[#F9F6F5] transition-opacity hover:opacity-70"
+                                    >
+                                        About us
+                                    </a>
+                                </li>
+                                                    </ul>
+                    </div>
+
+                    <div class="mt-8">
+                        <p class="type-b3 text-[#F9F6F5]/55">Contact</p>
+                        <ul class="mt-3 flex flex-col gap-2.5">
+                            <li>
+                                <a
+                                    href="tel:+529999031257"
+                                    class="type-b2 text-[#F9F6F5] transition-opacity hover:opacity-70"
+                                >
+                                    +52 (999) 903 1257
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    href="https://jorgegbellos.github.io/the-welcome-preview/contact/"
+                                    class="type-b2 text-[#F9F6F5] transition-opacity hover:opacity-70"
+                                >
+                                    Mail
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="mt-auto flex flex-wrap items-center gap-x-6 gap-y-2 pt-6">
+                        <span class="type-b3 text-[#F9F6F5]/45">All Rights Reserved</span>
+                        <a
+                            href="#"
+                            class="type-b3 text-[#F9F6F5]/45 transition-colors hover:text-[#F9F6F5]"
+                        >
+                            Privacy Policy
+                        </a>
+                    </div>
+                </div>
+
+                
+                <div class="site-footer-social">
+                    <div>
+                        <p class="type-b3 text-[#F9F6F5]/55">Social</p>
+                        <ul class="mt-3 flex flex-col gap-2.5">
+                                                            <li>
+                                    <a
+                                        href="#"
+                                         target="_blank" rel="noopener noreferrer"                                         class="type-b2 text-[#F9F6F5] transition-opacity hover:opacity-70"
+                                    >
+                                        Instagram
+                                    </a>
+                                </li>
+                                                            <li>
+                                    <a
+                                        href="#"
+                                         target="_blank" rel="noopener noreferrer"                                         class="type-b2 text-[#F9F6F5] transition-opacity hover:opacity-70"
+                                    >
+                                        LinkedIn
+                                    </a>
+                                </li>
+                                                    </ul>
+                    </div>
+
+                    <div class="mt-auto flex justify-end pt-6">
+                        <img
+                            src="https://jorgegbellos.github.io/the-welcome-preview/images/svg/Logotipo (2).svg"
+                            alt="The Welcome"
+                            class="site-footer-mark"
+                            width="31"
+                            height="24"
+                        >
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="flex flex-col items-center text-center lg:hidden">
+                <img
+                    src="https://jorgegbellos.github.io/the-welcome-preview/images/svg/Escudos.svg"
+                    alt=""
+                    class="site-footer-crest"
+                    width="186"
+                    height="140"
+                >
+
+                <div class="mt-10">
+                    <p class="type-b3 text-[#F9F6F5]/55">Discover</p>
+                    <ul class="mt-3 flex flex-col items-center gap-2.5">
+                                                    <li>
+                                <a
+                                    href="https://jorgegbellos.github.io/the-welcome-preview/"
+                                    class="type-b2 font-semibold text-[#F9F6F5] transition-opacity hover:opacity-70"
+                                >
+                                    Home
+                                </a>
+                            </li>
+                                                    <li>
+                                <a
+                                    href="https://jorgegbellos.github.io/the-welcome-preview/services/"
+                                    class="type-b2 font-semibold text-[#F9F6F5] transition-opacity hover:opacity-70"
+                                >
+                                    Expertise
+                                </a>
+                            </li>
+                                                    <li>
+                                <a
+                                    href="https://jorgegbellos.github.io/the-welcome-preview/projects/"
+                                    class="type-b2 font-semibold text-[#F9F6F5] transition-opacity hover:opacity-70"
+                                >
+                                    Works
+                                </a>
+                            </li>
+                                                    <li>
+                                <a
+                                    href="https://jorgegbellos.github.io/the-welcome-preview/about/"
+                                    class="type-b2 font-semibold text-[#F9F6F5] transition-opacity hover:opacity-70"
+                                >
+                                    About us
+                                </a>
+                            </li>
+                                            </ul>
+                </div>
+
+                <div class="mt-10">
+                    <p class="type-b3 text-[#F9F6F5]/55">Contact</p>
+                    <ul class="mt-3 flex flex-col items-center gap-2.5">
+                        <li>
+                            <a
+                                href="tel:+529999031257"
+                                class="type-b2 font-semibold text-[#F9F6F5] transition-opacity hover:opacity-70"
+                            >
+                                +52 (999) 903 1257
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                href="https://jorgegbellos.github.io/the-welcome-preview/contact/"
+                                class="type-b2 font-semibold text-[#F9F6F5] transition-opacity hover:opacity-70"
+                            >
+                                Mail
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="mt-10">
+                    <p class="type-b3 text-[#F9F6F5]/55">Social</p>
+                    <ul class="mt-3 flex flex-col items-center gap-2.5">
+                                                    <li>
+                                <a
+                                    href="#"
+                                     target="_blank" rel="noopener noreferrer"                                     class="type-b2 font-semibold text-[#F9F6F5] transition-opacity hover:opacity-70"
+                                >
+                                    Instagram
+                                </a>
+                            </li>
+                                                    <li>
+                                <a
+                                    href="#"
+                                     target="_blank" rel="noopener noreferrer"                                     class="type-b2 font-semibold text-[#F9F6F5] transition-opacity hover:opacity-70"
+                                >
+                                    LinkedIn
+                                </a>
+                            </li>
+                                            </ul>
+                </div>
+
+                <div class="mt-12 flex w-full items-center justify-between gap-4">
+                    <span class="type-b3 text-[#F9F6F5]/45">All Rights Reserved</span>
+                    <a
+                        href="#"
+                        class="type-b3 text-[#F9F6F5]/45 transition-colors hover:text-[#F9F6F5]"
+                    >
+                        Privacy Policy
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</footer>
+
+        
+    </body>
+</html>

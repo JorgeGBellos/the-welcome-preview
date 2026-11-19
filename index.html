@@ -1,0 +1,1888 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="csrf-token" content="i624eTqoVe6ZwH9VVC01LOasaaMOTELOQccJ6MNu">
+
+        <title>Home — The Welcome</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+        <link rel="preload" as="style" href="https://jorgegbellos.github.io/the-welcome-preview/build/assets/app-gI3td0ts.css" /><link rel="modulepreload" as="script" href="https://jorgegbellos.github.io/the-welcome-preview/build/assets/app-Bwn9szyo.js" /><link rel="stylesheet" href="https://jorgegbellos.github.io/the-welcome-preview/build/assets/app-gI3td0ts.css" data-navigate-track="reload" /><script type="module" src="https://jorgegbellos.github.io/the-welcome-preview/build/assets/app-Bwn9szyo.js" data-navigate-track="reload"></script>        <!-- Livewire Styles --><style >[wire\:loading][wire\:loading], [wire\:loading\.delay][wire\:loading\.delay], [wire\:loading\.list-item][wire\:loading\.list-item], [wire\:loading\.inline-block][wire\:loading\.inline-block], [wire\:loading\.inline][wire\:loading\.inline], [wire\:loading\.block][wire\:loading\.block], [wire\:loading\.flex][wire\:loading\.flex], [wire\:loading\.table][wire\:loading\.table], [wire\:loading\.grid][wire\:loading\.grid], [wire\:loading\.inline-flex][wire\:loading\.inline-flex] {display: none;}[wire\:loading\.delay\.none][wire\:loading\.delay\.none], [wire\:loading\.delay\.shortest][wire\:loading\.delay\.shortest], [wire\:loading\.delay\.shorter][wire\:loading\.delay\.shorter], [wire\:loading\.delay\.short][wire\:loading\.delay\.short], [wire\:loading\.delay\.default][wire\:loading\.delay\.default], [wire\:loading\.delay\.long][wire\:loading\.delay\.long], [wire\:loading\.delay\.longer][wire\:loading\.delay\.longer], [wire\:loading\.delay\.longest][wire\:loading\.delay\.longest] {display: none;}[wire\:offline][wire\:offline] {display: none;}[wire\:dirty]:not(textarea):not(input):not(select) {display: none;}:root {--livewire-progress-bar-color: #2299dd;}[x-cloak="x-cloak"],[x-cloak=""] {display: none !important;}[wire\:cloak="wire:cloak"],[wire\:cloak=""] {display: none !important;}dialog#livewire-error::backdrop {background-color: rgba(0, 0, 0, .6);}</style>
+        <script>
+    try {
+        if (sessionStorage.getItem('tw-welcomed') === '1') {
+            document.documentElement.classList.add('tw-entered');
+        }
+    } catch (e) {}
+</script>
+            <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js"></script>
+    </head>
+    <body class="min-h-screen bg-paper-100 font-sans text-black-500 antialiased">
+        <div
+    class="welcome-gate"
+    x-data="{
+        open: true,
+        hover: 0,
+        markEntered() {
+            try { sessionStorage.setItem('tw-welcomed', '1') } catch (e) {}
+            document.body.style.overflow = ''
+            this.open = false
+            setTimeout(() => {
+                document.documentElement.classList.add('tw-entered')
+            }, 700)
+        },
+        goPractice(id) {
+            this.markEntered()
+            const el = document.getElementById(id)
+            if (el) {
+                this.$nextTick(() => el.scrollIntoView({ behavior: 'smooth', block: 'start' }))
+                return
+            }
+            window.location.href = 'https:\/\/jorgegbellos.github.io\/the-welcome-preview' + '#' + id
+        },
+        goHome() {
+            this.markEntered()
+            if (! true) {
+                window.location.href = 'https:\/\/jorgegbellos.github.io\/the-welcome-preview'            }
+        },
+        goContact() {
+            this.markEntered()
+            window.location.href = 'https:\/\/jorgegbellos.github.io\/the-welcome-preview\/contact'        },
+    }"
+    x-init="
+        let seen = document.documentElement.classList.contains('tw-entered')
+        try { seen = seen || sessionStorage.getItem('tw-welcomed') === '1' } catch (e) {}
+        if (seen) {
+            document.documentElement.classList.add('tw-entered')
+            open = false
+            document.body.style.overflow = ''
+        } else {
+            document.body.style.overflow = 'hidden'
+        }
+    "
+    x-show="open"
+    x-transition:leave="transition ease-out duration-700"
+    x-transition:leave-start="opacity-100"
+    x-transition:leave-end="opacity-0"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="welcome-title"
+>
+    <img
+        src="https://jorgegbellos.github.io/the-welcome-preview/images/home/welcome-gate.png"
+        alt=""
+        class="welcome-gate__image"
+    >
+
+    <div class="relative flex min-h-dvh flex-col px-5 py-6 sm:px-8 sm:py-8">
+        <div class="flex justify-end">
+            <button
+                type="button"
+                class="inline-flex size-11 items-center justify-center rounded-full transition-opacity hover:opacity-70"
+                aria-label="Language"
+            >
+                <img
+                    src="https://jorgegbellos.github.io/the-welcome-preview/images/svg/Idioma_B.svg"
+                    alt=""
+                    class="size-9 brightness-0 invert"
+                >
+            </button>
+        </div>
+
+        <div class="mx-auto flex w-full max-w-lg flex-1 flex-col items-center justify-center py-8 text-center">
+            <img
+                src="https://jorgegbellos.github.io/the-welcome-preview/images/svg/Escudos.svg"
+                alt=""
+                class="h-24 w-auto sm:h-28"
+                style="filter: brightness(0) invert(1);"
+                width="187"
+                height="141"
+            >
+
+            <h1 id="welcome-title" class="type-h4 mt-8 text-[#FFFFFF] sm:mt-10">
+                Welcome. It’s good to have you here
+            </h1>
+            <p class="type-b2 mt-3 text-[#FFFFFF]/70">
+                Before we begin, how can we help?
+            </p>
+
+            <div class="mt-8 w-full max-w-sm" role="list">
+                                    <button
+                        type="button"
+                        role="listitem"
+                        class="welcome-option type-b2"
+                        :class="hover === 0 && 'is-active'"
+                        @mouseenter="hover = 0"
+                        @focus="hover = 0"
+                        @click="goPractice('practice-consulting')"
+                    >
+                        <span>
+                            <span class="text-[#FFFFFF]/45">01</span>
+                            <span class="ml-2">Consulting &amp; Strategy</span>
+                        </span>
+                        <span class="welcome-option-arrow" aria-hidden="true">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.75" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                            </svg>
+                        </span>
+                    </button>
+                                    <button
+                        type="button"
+                        role="listitem"
+                        class="welcome-option type-b2"
+                        :class="hover === 1 && 'is-active'"
+                        @mouseenter="hover = 1"
+                        @focus="hover = 1"
+                        @click="goPractice('practice-identity')"
+                    >
+                        <span>
+                            <span class="text-[#FFFFFF]/45">02</span>
+                            <span class="ml-2">Identity &amp; Experience</span>
+                        </span>
+                        <span class="welcome-option-arrow" aria-hidden="true">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.75" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                            </svg>
+                        </span>
+                    </button>
+                                    <button
+                        type="button"
+                        role="listitem"
+                        class="welcome-option type-b2"
+                        :class="hover === 2 && 'is-active'"
+                        @mouseenter="hover = 2"
+                        @focus="hover = 2"
+                        @click="goPractice('practice-technology')"
+                    >
+                        <span>
+                            <span class="text-[#FFFFFF]/45">03</span>
+                            <span class="ml-2">Technology &amp; Digital Systems</span>
+                        </span>
+                        <span class="welcome-option-arrow" aria-hidden="true">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.75" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                            </svg>
+                        </span>
+                    </button>
+                                    <button
+                        type="button"
+                        role="listitem"
+                        class="welcome-option type-b2"
+                        :class="hover === 3 && 'is-active'"
+                        @mouseenter="hover = 3"
+                        @focus="hover = 3"
+                        @click="goPractice('practice-commerce')"
+                    >
+                        <span>
+                            <span class="text-[#FFFFFF]/45">04</span>
+                            <span class="ml-2">Commerce &amp; Growth</span>
+                        </span>
+                        <span class="welcome-option-arrow" aria-hidden="true">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.75" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                            </svg>
+                        </span>
+                    </button>
+                            </div>
+
+            <p class="type-label-s mt-10 tracking-[0.18em] text-[#FFFFFF]/45">
+                NOT SURE YET?
+            </p>
+
+            <div class="mt-4 flex w-full max-w-sm flex-col gap-3">
+                <button
+        type="button"
+        class="btn btn-2 btn-solid-white w-full rounded-xl" @click="goContact()"
+    >
+        
+        <span>Let’s talk</span>
+
+            </button>
+
+                <button
+        type="button"
+        class="btn btn-2 btn-outline-white w-full rounded-xl" @click="goHome()"
+    >
+        
+        <span>Explore the full site</span>
+
+                    <span class="btn-icon">    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+    </svg></span>
+            </button>
+            </div>
+        </div>
+
+        <p class="type-b3 pb-2 text-center text-[#FFFFFF]/40">
+            &copy; 2026 The Welcome
+            <span class="mx-2">·</span>
+            Privacy Policy
+            <span class="mx-2">·</span>
+            All Rights Reserved
+        </p>
+    </div>
+</div>
+
+        <main>
+            <div wire:snapshot="{&quot;data&quot;:[],&quot;memo&quot;:{&quot;id&quot;:&quot;Jvj2XiqfD3UwVIfw5vki&quot;,&quot;name&quot;:&quot;pages.home&quot;,&quot;path&quot;:&quot;\/&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;release&quot;:&quot;a-a-a&quot;,&quot;children&quot;:[],&quot;scripts&quot;:[],&quot;assets&quot;:[],&quot;errors&quot;:[],&quot;locale&quot;:&quot;en&quot;,&quot;islands&quot;:[]},&quot;checksum&quot;:&quot;4a888541a6be27c33d7847f3ac6e508a57f179ef39496672da97d4ad193d1733&quot;}" wire:effects="{&quot;partials&quot;:[]}" wire:id="Jvj2XiqfD3UwVIfw5vki" wire:name="pages.home">
+    <header
+    class="fixed inset-x-0 top-0 z-[200] px-4 pt-4 sm:px-5 sm:pt-5 animate-[fade-in_0.6s_ease-out]"
+    x-data="{
+        open: false,
+        scrolled: false,
+        onScroll() {
+            this.scrolled = window.scrollY > 8
+        },
+    }"
+    x-init="onScroll(); window.addEventListener('scroll', () => onScroll(), { passive: true })"
+>
+    <div
+        class="site-header-bar box-border grid h-20 grid-cols-[1fr_auto_1fr] items-center gap-4 rounded-2xl px-10 py-4 shadow-sm"
+        :class="scrolled && 'is-frosted'"
+    >
+        <a href="https://jorgegbellos.github.io/the-welcome-preview/" class="justify-self-start shrink-0" aria-label="The Welcome">
+            <img
+                src="https://jorgegbellos.github.io/the-welcome-preview/images/svg/Logotipo.svg"
+                alt="The Welcome"
+                class="h-6 w-auto"
+            >
+        </a>
+
+        <nav class="hidden items-center gap-6 lg:flex xl:gap-8" aria-label="Primary">
+            <!--[if BLOCK]><![endif]-->                <a
+                    href="https://jorgegbellos.github.io/the-welcome-preview/services/"
+                    class="type-button-3 transition-colors text-black-500 hover:text-orange-500"
+                >
+                    Expertise
+                </a>
+                            <a
+                    href="https://jorgegbellos.github.io/the-welcome-preview/projects/"
+                    class="type-button-3 transition-colors text-black-500 hover:text-orange-500"
+                >
+                    Work
+                </a>
+                            <a
+                    href="https://jorgegbellos.github.io/the-welcome-preview/about/"
+                    class="type-button-3 transition-colors text-black-500 hover:text-orange-500"
+                >
+                    About us
+                </a>
+                            <a
+                    href="https://jorgegbellos.github.io/the-welcome-preview/contact/"
+                    class="type-button-3 transition-colors text-black-500 hover:text-orange-500"
+                >
+                    Contact
+                </a>
+            <!--[if ENDBLOCK]><![endif]-->        </nav>
+
+        <div class="flex items-center justify-self-end gap-3 sm:gap-5">
+            <button
+                type="button"
+                class="inline-flex size-11 shrink-0 items-center justify-center rounded-full transition-opacity hover:opacity-70"
+                aria-label="Language"
+            >
+                <img
+                    src="https://jorgegbellos.github.io/the-welcome-preview/images/svg/Idioma_B.svg"
+                    alt=""
+                    class="size-10"
+                >
+            </button>
+
+            <div class="hidden sm:block">
+                <!--[if BLOCK]><![endif]-->    <a
+        href="https://jorgegbellos.github.io/the-welcome-preview/contact/"
+        class="btn btn-2 btn-solid-black !h-12 !rounded-xl !py-0"=""
+    >
+        <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->
+        <span>Let's talk</span>
+
+        <!--[if BLOCK]><![endif]-->            <span class="btn-icon">    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+    </svg></span>
+        <!--[if ENDBLOCK]><![endif]-->    </a>
+<!--[if ENDBLOCK]><![endif]-->            </div>
+
+            <button
+                type="button"
+                class="type-button-3 inline-flex items-center justify-center rounded-lg border border-paper-200 px-3 py-2 text-black-500 lg:hidden"
+                @click="open = ! open"
+                :aria-expanded="open.toString()"
+                aria-controls="mobile-nav"
+            >
+                Menu
+            </button>
+        </div>
+    </div>
+
+    <nav
+        id="mobile-nav"
+        class="site-header-panel mt-2 rounded-2xl px-4 py-4 shadow-sm lg:hidden"
+        :class="scrolled && 'is-frosted'"
+        x-show="open"
+        x-cloak
+        x-transition
+        aria-label="Mobile"
+    >
+        <div class="flex flex-col gap-4">
+            <!--[if BLOCK]><![endif]-->                <a
+                    href="https://jorgegbellos.github.io/the-welcome-preview/services/"
+                    class="type-button-3 text-black-500"
+                    @click="open = false"
+                >
+                    Expertise
+                </a>
+                            <a
+                    href="https://jorgegbellos.github.io/the-welcome-preview/projects/"
+                    class="type-button-3 text-black-500"
+                    @click="open = false"
+                >
+                    Work
+                </a>
+                            <a
+                    href="https://jorgegbellos.github.io/the-welcome-preview/about/"
+                    class="type-button-3 text-black-500"
+                    @click="open = false"
+                >
+                    About us
+                </a>
+                            <a
+                    href="https://jorgegbellos.github.io/the-welcome-preview/contact/"
+                    class="type-button-3 text-black-500"
+                    @click="open = false"
+                >
+                    Contact
+                </a>
+            <!--[if ENDBLOCK]><![endif]-->
+            <!--[if BLOCK]><![endif]-->    <a
+        href="https://jorgegbellos.github.io/the-welcome-preview/contact/"
+        class="btn btn-2 btn-solid-black rounded-xl sm:hidden"=""
+    >
+        <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->
+        <span>Let's talk</span>
+
+        <!--[if BLOCK]><![endif]-->            <span class="btn-icon">    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+    </svg></span>
+        <!--[if ENDBLOCK]><![endif]-->    </a>
+<!--[if ENDBLOCK]><![endif]-->        </div>
+    </nav>
+</header>
+
+<!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->
+    <section class="relative isolate min-h-svh overflow-hidden">
+        <img
+            src="https://jorgegbellos.github.io/the-welcome-preview/images/Hero Image.png"
+            alt=""
+            class="absolute inset-0 size-full object-cover"
+        >
+
+        <div class="absolute inset-0 bg-black-500/25"></div>
+
+        <div class="relative flex min-h-svh flex-col items-center justify-end px-4 pb-16 pt-28 text-center sm:pb-20 sm:pt-32">
+            <div class="mx-auto max-w-3xl animate-[fade-up_0.8s_ease-out]">
+                <h1 class="type-h3 text-[#FFFFFF]">
+                    Strategy, Design &amp; Technology
+                </h1>
+
+                <p class="type-s2 mt-3 text-[#FFFFFF]/90 sm:mt-4">
+                    For Experience-Led Businesses.
+                </p>
+
+                <div class="mt-8 flex flex-col items-center justify-center gap-3 sm:mt-10 sm:flex-row sm:gap-4">
+                    <!--[if BLOCK]><![endif]-->    <a
+        href="https://jorgegbellos.github.io/the-welcome-preview/projects/"
+        class="btn btn-2 btn-outline-white rounded-xl"=""
+    >
+        <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->
+        <span>View our work</span>
+
+        <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->    </a>
+<!--[if ENDBLOCK]><![endif]-->
+                    <!--[if BLOCK]><![endif]-->    <a
+        href="https://jorgegbellos.github.io/the-welcome-preview/services/"
+        class="btn btn-2 btn-solid-white rounded-xl"=""
+    >
+        <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->
+        <span>Explore our services</span>
+
+        <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->    </a>
+<!--[if ENDBLOCK]><![endif]-->                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-sheet px-4 py-12 sm:px-5 sm:py-14 lg:py-16">
+    <div class="px-10">
+
+        
+        <div class="flex flex-col gap-8 lg:flex-row lg:items-start lg:justify-between lg:gap-12">
+            <div class="flex items-start gap-4 sm:gap-5">
+                <img
+                    src="https://jorgegbellos.github.io/the-welcome-preview/images/svg/animation_24dp_E3E3E3_FILL0_wght200_GRAD0_opsz24 (1) 1.svg"
+                    alt=""
+                    class="size-[52px] shrink-0"
+                >
+
+                <div>
+                    <p class="type-s2 text-black-500">One vision</p>
+                    <h2 class="type-h3 mt-1 text-black-500">Many disciplines</h2>
+                </div>
+            </div>
+
+            <p class="type-b2 max-w-md text-black-400 lg:max-w-sm lg:text-right">
+                Brands, experiences and businesses don't work in isolation. Their value depends on the relationship between what they stand for, what they offer and how they operate.
+            </p>
+        </div>
+
+        
+        <div class="mt-10 grid grid-cols-1 gap-4 sm:mt-12 sm:gap-5 md:grid-cols-2 lg:grid-cols-3">
+            <div class="aspect-[590/680] overflow-hidden rounded-2xl bg-beige-400">
+                <img
+                    src="https://jorgegbellos.github.io/the-welcome-preview/images/home/vision-vertical-1.png"
+                    alt=""
+                    class="size-full object-cover"
+                >
+            </div>
+
+            <div class="aspect-[590/680] overflow-hidden rounded-2xl bg-beige-400">
+                <img
+                    src="https://jorgegbellos.github.io/the-welcome-preview/images/home/vision-vertical-2.png"
+                    alt=""
+                    class="size-full object-cover"
+                >
+            </div>
+
+            <div class="grid grid-rows-2 gap-4 sm:gap-5 md:col-span-2 lg:col-span-1">
+                <div class="aspect-[590/330] overflow-hidden rounded-2xl bg-beige-500">
+                    <img
+                        src="https://jorgegbellos.github.io/the-welcome-preview/images/home/vision-stack-1.png"
+                        alt=""
+                        class="size-full object-cover"
+                    >
+                </div>
+
+                <div class="aspect-[590/330] overflow-hidden rounded-2xl bg-beige-500">
+                    <img
+                        src="https://jorgegbellos.github.io/the-welcome-preview/images/home/vision-stack-2.png"
+                        alt=""
+                        class="size-full object-cover"
+                    >
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="mx-auto mt-14 max-w-3xl text-center sm:mt-16">
+            <p class="type-s2 text-black-500">
+                At The Welcome, we connect
+                <span class="font-semibold">strategy</span>,
+                <span class="font-semibold">design</span>
+                and
+                <span class="font-semibold">technology</span>
+                under one vision
+            </p>
+
+            <div class="mt-10 flex justify-center sm:mt-12">
+                <div class="flex origin-center scale-[0.58] flex-nowrap items-center justify-center gap-5 sm:scale-75 sm:gap-6 md:scale-90 lg:scale-100">
+                    <!--[if BLOCK]><![endif]-->                        <div
+                            class="flex h-[280px] w-[280px] shrink-0 items-center justify-center rounded-full border border-black-500"
+                            style="width: 280px; height: 280px;"
+                        >
+                            <span class="type-label-m text-black-500">Strategy</span>
+                        </div>
+                                            <div
+                            class="flex h-[280px] w-[280px] shrink-0 items-center justify-center rounded-full border border-black-500"
+                            style="width: 280px; height: 280px;"
+                        >
+                            <span class="type-label-m text-black-500">Technology</span>
+                        </div>
+                                            <div
+                            class="flex h-[280px] w-[280px] shrink-0 items-center justify-center rounded-full border border-black-500"
+                            style="width: 280px; height: 280px;"
+                        >
+                            <span class="type-label-m text-black-500">Design</span>
+                        </div>
+                    <!--[if ENDBLOCK]><![endif]-->                </div>
+            </div>
+
+            <div class="mt-10 flex justify-center sm:mt-12">
+                <img
+                    src="https://jorgegbellos.github.io/the-welcome-preview/images/svg/Logotipo (1).svg"
+                    alt=""
+                    class="h-6 w-auto"
+                >
+            </div>
+        </div>
+    </div>
+</section>
+
+    <section id="what-we-do" class="bg-paper-100 px-4 py-10 sm:px-5 sm:py-14 lg:py-16">
+    <div class="px-10">
+        <div class="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between sm:gap-8">
+            <div>
+                <h2 class="type-h3 text-black-500">What we do</h2>
+                <p class="type-b2 mt-2 text-black-300">
+                    Four practices that can work independently or as one team.
+                </p>
+            </div>
+
+            <!--[if BLOCK]><![endif]-->    <a
+        href="https://jorgegbellos.github.io/the-welcome-preview/services/"
+        class="btn btn-2 btn-outline shrink-0 self-start rounded-xl sm:self-auto"=""
+    >
+        <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->
+        <span>Explore Our Services</span>
+
+        <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->    </a>
+<!--[if ENDBLOCK]><![endif]-->        </div>
+
+        <div class="practice-grid">
+            <!--[if BLOCK]><![endif]-->                <article id="practice-consulting" class="practice-card">
+                    <img
+                        src="https://jorgegbellos.github.io/the-welcome-preview/images/home/practice-hover-1.png"
+                        alt=""
+                        class="practice-card__bg"
+                    >
+
+                    <div class="relative z-10 flex h-full flex-col justify-between">
+                        <div class="flex items-start justify-between gap-3">
+                            <span class="type-b3 text-black-500">(01)</span>
+
+                            <img
+                                src="https://jorgegbellos.github.io/the-welcome-preview/images/svg/leon.svg"
+                                alt=""
+                                class="h-[66px] w-auto"
+                            >
+                        </div>
+
+                        <div>
+                            <h3 class="type-s3 text-black-500">Consulting &amp; Strategy</h3>
+                            <p class="type-b2 mt-3 text-black-400">We define the strategic foundations of brands, experiences and businesses.</p>
+
+                            <div class="practice-card__cta">
+                                <!--[if BLOCK]><![endif]-->    <a
+        href="https://jorgegbellos.github.io/the-welcome-preview/services/#practice-consulting"
+        class="btn btn-2 btn-solid-white rounded-full"=""
+    >
+        <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->
+        <span>Learn more</span>
+
+        <!--[if BLOCK]><![endif]-->            <span class="btn-icon">    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+    </svg></span>
+        <!--[if ENDBLOCK]><![endif]-->    </a>
+<!--[if ENDBLOCK]><![endif]-->                            </div>
+                        </div>
+                    </div>
+                </article>
+                            <article id="practice-identity" class="practice-card">
+                    <img
+                        src="https://jorgegbellos.github.io/the-welcome-preview/images/home/practice-hover-2.png"
+                        alt=""
+                        class="practice-card__bg"
+                    >
+
+                    <div class="relative z-10 flex h-full flex-col justify-between">
+                        <div class="flex items-start justify-between gap-3">
+                            <span class="type-b3 text-black-500">(02)</span>
+
+                            <img
+                                src="https://jorgegbellos.github.io/the-welcome-preview/images/svg/venado.svg"
+                                alt=""
+                                class="h-[66px] w-auto"
+                            >
+                        </div>
+
+                        <div>
+                            <h3 class="type-s3 text-black-500">Identity &amp; Experience</h3>
+                            <p class="type-b2 mt-3 text-black-400">We build identities and experiences that express the character of each brand.</p>
+
+                            <div class="practice-card__cta">
+                                <!--[if BLOCK]><![endif]-->    <a
+        href="https://jorgegbellos.github.io/the-welcome-preview/services/#practice-identity"
+        class="btn btn-2 btn-solid-white rounded-full"=""
+    >
+        <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->
+        <span>Learn more</span>
+
+        <!--[if BLOCK]><![endif]-->            <span class="btn-icon">    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+    </svg></span>
+        <!--[if ENDBLOCK]><![endif]-->    </a>
+<!--[if ENDBLOCK]><![endif]-->                            </div>
+                        </div>
+                    </div>
+                </article>
+                            <article id="practice-technology" class="practice-card">
+                    <img
+                        src="https://jorgegbellos.github.io/the-welcome-preview/images/home/practice-hover-1.png"
+                        alt=""
+                        class="practice-card__bg"
+                    >
+
+                    <div class="relative z-10 flex h-full flex-col justify-between">
+                        <div class="flex items-start justify-between gap-3">
+                            <span class="type-b3 text-black-500">(03)</span>
+
+                            <img
+                                src="https://jorgegbellos.github.io/the-welcome-preview/images/svg/leon.svg"
+                                alt=""
+                                class="h-[66px] w-auto"
+                            >
+                        </div>
+
+                        <div>
+                            <h3 class="type-s3 text-black-500">Technology &amp; Digital Systems</h3>
+                            <p class="type-b2 mt-3 text-black-400">We develop digital experiences and connect the tools each business needs.</p>
+
+                            <div class="practice-card__cta">
+                                <!--[if BLOCK]><![endif]-->    <a
+        href="https://jorgegbellos.github.io/the-welcome-preview/services/#practice-technology"
+        class="btn btn-2 btn-solid-white rounded-full"=""
+    >
+        <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->
+        <span>Learn more</span>
+
+        <!--[if BLOCK]><![endif]-->            <span class="btn-icon">    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+    </svg></span>
+        <!--[if ENDBLOCK]><![endif]-->    </a>
+<!--[if ENDBLOCK]><![endif]-->                            </div>
+                        </div>
+                    </div>
+                </article>
+                            <article id="practice-commerce" class="practice-card">
+                    <img
+                        src="https://jorgegbellos.github.io/the-welcome-preview/images/home/practice-hover-2.png"
+                        alt=""
+                        class="practice-card__bg"
+                    >
+
+                    <div class="relative z-10 flex h-full flex-col justify-between">
+                        <div class="flex items-start justify-between gap-3">
+                            <span class="type-b3 text-black-500">(04)</span>
+
+                            <img
+                                src="https://jorgegbellos.github.io/the-welcome-preview/images/svg/venado.svg"
+                                alt=""
+                                class="h-[66px] w-auto"
+                            >
+                        </div>
+
+                        <div>
+                            <h3 class="type-s3 text-black-500">Commerce &amp; Growth</h3>
+                            <p class="type-b2 mt-3 text-black-400">We connect brand strategy with customer acquisition and commercial performance.</p>
+
+                            <div class="practice-card__cta">
+                                <!--[if BLOCK]><![endif]-->    <a
+        href="https://jorgegbellos.github.io/the-welcome-preview/services/#practice-commerce"
+        class="btn btn-2 btn-solid-white rounded-full"=""
+    >
+        <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->
+        <span>Learn more</span>
+
+        <!--[if BLOCK]><![endif]-->            <span class="btn-icon">    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+    </svg></span>
+        <!--[if ENDBLOCK]><![endif]-->    </a>
+<!--[if ENDBLOCK]><![endif]-->                            </div>
+                        </div>
+                    </div>
+                </article>
+            <!--[if ENDBLOCK]><![endif]-->        </div>
+    </div>
+</section>
+
+    <section
+    class="section-sheet px-4 py-10 sm:px-5 sm:py-14 lg:py-16"
+    x-data="{ active: 0 }"
+>
+    <div class="px-10">
+        <div class="grid gap-10 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.55fr)] lg:items-stretch lg:gap-12 xl:gap-16">
+            
+            <div class="flex flex-col lg:h-full lg:justify-between">
+                <div>
+                    <h2 class="type-s2 max-w-md text-black-500">
+                        Designed for the experience industry
+                    </h2>
+                    <p class="type-b2 mt-3 max-w-sm text-black-400 sm:mt-4">
+                        We work with companies where perception, service and every interaction are part of the value of the business.
+                    </p>
+                </div>
+
+                <div
+                    class="mt-8 flex flex-col gap-2 sm:mt-10 lg:mt-0"
+                    role="tablist"
+                    aria-label="Industries"
+                >
+                    <!--[if BLOCK]><![endif]-->                        <button
+                            type="button"
+                            role="tab"
+                            id="industry-tab-0"
+                            aria-controls="industry-panel-0"
+                            @click="active = 0"
+                            :aria-selected="active === 0"
+                            :class="active === 0
+                                ? 'bg-black-100 px-5 py-4'
+                                : 'bg-paper-100 px-5 py-3.5 hover:bg-paper-200'"
+                            class="w-full rounded-2xl text-left transition-colors"
+                        >
+                            <span class="type-s3 block text-black-500">
+                                Hospitality
+                            </span>
+
+                            <p
+                                x-show="active === 0"
+                                x-cloak
+                                x-transition:enter="transition ease-out duration-200"
+                                x-transition:enter-start="opacity-0 -translate-y-1"
+                                x-transition:enter-end="opacity-100 translate-y-0"
+                                class="type-b2 mt-2 max-w-xs text-black-400"
+                            >
+                                Independent and boutique hotels, resorts, lodging, hotel groups and projects in development.
+                            </p>
+                        </button>
+                                            <button
+                            type="button"
+                            role="tab"
+                            id="industry-tab-1"
+                            aria-controls="industry-panel-1"
+                            @click="active = 1"
+                            :aria-selected="active === 1"
+                            :class="active === 1
+                                ? 'bg-black-100 px-5 py-4'
+                                : 'bg-paper-100 px-5 py-3.5 hover:bg-paper-200'"
+                            class="w-full rounded-2xl text-left transition-colors"
+                        >
+                            <span class="type-s3 block text-black-500">
+                                Food &amp; Beverage
+                            </span>
+
+                            <p
+                                x-show="active === 1"
+                                x-cloak
+                                x-transition:enter="transition ease-out duration-200"
+                                x-transition:enter-start="opacity-0 -translate-y-1"
+                                x-transition:enter-end="opacity-100 translate-y-0"
+                                class="type-b2 mt-2 max-w-xs text-black-400"
+                            >
+                                Restaurants, bars and concepts where the experience is central to the business.
+                            </p>
+                        </button>
+                                            <button
+                            type="button"
+                            role="tab"
+                            id="industry-tab-2"
+                            aria-controls="industry-panel-2"
+                            @click="active = 2"
+                            :aria-selected="active === 2"
+                            :class="active === 2
+                                ? 'bg-black-100 px-5 py-4'
+                                : 'bg-paper-100 px-5 py-3.5 hover:bg-paper-200'"
+                            class="w-full rounded-2xl text-left transition-colors"
+                        >
+                            <span class="type-s3 block text-black-500">
+                                Tourism &amp; Experiences
+                            </span>
+
+                            <p
+                                x-show="active === 2"
+                                x-cloak
+                                x-transition:enter="transition ease-out duration-200"
+                                x-transition:enter-start="opacity-0 -translate-y-1"
+                                x-transition:enter-end="opacity-100 translate-y-0"
+                                class="type-b2 mt-2 max-w-xs text-black-400"
+                            >
+                                Destinations, operators, venues and travel experiences.
+                            </p>
+                        </button>
+                                            <button
+                            type="button"
+                            role="tab"
+                            id="industry-tab-3"
+                            aria-controls="industry-panel-3"
+                            @click="active = 3"
+                            :aria-selected="active === 3"
+                            :class="active === 3
+                                ? 'bg-black-100 px-5 py-4'
+                                : 'bg-paper-100 px-5 py-3.5 hover:bg-paper-200'"
+                            class="w-full rounded-2xl text-left transition-colors"
+                        >
+                            <span class="type-s3 block text-black-500">
+                                Lifestyle
+                            </span>
+
+                            <p
+                                x-show="active === 3"
+                                x-cloak
+                                x-transition:enter="transition ease-out duration-200"
+                                x-transition:enter-start="opacity-0 -translate-y-1"
+                                x-transition:enter-end="opacity-100 translate-y-0"
+                                class="type-b2 mt-2 max-w-xs text-black-400"
+                            >
+                                Selected brands whose value depends on their identity and the experience they offer.
+                            </p>
+                        </button>
+                    <!--[if ENDBLOCK]><![endif]-->                </div>
+            </div>
+
+            
+            <div class="relative min-h-[22rem] overflow-hidden rounded-[1.75rem] sm:min-h-[28rem] lg:min-h-[32rem] lg:rounded-[2rem]">
+                <!--[if BLOCK]><![endif]-->                    <div
+                        id="industry-panel-0"
+                        role="tabpanel"
+                        aria-labelledby="industry-tab-0"
+                        x-show="active === 0"
+                        x-transition:enter="transition ease-out duration-300"
+                        x-transition:enter-start="opacity-0 scale-[1.02]"
+                        x-transition:enter-end="opacity-100 scale-100"
+                        class="absolute inset-0"
+                                            >
+                        <img
+                            src="https://jorgegbellos.github.io/the-welcome-preview/images/home/industry-hospitality.png"
+                            alt="Hospitality"
+                            class="size-full object-cover"
+                        >
+                    </div>
+                                    <div
+                        id="industry-panel-1"
+                        role="tabpanel"
+                        aria-labelledby="industry-tab-1"
+                        x-show="active === 1"
+                        x-transition:enter="transition ease-out duration-300"
+                        x-transition:enter-start="opacity-0 scale-[1.02]"
+                        x-transition:enter-end="opacity-100 scale-100"
+                        class="absolute inset-0"
+                         x-cloak style="display: none;"                     >
+                        <img
+                            src="https://jorgegbellos.github.io/the-welcome-preview/images/home/industry-food.png"
+                            alt="Food &amp; Beverage"
+                            class="size-full object-cover"
+                        >
+                    </div>
+                                    <div
+                        id="industry-panel-2"
+                        role="tabpanel"
+                        aria-labelledby="industry-tab-2"
+                        x-show="active === 2"
+                        x-transition:enter="transition ease-out duration-300"
+                        x-transition:enter-start="opacity-0 scale-[1.02]"
+                        x-transition:enter-end="opacity-100 scale-100"
+                        class="absolute inset-0"
+                         x-cloak style="display: none;"                     >
+                        <img
+                            src="https://jorgegbellos.github.io/the-welcome-preview/images/home/industry-tourism.png"
+                            alt="Tourism &amp; Experiences"
+                            class="size-full object-cover"
+                        >
+                    </div>
+                                    <div
+                        id="industry-panel-3"
+                        role="tabpanel"
+                        aria-labelledby="industry-tab-3"
+                        x-show="active === 3"
+                        x-transition:enter="transition ease-out duration-300"
+                        x-transition:enter-start="opacity-0 scale-[1.02]"
+                        x-transition:enter-end="opacity-100 scale-100"
+                        class="absolute inset-0"
+                         x-cloak style="display: none;"                     >
+                        <img
+                            src="https://jorgegbellos.github.io/the-welcome-preview/images/home/industry-lifestyle.png"
+                            alt="Lifestyle"
+                            class="size-full object-cover"
+                        >
+                    </div>
+                <!--[if ENDBLOCK]><![endif]-->            </div>
+        </div>
+    </div>
+</section>
+
+    <section
+    class="bg-paper-100 px-4 py-10 sm:px-5 sm:py-14 lg:py-16"
+    x-data="{
+        index: 0,
+        count: 5,
+        instant: false,
+        next() {
+            this.index++
+            if (this.index >= this.count) {
+                this.$nextTick(() => {
+                    setTimeout(() => {
+                        this.instant = true
+                        this.index = 0
+                        this.$nextTick(() => { this.instant = false })
+                    }, 620)
+                })
+            }
+        },
+        prev() {
+            if (this.index === 0) {
+                this.instant = true
+                this.index = this.count
+                this.$nextTick(() => {
+                    this.instant = false
+                    this.index = this.count - 1
+                })
+                return
+            }
+            this.index--
+        },
+    }"
+>
+    <div class="px-10">
+        <div class="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between sm:gap-8">
+            <div>
+                <h2 class="type-s2 text-black-500">Our Work</h2>
+                <p class="type-b2 mt-2 max-w-md text-black-400">
+                    A selection of projects where strategy, design and technology worked together.
+                </p>
+            </div>
+
+            <!--[if BLOCK]><![endif]-->    <a
+        href="https://jorgegbellos.github.io/the-welcome-preview/projects/"
+        class="btn btn-2 btn-outline shrink-0 self-start rounded-xl sm:self-auto"=""
+    >
+        <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->
+        <span>View all work</span>
+
+        <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->    </a>
+<!--[if ENDBLOCK]><![endif]-->        </div>
+
+        <div class="relative mt-8 sm:mt-10">
+            <div class="work-viewport">
+                <div
+                    class="work-track"
+                    :class="instant && 'is-instant'"
+                    :style="`--work-index: ${index}`"
+                >
+                    <!--[if BLOCK]><![endif]-->                        <article
+                            class="work-card"
+                            :class="index === 0 && 'is-featured'"
+                        >
+                            <div class="work-card-media">
+                                <img
+                                    src="https://jorgegbellos.github.io/the-welcome-preview/images/home/vision-vertical-1.png"
+                                    alt="Tótem Hotel &amp; Club de Playa"
+                                >
+
+                                <span
+                                    class="absolute left-4 top-4 rounded-full bg-beige-500 px-3 py-1.5 type-label-s uppercase tracking-wide text-black-500"
+                                    x-show="index === 0"
+                                    x-cloak
+                                    x-transition.opacity.duration.300ms
+                                >
+                                    Hospitality
+                                </span>
+                            </div>
+
+                            <div class="work-card-caption flex items-start justify-between gap-3">
+                                <div class="min-w-0">
+                                    <h3 class="type-s3 truncate text-black-500">Tótem Hotel &amp; Club de Playa</h3>
+                                    <p class="type-b2 mt-1 line-clamp-2 text-black-400">
+                                        A residential amenity that became a business: hotel, restaurant and beach club.
+                                    </p>
+                                </div>
+
+                                <span class="work-card-cta shrink-0">
+                                    <!--[if BLOCK]><![endif]-->    <a
+        href="https://jorgegbellos.github.io/the-welcome-preview/projects/"
+        class="btn btn-2 btn-outline rounded-xl"=""
+    >
+        <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->
+        <span>View case studio</span>
+
+        <!--[if BLOCK]><![endif]-->            <span class="btn-icon">    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+    </svg></span>
+        <!--[if ENDBLOCK]><![endif]-->    </a>
+<!--[if ENDBLOCK]><![endif]-->                                </span>
+                            </div>
+                        </article>
+                                            <article
+                            class="work-card"
+                            :class="index === 1 && 'is-featured'"
+                        >
+                            <div class="work-card-media">
+                                <img
+                                    src="https://jorgegbellos.github.io/the-welcome-preview/images/home/vision-stack-1.png"
+                                    alt="Cigno Hotel"
+                                >
+
+                                <span
+                                    class="absolute left-4 top-4 rounded-full bg-beige-500 px-3 py-1.5 type-label-s uppercase tracking-wide text-black-500"
+                                    x-show="index === 1"
+                                    x-cloak
+                                    x-transition.opacity.duration.300ms
+                                >
+                                    Hospitality
+                                </span>
+                            </div>
+
+                            <div class="work-card-caption flex items-start justify-between gap-3">
+                                <div class="min-w-0">
+                                    <h3 class="type-s3 truncate text-black-500">Cigno Hotel</h3>
+                                    <p class="type-b2 mt-1 line-clamp-2 text-black-400">
+                                        A residential amenity that became a business: hotel and living concept.
+                                    </p>
+                                </div>
+
+                                <span class="work-card-cta shrink-0">
+                                    <!--[if BLOCK]><![endif]-->    <a
+        href="https://jorgegbellos.github.io/the-welcome-preview/projects/"
+        class="btn btn-2 btn-outline rounded-xl"=""
+    >
+        <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->
+        <span>View case studio</span>
+
+        <!--[if BLOCK]><![endif]-->            <span class="btn-icon">    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+    </svg></span>
+        <!--[if ENDBLOCK]><![endif]-->    </a>
+<!--[if ENDBLOCK]><![endif]-->                                </span>
+                            </div>
+                        </article>
+                                            <article
+                            class="work-card"
+                            :class="index === 2 && 'is-featured'"
+                        >
+                            <div class="work-card-media">
+                                <img
+                                    src="https://jorgegbellos.github.io/the-welcome-preview/images/home/vision-vertical-2.png"
+                                    alt="Hotel Kahal"
+                                >
+
+                                <span
+                                    class="absolute left-4 top-4 rounded-full bg-beige-500 px-3 py-1.5 type-label-s uppercase tracking-wide text-black-500"
+                                    x-show="index === 2"
+                                    x-cloak
+                                    x-transition.opacity.duration.300ms
+                                >
+                                    Hospitality
+                                </span>
+                            </div>
+
+                            <div class="work-card-caption flex items-start justify-between gap-3">
+                                <div class="min-w-0">
+                                    <h3 class="type-s3 truncate text-black-500">Hotel Kahal</h3>
+                                    <p class="type-b2 mt-1 line-clamp-2 text-black-400">
+                                        A boutique hotel on Paseo de Montejo that found its place.
+                                    </p>
+                                </div>
+
+                                <span class="work-card-cta shrink-0">
+                                    <!--[if BLOCK]><![endif]-->    <a
+        href="https://jorgegbellos.github.io/the-welcome-preview/projects/"
+        class="btn btn-2 btn-outline rounded-xl"=""
+    >
+        <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->
+        <span>View case studio</span>
+
+        <!--[if BLOCK]><![endif]-->            <span class="btn-icon">    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+    </svg></span>
+        <!--[if ENDBLOCK]><![endif]-->    </a>
+<!--[if ENDBLOCK]><![endif]-->                                </span>
+                            </div>
+                        </article>
+                                            <article
+                            class="work-card"
+                            :class="index === 3 && 'is-featured'"
+                        >
+                            <div class="work-card-media">
+                                <img
+                                    src="https://jorgegbellos.github.io/the-welcome-preview/images/home/vision-stack-2.png"
+                                    alt="Casa Lecanda"
+                                >
+
+                                <span
+                                    class="absolute left-4 top-4 rounded-full bg-beige-500 px-3 py-1.5 type-label-s uppercase tracking-wide text-black-500"
+                                    x-show="index === 3"
+                                    x-cloak
+                                    x-transition.opacity.duration.300ms
+                                >
+                                    Lifestyle
+                                </span>
+                            </div>
+
+                            <div class="work-card-caption flex items-start justify-between gap-3">
+                                <div class="min-w-0">
+                                    <h3 class="type-s3 truncate text-black-500">Casa Lecanda</h3>
+                                    <p class="type-b2 mt-1 line-clamp-2 text-black-400">
+                                        A boutique house where identity, space and service share one vision.
+                                    </p>
+                                </div>
+
+                                <span class="work-card-cta shrink-0">
+                                    <!--[if BLOCK]><![endif]-->    <a
+        href="https://jorgegbellos.github.io/the-welcome-preview/projects/"
+        class="btn btn-2 btn-outline rounded-xl"=""
+    >
+        <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->
+        <span>View case studio</span>
+
+        <!--[if BLOCK]><![endif]-->            <span class="btn-icon">    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+    </svg></span>
+        <!--[if ENDBLOCK]><![endif]-->    </a>
+<!--[if ENDBLOCK]><![endif]-->                                </span>
+                            </div>
+                        </article>
+                                            <article
+                            class="work-card"
+                            :class="index === 4 && 'is-featured'"
+                        >
+                            <div class="work-card-media">
+                                <img
+                                    src="https://jorgegbellos.github.io/the-welcome-preview/images/home/practice-hover-1.png"
+                                    alt="Grupo Oliva"
+                                >
+
+                                <span
+                                    class="absolute left-4 top-4 rounded-full bg-beige-500 px-3 py-1.5 type-label-s uppercase tracking-wide text-black-500"
+                                    x-show="index === 4"
+                                    x-cloak
+                                    x-transition.opacity.duration.300ms
+                                >
+                                    Hospitality
+                                </span>
+                            </div>
+
+                            <div class="work-card-caption flex items-start justify-between gap-3">
+                                <div class="min-w-0">
+                                    <h3 class="type-s3 truncate text-black-500">Grupo Oliva</h3>
+                                    <p class="type-b2 mt-1 line-clamp-2 text-black-400">
+                                        Hospitality systems connected across brand, experience and operations.
+                                    </p>
+                                </div>
+
+                                <span class="work-card-cta shrink-0">
+                                    <!--[if BLOCK]><![endif]-->    <a
+        href="https://jorgegbellos.github.io/the-welcome-preview/projects/"
+        class="btn btn-2 btn-outline rounded-xl"=""
+    >
+        <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->
+        <span>View case studio</span>
+
+        <!--[if BLOCK]><![endif]-->            <span class="btn-icon">    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+    </svg></span>
+        <!--[if ENDBLOCK]><![endif]-->    </a>
+<!--[if ENDBLOCK]><![endif]-->                                </span>
+                            </div>
+                        </article>
+                                            <article
+                            class="work-card"
+                            :class="index === 5 && 'is-featured'"
+                        >
+                            <div class="work-card-media">
+                                <img
+                                    src="https://jorgegbellos.github.io/the-welcome-preview/images/home/vision-vertical-1.png"
+                                    alt="Tótem Hotel &amp; Club de Playa"
+                                >
+
+                                <span
+                                    class="absolute left-4 top-4 rounded-full bg-beige-500 px-3 py-1.5 type-label-s uppercase tracking-wide text-black-500"
+                                    x-show="index === 5"
+                                    x-cloak
+                                    x-transition.opacity.duration.300ms
+                                >
+                                    Hospitality
+                                </span>
+                            </div>
+
+                            <div class="work-card-caption flex items-start justify-between gap-3">
+                                <div class="min-w-0">
+                                    <h3 class="type-s3 truncate text-black-500">Tótem Hotel &amp; Club de Playa</h3>
+                                    <p class="type-b2 mt-1 line-clamp-2 text-black-400">
+                                        A residential amenity that became a business: hotel, restaurant and beach club.
+                                    </p>
+                                </div>
+
+                                <span class="work-card-cta shrink-0">
+                                    <!--[if BLOCK]><![endif]-->    <a
+        href="https://jorgegbellos.github.io/the-welcome-preview/projects/"
+        class="btn btn-2 btn-outline rounded-xl"=""
+    >
+        <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->
+        <span>View case studio</span>
+
+        <!--[if BLOCK]><![endif]-->            <span class="btn-icon">    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+    </svg></span>
+        <!--[if ENDBLOCK]><![endif]-->    </a>
+<!--[if ENDBLOCK]><![endif]-->                                </span>
+                            </div>
+                        </article>
+                                            <article
+                            class="work-card"
+                            :class="index === 6 && 'is-featured'"
+                        >
+                            <div class="work-card-media">
+                                <img
+                                    src="https://jorgegbellos.github.io/the-welcome-preview/images/home/vision-stack-1.png"
+                                    alt="Cigno Hotel"
+                                >
+
+                                <span
+                                    class="absolute left-4 top-4 rounded-full bg-beige-500 px-3 py-1.5 type-label-s uppercase tracking-wide text-black-500"
+                                    x-show="index === 6"
+                                    x-cloak
+                                    x-transition.opacity.duration.300ms
+                                >
+                                    Hospitality
+                                </span>
+                            </div>
+
+                            <div class="work-card-caption flex items-start justify-between gap-3">
+                                <div class="min-w-0">
+                                    <h3 class="type-s3 truncate text-black-500">Cigno Hotel</h3>
+                                    <p class="type-b2 mt-1 line-clamp-2 text-black-400">
+                                        A residential amenity that became a business: hotel and living concept.
+                                    </p>
+                                </div>
+
+                                <span class="work-card-cta shrink-0">
+                                    <!--[if BLOCK]><![endif]-->    <a
+        href="https://jorgegbellos.github.io/the-welcome-preview/projects/"
+        class="btn btn-2 btn-outline rounded-xl"=""
+    >
+        <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->
+        <span>View case studio</span>
+
+        <!--[if BLOCK]><![endif]-->            <span class="btn-icon">    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+    </svg></span>
+        <!--[if ENDBLOCK]><![endif]-->    </a>
+<!--[if ENDBLOCK]><![endif]-->                                </span>
+                            </div>
+                        </article>
+                                            <article
+                            class="work-card"
+                            :class="index === 7 && 'is-featured'"
+                        >
+                            <div class="work-card-media">
+                                <img
+                                    src="https://jorgegbellos.github.io/the-welcome-preview/images/home/vision-vertical-2.png"
+                                    alt="Hotel Kahal"
+                                >
+
+                                <span
+                                    class="absolute left-4 top-4 rounded-full bg-beige-500 px-3 py-1.5 type-label-s uppercase tracking-wide text-black-500"
+                                    x-show="index === 7"
+                                    x-cloak
+                                    x-transition.opacity.duration.300ms
+                                >
+                                    Hospitality
+                                </span>
+                            </div>
+
+                            <div class="work-card-caption flex items-start justify-between gap-3">
+                                <div class="min-w-0">
+                                    <h3 class="type-s3 truncate text-black-500">Hotel Kahal</h3>
+                                    <p class="type-b2 mt-1 line-clamp-2 text-black-400">
+                                        A boutique hotel on Paseo de Montejo that found its place.
+                                    </p>
+                                </div>
+
+                                <span class="work-card-cta shrink-0">
+                                    <!--[if BLOCK]><![endif]-->    <a
+        href="https://jorgegbellos.github.io/the-welcome-preview/projects/"
+        class="btn btn-2 btn-outline rounded-xl"=""
+    >
+        <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->
+        <span>View case studio</span>
+
+        <!--[if BLOCK]><![endif]-->            <span class="btn-icon">    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+    </svg></span>
+        <!--[if ENDBLOCK]><![endif]-->    </a>
+<!--[if ENDBLOCK]><![endif]-->                                </span>
+                            </div>
+                        </article>
+                                            <article
+                            class="work-card"
+                            :class="index === 8 && 'is-featured'"
+                        >
+                            <div class="work-card-media">
+                                <img
+                                    src="https://jorgegbellos.github.io/the-welcome-preview/images/home/vision-stack-2.png"
+                                    alt="Casa Lecanda"
+                                >
+
+                                <span
+                                    class="absolute left-4 top-4 rounded-full bg-beige-500 px-3 py-1.5 type-label-s uppercase tracking-wide text-black-500"
+                                    x-show="index === 8"
+                                    x-cloak
+                                    x-transition.opacity.duration.300ms
+                                >
+                                    Lifestyle
+                                </span>
+                            </div>
+
+                            <div class="work-card-caption flex items-start justify-between gap-3">
+                                <div class="min-w-0">
+                                    <h3 class="type-s3 truncate text-black-500">Casa Lecanda</h3>
+                                    <p class="type-b2 mt-1 line-clamp-2 text-black-400">
+                                        A boutique house where identity, space and service share one vision.
+                                    </p>
+                                </div>
+
+                                <span class="work-card-cta shrink-0">
+                                    <!--[if BLOCK]><![endif]-->    <a
+        href="https://jorgegbellos.github.io/the-welcome-preview/projects/"
+        class="btn btn-2 btn-outline rounded-xl"=""
+    >
+        <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->
+        <span>View case studio</span>
+
+        <!--[if BLOCK]><![endif]-->            <span class="btn-icon">    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+    </svg></span>
+        <!--[if ENDBLOCK]><![endif]-->    </a>
+<!--[if ENDBLOCK]><![endif]-->                                </span>
+                            </div>
+                        </article>
+                                            <article
+                            class="work-card"
+                            :class="index === 9 && 'is-featured'"
+                        >
+                            <div class="work-card-media">
+                                <img
+                                    src="https://jorgegbellos.github.io/the-welcome-preview/images/home/practice-hover-1.png"
+                                    alt="Grupo Oliva"
+                                >
+
+                                <span
+                                    class="absolute left-4 top-4 rounded-full bg-beige-500 px-3 py-1.5 type-label-s uppercase tracking-wide text-black-500"
+                                    x-show="index === 9"
+                                    x-cloak
+                                    x-transition.opacity.duration.300ms
+                                >
+                                    Hospitality
+                                </span>
+                            </div>
+
+                            <div class="work-card-caption flex items-start justify-between gap-3">
+                                <div class="min-w-0">
+                                    <h3 class="type-s3 truncate text-black-500">Grupo Oliva</h3>
+                                    <p class="type-b2 mt-1 line-clamp-2 text-black-400">
+                                        Hospitality systems connected across brand, experience and operations.
+                                    </p>
+                                </div>
+
+                                <span class="work-card-cta shrink-0">
+                                    <!--[if BLOCK]><![endif]-->    <a
+        href="https://jorgegbellos.github.io/the-welcome-preview/projects/"
+        class="btn btn-2 btn-outline rounded-xl"=""
+    >
+        <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->
+        <span>View case studio</span>
+
+        <!--[if BLOCK]><![endif]-->            <span class="btn-icon">    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+    </svg></span>
+        <!--[if ENDBLOCK]><![endif]-->    </a>
+<!--[if ENDBLOCK]><![endif]-->                                </span>
+                            </div>
+                        </article>
+                    <!--[if ENDBLOCK]><![endif]-->                </div>
+            </div>
+
+            <button
+                type="button"
+                class="work-nav absolute left-3 top-[min(42%,12rem)] z-10 -translate-y-1/2 lg:left-4"
+                aria-label="Previous project"
+                @click="prev()"
+            >
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.75" stroke="currentColor" class="size-4">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+                </svg>
+            </button>
+
+            <button
+                type="button"
+                class="work-nav absolute right-3 top-[min(42%,12rem)] z-10 -translate-y-1/2 lg:right-4"
+                aria-label="Next project"
+                @click="next()"
+            >
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.75" stroke="currentColor" class="size-4">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                </svg>
+            </button>
+        </div>
+    </div>
+</section>
+
+    <section class="section-sheet px-4 py-10 sm:px-5 sm:py-14 lg:py-16">
+    <div class="px-10">
+        <div class="mx-auto max-w-2xl text-center">
+            <h2 class="type-s2 text-black-500">Who we’ve worked with</h2>
+            <p class="type-b2 mt-3 text-black-400">
+                Companies, institutions and brands that have trusted our work.
+            </p>
+        </div>
+
+        
+        <div class="partners-video-frame relative mt-8 overflow-hidden rounded-3xl bg-black-500 sm:mt-10 lg:mt-12">
+            <video
+                class="partners-video absolute inset-0"
+                src="https://limegreen-falcon-288158.hostingersite.com/videos/Night.mp4"
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="metadata"
+                width="1800"
+                height="690"
+            ></video>
+
+            <div class="pointer-events-none absolute inset-x-0 bottom-0 flex justify-center pb-6 sm:pb-8">
+                <!--[if BLOCK]><![endif]-->    <a
+        href="https://jorgegbellos.github.io/the-welcome-preview/projects/"
+        class="btn btn-2 btn-solid-white pointer-events-auto rounded-xl"=""
+    >
+        <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->
+        <span>View all work</span>
+
+        <!--[if BLOCK]><![endif]-->            <span class="btn-icon">    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+    </svg></span>
+        <!--[if ENDBLOCK]><![endif]-->    </a>
+<!--[if ENDBLOCK]><![endif]-->            </div>
+        </div>
+
+        
+        <div class="partners-strip mt-2" aria-hidden="true">
+            <div class="partners-strip-track">
+                <img
+                    src="https://jorgegbellos.github.io/the-welcome-preview/images/svg/Partner Logo Strip.svg"
+                    alt=""
+                    width="4471"
+                    height="104"
+                    loading="lazy"
+                    decoding="async"
+                >
+                <img
+                    src="https://jorgegbellos.github.io/the-welcome-preview/images/svg/Partner Logo Strip.svg"
+                    alt=""
+                    width="4471"
+                    height="104"
+                    loading="lazy"
+                    decoding="async"
+                >
+            </div>
+        </div>
+    </div>
+</section>
+
+    <section
+    class="bg-paper-100 px-4 py-10 sm:px-5 sm:py-14 lg:py-16"
+    x-data="{ active: 0 }"
+>
+    <div class="px-10">
+        <div class="grid gap-10 lg:grid-cols-[minmax(16rem,0.7fr)_minmax(0,1.6fr)] lg:items-stretch lg:gap-12 xl:gap-16">
+            <div class="flex flex-col lg:h-full lg:justify-between">
+                <div>
+                    <h2 class="type-s2 text-black-500">Where we’ve worked</h2>
+                    <p class="type-b2 mt-2 text-black-400">
+                        Projects in Mexico and abroad.
+                    </p>
+                </div>
+
+                <div
+                    class="mt-10 flex flex-col items-start gap-2 lg:mt-0"
+                    role="tablist"
+                    aria-label="Regions"
+                >
+                    <!--[if BLOCK]><![endif]-->                        <button
+                            type="button"
+                            role="tab"
+                            id="location-tab-0"
+                            aria-controls="location-panel-0"
+                            @click="active = 0"
+                            :aria-selected="active === 0"
+                            :class="active === 0
+                                ? 'bg-black-100 text-black-500'
+                                : 'bg-[#FFFFFF] text-black-400 hover:text-black-500'"
+                            class="type-s3 min-w-[9.5rem] rounded-full px-8 py-3 text-center transition-colors"
+                        >
+                            Mexico
+                        </button>
+                                            <button
+                            type="button"
+                            role="tab"
+                            id="location-tab-1"
+                            aria-controls="location-panel-1"
+                            @click="active = 1"
+                            :aria-selected="active === 1"
+                            :class="active === 1
+                                ? 'bg-black-100 text-black-500'
+                                : 'bg-[#FFFFFF] text-black-400 hover:text-black-500'"
+                            class="type-s3 min-w-[9.5rem] rounded-full px-8 py-3 text-center transition-colors"
+                        >
+                            Abroad
+                        </button>
+                    <!--[if ENDBLOCK]><![endif]-->                </div>
+            </div>
+
+            <div class="relative min-h-[22rem] overflow-hidden rounded-[1.75rem] bg-paper sm:min-h-[28rem] lg:min-h-[32rem] lg:rounded-[2rem]">
+                <!--[if BLOCK]><![endif]-->                    <div
+                        id="location-panel-0"
+                        role="tabpanel"
+                        aria-labelledby="location-tab-0"
+                        x-show="active === 0"
+                        class="absolute inset-0"
+                                            >
+                        <iframe
+                            title="Mexico project locations"
+                            src="https://maps.google.com/maps?q=Yucatán,+Mexico&amp;hl=en&amp;z=6&amp;output=embed"
+                            class="size-full border-0"
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"
+                            allowfullscreen
+                        ></iframe>
+                    </div>
+                                    <div
+                        id="location-panel-1"
+                        role="tabpanel"
+                        aria-labelledby="location-tab-1"
+                        x-show="active === 1"
+                        class="absolute inset-0"
+                         x-cloak style="display: none;"                     >
+                        <iframe
+                            title="Abroad project locations"
+                            src="https://maps.google.com/maps?q=Europe&amp;hl=en&amp;z=4&amp;output=embed"
+                            class="size-full border-0"
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"
+                            allowfullscreen
+                        ></iframe>
+                    </div>
+                <!--[if ENDBLOCK]><![endif]-->            </div>
+        </div>
+    </div>
+</section>
+
+    <section class="section-sheet px-4 py-10 sm:px-5 sm:py-14 lg:py-16">
+    <div class="px-10">
+        <div class="mx-auto max-w-2xl text-center">
+            <h2 class="type-s2 text-black-500">Coherence as a starting point</h2>
+            <p class="type-b2 mt-3 text-black-400">
+                An identity needs a strategy. An experience needs systems that make it possible. A commercial strategy needs to understand the business it seeks to grow.
+                Our work is to connect these decisions and build solutions that work as a whole.
+            </p>
+        </div>
+
+        <div class="mt-10 flex justify-center overflow-hidden sm:mt-14">
+            <div class="process-row">
+                <!--[if BLOCK]><![endif]-->                    <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->
+                    <div class="process-circle">
+                        <h3 class="type-s3 text-black-500">Understand</h3>
+                        <p class="type-b2 mt-2 text-black-400">We research, diagnose and define objectives.</p>
+                    </div>
+                                    <!--[if BLOCK]><![endif]-->                        <span class="process-arrow" aria-hidden="true">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.25" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                            </svg>
+                        </span>
+                    <!--[if ENDBLOCK]><![endif]-->
+                    <div class="process-circle">
+                        <h3 class="type-s3 text-black-500">Create</h3>
+                        <p class="type-b2 mt-2 text-black-400">We conceptualize, design and develop solutions.</p>
+                    </div>
+                                    <!--[if BLOCK]><![endif]-->                        <span class="process-arrow" aria-hidden="true">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.25" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                            </svg>
+                        </span>
+                    <!--[if ENDBLOCK]><![endif]-->
+                    <div class="process-circle">
+                        <h3 class="type-s3 text-black-500">Implement</h3>
+                        <p class="type-b2 mt-2 text-black-400">We build, integrate, test and launch.</p>
+                    </div>
+                                    <!--[if BLOCK]><![endif]-->                        <span class="process-arrow" aria-hidden="true">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.25" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                            </svg>
+                        </span>
+                    <!--[if ENDBLOCK]><![endif]-->
+                    <div class="process-circle">
+                        <h3 class="type-s3 text-black-500">Optimize</h3>
+                        <p class="type-b2 mt-2 text-black-400">We measure, adjust and stay alongside.</p>
+                    </div>
+                <!--[if ENDBLOCK]><![endif]-->            </div>
+        </div>
+    </div>
+</section>
+</div>
+        </main>
+
+        <footer class="bg-paper-100">
+    
+        <div class="px-4 py-16 sm:px-5 sm:py-20 lg:py-24">
+        <div class="mx-auto flex max-w-2xl flex-col items-center px-10 text-center">
+            <h2 class="type-h3 text-black-500">Let’s build what comes next</h2>
+            <p class="type-b2 mt-3 max-w-md text-black-400 sm:mt-4">
+                Every project begins by understanding the business, its challenges and its possibilities.
+            </p>
+
+            <a
+        href="https://jorgegbellos.github.io/the-welcome-preview/contact/"
+        class="btn btn-2 btn-solid-orange mt-8 shrink-0 rounded-xl sm:mt-10"=""
+    >
+        
+        <span>Schedule a Meeting</span>
+
+                    <span class="btn-icon">    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+    </svg></span>
+            </a>
+        </div>
+    </div>
+    
+    
+    <div class="px-4 pb-4 sm:px-5 sm:pb-5">
+        <div class="site-footer-panel px-8 py-10 sm:px-10 lg:py-10">
+
+            
+            <div class="site-footer-desktop hidden h-full lg:grid">
+                
+                <div class="site-footer-brand">
+                    <img
+                        src="https://jorgegbellos.github.io/the-welcome-preview/images/svg/Escudos.svg"
+                        alt=""
+                        class="site-footer-crest"
+                        width="186"
+                        height="140"
+                    >
+
+                    <div>
+                        <p class="type-s1 text-[#F9F6F5]">The Welcome</p>
+                        <p class="type-b2 mt-1 text-[#F9F6F5]/65">Hospitality Intelligence Services</p>
+                    </div>
+                </div>
+
+                
+                <div class="site-footer-discover">
+                    <div>
+                        <p class="type-b3 text-[#F9F6F5]/55">Discover</p>
+                        <ul class="mt-3 flex flex-col gap-2.5">
+                                                            <li>
+                                    <a
+                                        href="https://jorgegbellos.github.io/the-welcome-preview/"
+                                        class="type-b2 text-[#F9F6F5] transition-opacity hover:opacity-70"
+                                    >
+                                        Home
+                                    </a>
+                                </li>
+                                                            <li>
+                                    <a
+                                        href="https://jorgegbellos.github.io/the-welcome-preview/services/"
+                                        class="type-b2 text-[#F9F6F5] transition-opacity hover:opacity-70"
+                                    >
+                                        Expertise
+                                    </a>
+                                </li>
+                                                            <li>
+                                    <a
+                                        href="https://jorgegbellos.github.io/the-welcome-preview/projects/"
+                                        class="type-b2 text-[#F9F6F5] transition-opacity hover:opacity-70"
+                                    >
+                                        Works
+                                    </a>
+                                </li>
+                                                            <li>
+                                    <a
+                                        href="https://jorgegbellos.github.io/the-welcome-preview/about/"
+                                        class="type-b2 text-[#F9F6F5] transition-opacity hover:opacity-70"
+                                    >
+                                        About us
+                                    </a>
+                                </li>
+                                                    </ul>
+                    </div>
+
+                    <div class="mt-8">
+                        <p class="type-b3 text-[#F9F6F5]/55">Contact</p>
+                        <ul class="mt-3 flex flex-col gap-2.5">
+                            <li>
+                                <a
+                                    href="tel:+529999031257"
+                                    class="type-b2 text-[#F9F6F5] transition-opacity hover:opacity-70"
+                                >
+                                    +52 (999) 903 1257
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    href="https://jorgegbellos.github.io/the-welcome-preview/contact/"
+                                    class="type-b2 text-[#F9F6F5] transition-opacity hover:opacity-70"
+                                >
+                                    Mail
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="mt-auto flex flex-wrap items-center gap-x-6 gap-y-2 pt-6">
+                        <span class="type-b3 text-[#F9F6F5]/45">All Rights Reserved</span>
+                        <a
+                            href="#"
+                            class="type-b3 text-[#F9F6F5]/45 transition-colors hover:text-[#F9F6F5]"
+                        >
+                            Privacy Policy
+                        </a>
+                    </div>
+                </div>
+
+                
+                <div class="site-footer-social">
+                    <div>
+                        <p class="type-b3 text-[#F9F6F5]/55">Social</p>
+                        <ul class="mt-3 flex flex-col gap-2.5">
+                                                            <li>
+                                    <a
+                                        href="#"
+                                         target="_blank" rel="noopener noreferrer"                                         class="type-b2 text-[#F9F6F5] transition-opacity hover:opacity-70"
+                                    >
+                                        Instagram
+                                    </a>
+                                </li>
+                                                            <li>
+                                    <a
+                                        href="#"
+                                         target="_blank" rel="noopener noreferrer"                                         class="type-b2 text-[#F9F6F5] transition-opacity hover:opacity-70"
+                                    >
+                                        LinkedIn
+                                    </a>
+                                </li>
+                                                    </ul>
+                    </div>
+
+                    <div class="mt-auto flex justify-end pt-6">
+                        <img
+                            src="https://jorgegbellos.github.io/the-welcome-preview/images/svg/Logotipo (2).svg"
+                            alt="The Welcome"
+                            class="site-footer-mark"
+                            width="31"
+                            height="24"
+                        >
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="flex flex-col items-center text-center lg:hidden">
+                <img
+                    src="https://jorgegbellos.github.io/the-welcome-preview/images/svg/Escudos.svg"
+                    alt=""
+                    class="site-footer-crest"
+                    width="186"
+                    height="140"
+                >
+
+                <div class="mt-10">
+                    <p class="type-b3 text-[#F9F6F5]/55">Discover</p>
+                    <ul class="mt-3 flex flex-col items-center gap-2.5">
+                                                    <li>
+                                <a
+                                    href="https://jorgegbellos.github.io/the-welcome-preview/"
+                                    class="type-b2 font-semibold text-[#F9F6F5] transition-opacity hover:opacity-70"
+                                >
+                                    Home
+                                </a>
+                            </li>
+                                                    <li>
+                                <a
+                                    href="https://jorgegbellos.github.io/the-welcome-preview/services/"
+                                    class="type-b2 font-semibold text-[#F9F6F5] transition-opacity hover:opacity-70"
+                                >
+                                    Expertise
+                                </a>
+                            </li>
+                                                    <li>
+                                <a
+                                    href="https://jorgegbellos.github.io/the-welcome-preview/projects/"
+                                    class="type-b2 font-semibold text-[#F9F6F5] transition-opacity hover:opacity-70"
+                                >
+                                    Works
+                                </a>
+                            </li>
+                                                    <li>
+                                <a
+                                    href="https://jorgegbellos.github.io/the-welcome-preview/about/"
+                                    class="type-b2 font-semibold text-[#F9F6F5] transition-opacity hover:opacity-70"
+                                >
+                                    About us
+                                </a>
+                            </li>
+                                            </ul>
+                </div>
+
+                <div class="mt-10">
+                    <p class="type-b3 text-[#F9F6F5]/55">Contact</p>
+                    <ul class="mt-3 flex flex-col items-center gap-2.5">
+                        <li>
+                            <a
+                                href="tel:+529999031257"
+                                class="type-b2 font-semibold text-[#F9F6F5] transition-opacity hover:opacity-70"
+                            >
+                                +52 (999) 903 1257
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                href="https://jorgegbellos.github.io/the-welcome-preview/contact/"
+                                class="type-b2 font-semibold text-[#F9F6F5] transition-opacity hover:opacity-70"
+                            >
+                                Mail
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="mt-10">
+                    <p class="type-b3 text-[#F9F6F5]/55">Social</p>
+                    <ul class="mt-3 flex flex-col items-center gap-2.5">
+                                                    <li>
+                                <a
+                                    href="#"
+                                     target="_blank" rel="noopener noreferrer"                                     class="type-b2 font-semibold text-[#F9F6F5] transition-opacity hover:opacity-70"
+                                >
+                                    Instagram
+                                </a>
+                            </li>
+                                                    <li>
+                                <a
+                                    href="#"
+                                     target="_blank" rel="noopener noreferrer"                                     class="type-b2 font-semibold text-[#F9F6F5] transition-opacity hover:opacity-70"
+                                >
+                                    LinkedIn
+                                </a>
+                            </li>
+                                            </ul>
+                </div>
+
+                <div class="mt-12 flex w-full items-center justify-between gap-4">
+                    <span class="type-b3 text-[#F9F6F5]/45">All Rights Reserved</span>
+                    <a
+                        href="#"
+                        class="type-b3 text-[#F9F6F5]/45 transition-colors hover:text-[#F9F6F5]"
+                    >
+                        Privacy Policy
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</footer>
+
+        <!-- Livewire Scripts -->
+
+    </body>
+</html>
