@@ -3,15 +3,11 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="csrf-token" content="nz9Taj6CUIacIpKSaSR87e0kuMchQNiBUuO1r8Fv">
+        <meta name="csrf-token" content="ltKMsiHMiwU6TUk4nU60n5EnMy60RffDcGfXdIsT">
 
         <title>Expertise — The Welcome</title>
 
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-        <link rel="preload" as="style" href="https://jorgegbellos.github.io/the-welcome-preview/build/assets/app-CHDn_atc.css" /><link rel="modulepreload" as="script" href="https://jorgegbellos.github.io/the-welcome-preview/build/assets/app-Bwn9szyo.js" /><link rel="stylesheet" href="https://jorgegbellos.github.io/the-welcome-preview/build/assets/app-CHDn_atc.css" data-navigate-track="reload" /><script type="module" src="https://jorgegbellos.github.io/the-welcome-preview/build/assets/app-Bwn9szyo.js" data-navigate-track="reload"></script>        
+        <link rel="preload" as="style" href="https://jorgegbellos.github.io/the-welcome-preview/build/assets/app-qTP58QPY.css" /><link rel="modulepreload" as="script" href="https://jorgegbellos.github.io/the-welcome-preview/build/assets/app-Bwn9szyo.js" /><link rel="stylesheet" href="https://jorgegbellos.github.io/the-welcome-preview/build/assets/app-qTP58QPY.css" data-navigate-track="reload" /><script type="module" src="https://jorgegbellos.github.io/the-welcome-preview/build/assets/app-Bwn9szyo.js" data-navigate-track="reload"></script>        
         <script>
     try {
         if (sessionStorage.getItem('tw-welcomed') === '1') {
@@ -80,17 +76,56 @@
 
     <div class="relative flex min-h-dvh flex-col px-5 py-6 sm:px-8 sm:py-8">
         <div class="flex justify-end">
-            <button
-                type="button"
-                class="inline-flex size-11 items-center justify-center rounded-full transition-opacity hover:opacity-70"
-                aria-label="Language"
-            >
-                <img
-                    src="https://jorgegbellos.github.io/the-welcome-preview/images/svg/Idioma_B.svg"
-                    alt=""
-                    class="size-9 brightness-0 invert"
-                >
-            </button>
+            <div
+    class="flex items-center"
+    x-data="{ langOpen: false }"
+    @keydown.escape.window="langOpen = false"
+    @click.outside="langOpen = false"
+>
+    <button
+        type="button"
+        class="inline-flex size-9 shrink-0 items-center justify-center rounded-full transition-opacity hover:opacity-70 sm:size-10 lg:size-11"
+        @click="langOpen = ! langOpen"
+        :aria-expanded="langOpen.toString()"
+        aria-controls="language-options-light"
+        aria-label="Language"
+    >
+        <img
+            src="https://jorgegbellos.github.io/the-welcome-preview/images/svg/Idioma_B.svg"
+            alt=""
+            class="size-8 brightness-0 invert sm:size-9"
+        >
+    </button>
+
+    <div
+        id="language-options-light"
+        class="lang-switcher-options"
+        :class="langOpen && 'is-open'"
+        role="listbox"
+        aria-label="Language"
+    >
+        <div>
+            <div class="flex min-w-max items-center gap-2 pl-1.5">
+                                                        <a
+                        href="https://jorgegbellos.github.io/the-welcome-preview/locale/es"
+                        role="option"
+                        aria-selected="false"
+                        class="lang-chip type-button-3 uppercase lang-chip--light"
+                    >
+                        ES
+                    </a>
+                                                        <a
+                        href="https://jorgegbellos.github.io/the-welcome-preview/locale/en"
+                        role="option"
+                        aria-selected="true"
+                        class="lang-chip type-button-3 uppercase lang-chip--light is-active"
+                    >
+                        EN
+                    </a>
+                            </div>
+        </div>
+    </div>
+</div>
         </div>
 
         <div class="mx-auto flex w-full max-w-lg flex-1 flex-col items-center justify-center py-8 text-center">
@@ -199,7 +234,7 @@
         class="btn btn-2 btn-solid-white w-full rounded-xl" @click="goContact()"
     >
         
-        <span>Let’s talk</span>
+        <span>Let&#039;s talk</span>
 
             </button>
 
@@ -228,7 +263,7 @@
 </div>
 
         <main>
-            <div wire:snapshot="{&quot;data&quot;:[],&quot;memo&quot;:{&quot;id&quot;:&quot;MdBnwl5CXmZGkpmwEYrd&quot;,&quot;name&quot;:&quot;pages.services&quot;,&quot;path&quot;:&quot;services&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;release&quot;:&quot;a-a-a&quot;,&quot;children&quot;:[],&quot;scripts&quot;:[],&quot;assets&quot;:[],&quot;errors&quot;:[],&quot;locale&quot;:&quot;en&quot;,&quot;islands&quot;:[]},&quot;checksum&quot;:&quot;d4fbc9fff17580f0495e96c7ee22af6117e58867b57250b7cd44fd82f733f9d4&quot;}" wire:effects="{&quot;partials&quot;:[]}" wire:id="MdBnwl5CXmZGkpmwEYrd" wire:name="pages.services">
+            <div wire:snapshot="{&quot;data&quot;:[],&quot;memo&quot;:{&quot;id&quot;:&quot;26GoG5FHcPnx8Y6tRpgE&quot;,&quot;name&quot;:&quot;pages.services&quot;,&quot;path&quot;:&quot;services&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;release&quot;:&quot;a-a-a&quot;,&quot;children&quot;:[],&quot;scripts&quot;:[],&quot;assets&quot;:[],&quot;errors&quot;:[],&quot;locale&quot;:&quot;en&quot;,&quot;islands&quot;:[]},&quot;checksum&quot;:&quot;445b7265c0d989eb68229b850e09045c93e6cca73f998fb109ea36b88b0102ea&quot;}" wire:effects="{&quot;partials&quot;:[]}" wire:id="26GoG5FHcPnx8Y6tRpgE" wire:name="pages.services">
     <header
     class="fixed inset-x-0 top-0 z-[200] px-4 pt-4 sm:px-5 sm:pt-5 animate-[fade-in_0.6s_ease-out]"
     x-data="{
@@ -241,7 +276,7 @@
     x-init="onScroll(); window.addEventListener('scroll', () => onScroll(), { passive: true })"
 >
     <div
-        class="site-header-bar box-border flex h-14 items-center justify-between rounded-full px-5 shadow-sm sm:h-16 sm:px-6 lg:grid lg:h-20 lg:grid-cols-[1fr_auto_1fr] lg:gap-4 lg:rounded-2xl lg:px-10 lg:py-4"
+        class="site-header-bar box-border flex h-14 items-center justify-between rounded-2xl px-4 shadow-sm sm:h-16 sm:px-6 lg:grid lg:h-20 lg:grid-cols-[1fr_auto_1fr] lg:gap-4 lg:px-10 lg:py-4"
         :class="scrolled && 'is-frosted'"
     >
         <a href="https://jorgegbellos.github.io/the-welcome-preview/" class="justify-self-start shrink-0" aria-label="The Welcome">
@@ -284,31 +319,57 @@
                 </a>
             <!--[if ENDBLOCK]><![endif]-->        </nav>
 
-        <div class="flex items-center justify-self-end gap-4 sm:gap-5">
-            <button
-                type="button"
-                class="inline-flex size-10 shrink-0 items-center justify-center rounded-full text-black-500 transition-opacity hover:opacity-70 lg:size-11"
-                aria-label="Language"
-            >
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke-width="1.5"
-                    stroke="currentColor"
-                    class="size-7 lg:hidden"
-                    aria-hidden="true"
-                >
-                    <circle cx="12" cy="12" r="8.25" />
-                    <ellipse cx="12" cy="12" rx="3.25" ry="8.25" />
-                    <path stroke-linecap="round" d="M3.75 12h16.5" />
-                </svg>
-                <img
-                    src="https://jorgegbellos.github.io/the-welcome-preview/images/svg/Idioma_B.svg"
-                    alt=""
-                    class="hidden size-10 lg:block"
-                >
-            </button>
+        <div class="flex items-center justify-self-end gap-1.5 sm:gap-4 lg:gap-5">
+            <div
+    class="flex items-center"
+    x-data="{ langOpen: false }"
+    @keydown.escape.window="langOpen = false"
+    @click.outside="langOpen = false"
+>
+    <button
+        type="button"
+        class="inline-flex size-9 shrink-0 items-center justify-center rounded-full transition-opacity hover:opacity-70 sm:size-10 lg:size-11"
+        @click="langOpen = ! langOpen"
+        :aria-expanded="langOpen.toString()"
+        aria-controls="language-options-default"
+        aria-label="Language"
+    >
+        <img
+            src="https://jorgegbellos.github.io/the-welcome-preview/images/svg/Idioma_B.svg"
+            alt=""
+            class="size-6 sm:size-7 lg:size-10"
+        >
+    </button>
+
+    <div
+        id="language-options-default"
+        class="lang-switcher-options"
+        :class="langOpen && 'is-open'"
+        role="listbox"
+        aria-label="Language"
+    >
+        <div>
+            <div class="flex min-w-max items-center gap-2 pl-1.5">
+                <!--[if BLOCK]><![endif]-->                                        <a
+                        href="https://jorgegbellos.github.io/the-welcome-preview/locale/es"
+                        role="option"
+                        aria-selected="false"
+                        class="lang-chip type-button-3 uppercase"
+                    >
+                        ES
+                    </a>
+                                                        <a
+                        href="https://jorgegbellos.github.io/the-welcome-preview/locale/en"
+                        role="option"
+                        aria-selected="true"
+                        class="lang-chip type-button-3 uppercase is-active"
+                    >
+                        EN
+                    </a>
+                <!--[if ENDBLOCK]><![endif]-->            </div>
+        </div>
+    </div>
+</div>
 
             <div class="hidden lg:block">
                 <!--[if BLOCK]><![endif]-->    <a
@@ -316,7 +377,7 @@
         class="btn btn-2 btn-solid-black !h-12 !rounded-xl !py-0"=""
     >
         <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->
-        <span>Let's talk</span>
+        <span>Let&#039;s talk</span>
 
         <!--[if BLOCK]><![endif]-->            <span class="btn-icon">    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
         <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
@@ -326,7 +387,7 @@
 
             <button
                 type="button"
-                class="inline-flex size-10 shrink-0 items-center justify-center rounded-full text-black-500 transition-opacity hover:opacity-70 lg:hidden"
+                class="inline-flex size-9 shrink-0 items-center justify-center rounded-full text-black-500 transition-opacity hover:opacity-70 sm:size-10 lg:hidden"
                 @click="open = ! open"
                 :aria-expanded="open.toString()"
                 aria-controls="mobile-nav"
@@ -405,7 +466,7 @@
         class="btn btn-2 btn-solid-black rounded-xl"=""
     >
         <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->
-        <span>Let's talk</span>
+        <span>Let&#039;s talk</span>
 
         <!--[if BLOCK]><![endif]-->            <span class="btn-icon">    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
         <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
@@ -416,12 +477,12 @@
 </header>
 
 <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->
-    <section class="relative flex h-[700px] flex-col px-4 sm:px-5">
+    <section class="relative flex min-h-[28rem] flex-col px-4 sm:min-h-[32rem] sm:px-5 lg:h-[700px] lg:min-h-0">
     <div class="site-header-spacer shrink-0" aria-hidden="true"></div>
 
-    <div class="flex flex-1 flex-col items-center justify-center px-10 pb-10 text-center">
+    <div class="flex flex-1 flex-col items-center justify-center px-2 pb-10 text-center lg:px-10">
         <img
-            src="https://jorgegbellos.github.io/the-welcome-preview/images/svg/Escudos.svg"
+            src="https://jorgegbellos.github.io/the-welcome-preview/images/svg/expertise.svg"
             alt=""
             class="h-[4.5rem] w-auto sm:h-20"
         >
@@ -445,16 +506,16 @@
     class="px-4 py-10 sm:px-5 sm:py-14 lg:py-16 section-sheet"
     x-data="{ open: false }"
 >
-    <div class="px-10">
+    <div class="section-inner">
         <div class="practice-mosaic">
             <article class="practice-tile practice-intro p-6 sm:p-8">
-                <img src="https://jorgegbellos.github.io/the-welcome-preview/images/home/practice-hover-1.png" alt="">
+                <img src="https://jorgegbellos.github.io/the-welcome-preview/images/expertise/intro-bg.png" alt="">
 
-                <p class="type-b3 text-white/80">
+                <p class="practice-intro-label type-b3 text-white/80">
                     (01) Consulting &amp; Strategy
                 </p>
 
-                <div>
+                <div class="practice-intro-copy">
                     <h2 class="type-s3 max-w-xs text-[#FFFFFF]">
                         We define the strategic foundations of brands, experiences and businesses.
                     </h2>
@@ -465,19 +526,19 @@
             </article>
 
             <div class="practice-tile practice-tall-a">
-                <img src="https://jorgegbellos.github.io/the-welcome-preview/images/home/vision-vertical-1.png" alt="">
+                <img src="https://jorgegbellos.github.io/the-welcome-preview/images/expertise/consulting-3.png" alt="">
             </div>
 
             <div class="practice-tile practice-mid-top">
-                <img src="https://jorgegbellos.github.io/the-welcome-preview/images/home/vision-stack-1.png" alt="">
+                <img src="https://jorgegbellos.github.io/the-welcome-preview/images/expertise/consulting-1.png" alt="">
             </div>
 
             <div class="practice-tile practice-mid-bottom">
-                <img src="https://jorgegbellos.github.io/the-welcome-preview/images/home/vision-stack-2.png" alt="">
+                <img src="https://jorgegbellos.github.io/the-welcome-preview/images/expertise/consulting-4.png" alt="">
             </div>
 
             <div class="practice-tile practice-tall-b">
-                <img src="https://jorgegbellos.github.io/the-welcome-preview/images/home/vision-vertical-2.png" alt="">
+                <img src="https://jorgegbellos.github.io/the-welcome-preview/images/expertise/consulting-2.png" alt="">
             </div>
         </div>
 
@@ -573,16 +634,16 @@
     class="px-4 py-10 sm:px-5 sm:py-14 lg:py-16"
     x-data="{ open: false }"
 >
-    <div class="px-10">
+    <div class="section-inner">
         <div class="practice-mosaic">
             <article class="practice-tile practice-intro p-6 sm:p-8">
-                <img src="https://jorgegbellos.github.io/the-welcome-preview/images/home/practice-hover-2.png" alt="">
+                <img src="https://jorgegbellos.github.io/the-welcome-preview/images/expertise/intro-bg.png" alt="">
 
-                <p class="type-b3 text-white/80">
+                <p class="practice-intro-label type-b3 text-white/80">
                     (02) Identity &amp; Experience
                 </p>
 
-                <div>
+                <div class="practice-intro-copy">
                     <h2 class="type-s3 max-w-xs text-[#FFFFFF]">
                         We build identities and experiences that express the character of each brand.
                     </h2>
@@ -593,19 +654,19 @@
             </article>
 
             <div class="practice-tile practice-tall-a">
-                <img src="https://jorgegbellos.github.io/the-welcome-preview/images/home/industry-lifestyle.png" alt="">
+                <img src="https://jorgegbellos.github.io/the-welcome-preview/images/expertise/identity-3.png" alt="">
             </div>
 
             <div class="practice-tile practice-mid-top">
-                <img src="https://jorgegbellos.github.io/the-welcome-preview/images/home/industry-food.png" alt="">
+                <img src="https://jorgegbellos.github.io/the-welcome-preview/images/expertise/identity-1.png" alt="">
             </div>
 
             <div class="practice-tile practice-mid-bottom">
-                <img src="https://jorgegbellos.github.io/the-welcome-preview/images/home/industry-tourism.png" alt="">
+                <img src="https://jorgegbellos.github.io/the-welcome-preview/images/expertise/identity-2.png" alt="">
             </div>
 
             <div class="practice-tile practice-tall-b">
-                <img src="https://jorgegbellos.github.io/the-welcome-preview/images/home/industry-hospitality.png" alt="">
+                <img src="https://jorgegbellos.github.io/the-welcome-preview/images/expertise/identity-4.png" alt="">
             </div>
         </div>
 
@@ -692,16 +753,16 @@
     class="px-4 py-10 sm:px-5 sm:py-14 lg:py-16 section-sheet"
     x-data="{ open: false }"
 >
-    <div class="px-10">
+    <div class="section-inner">
         <div class="practice-mosaic">
             <article class="practice-tile practice-intro p-6 sm:p-8">
-                <img src="https://jorgegbellos.github.io/the-welcome-preview/images/Hero Image.png" alt="">
+                <img src="https://jorgegbellos.github.io/the-welcome-preview/images/expertise/intro-bg.png" alt="">
 
-                <p class="type-b3 text-white/80">
+                <p class="practice-intro-label type-b3 text-white/80">
                     (03) Technology &amp; Digital Systems
                 </p>
 
-                <div>
+                <div class="practice-intro-copy">
                     <h2 class="type-s3 max-w-xs text-[#FFFFFF]">
                         We develop digital experiences and connect the tools each business needs.
                     </h2>
@@ -712,19 +773,19 @@
             </article>
 
             <div class="practice-tile practice-tall-a">
-                <img src="https://jorgegbellos.github.io/the-welcome-preview/images/home/vision-vertical-2.png" alt="">
+                <img src="https://jorgegbellos.github.io/the-welcome-preview/images/expertise/technology-1.png" alt="">
             </div>
 
             <div class="practice-tile practice-mid-top">
-                <img src="https://jorgegbellos.github.io/the-welcome-preview/images/home/industry-tourism.png" alt="">
+                <img src="https://jorgegbellos.github.io/the-welcome-preview/images/expertise/technology-2.png" alt="">
             </div>
 
             <div class="practice-tile practice-mid-bottom">
-                <img src="https://jorgegbellos.github.io/the-welcome-preview/images/home/vision-stack-1.png" alt="">
+                <img src="https://jorgegbellos.github.io/the-welcome-preview/images/expertise/technology-3.png" alt="">
             </div>
 
             <div class="practice-tile practice-tall-b">
-                <img src="https://jorgegbellos.github.io/the-welcome-preview/images/home/practice-hover-1.png" alt="">
+                <img src="https://jorgegbellos.github.io/the-welcome-preview/images/expertise/technology-4.png" alt="">
             </div>
         </div>
 
@@ -811,16 +872,16 @@
     class="px-4 py-10 sm:px-5 sm:py-14 lg:py-16"
     x-data="{ open: false }"
 >
-    <div class="px-10">
+    <div class="section-inner">
         <div class="practice-mosaic">
             <article class="practice-tile practice-intro p-6 sm:p-8">
-                <img src="https://jorgegbellos.github.io/the-welcome-preview/images/home/industry-hospitality.png" alt="">
+                <img src="https://jorgegbellos.github.io/the-welcome-preview/images/expertise/intro-bg.png" alt="">
 
-                <p class="type-b3 text-white/80">
+                <p class="practice-intro-label type-b3 text-white/80">
                     (04) Commerce &amp; Growth
                 </p>
 
-                <div>
+                <div class="practice-intro-copy">
                     <h2 class="type-s3 max-w-xs text-[#FFFFFF]">
                         We connect brand strategy with customer acquisition and commercial performance.
                     </h2>
@@ -831,19 +892,19 @@
             </article>
 
             <div class="practice-tile practice-tall-a">
-                <img src="https://jorgegbellos.github.io/the-welcome-preview/images/home/vision-stack-2.png" alt="">
+                <img src="https://jorgegbellos.github.io/the-welcome-preview/images/expertise/commerce-1.png" alt="">
             </div>
 
             <div class="practice-tile practice-mid-top">
-                <img src="https://jorgegbellos.github.io/the-welcome-preview/images/home/industry-food.png" alt="">
+                <img src="https://jorgegbellos.github.io/the-welcome-preview/images/expertise/commerce-2.png" alt="">
             </div>
 
             <div class="practice-tile practice-mid-bottom">
-                <img src="https://jorgegbellos.github.io/the-welcome-preview/images/home/practice-hover-2.png" alt="">
+                <img src="https://jorgegbellos.github.io/the-welcome-preview/images/expertise/commerce-4.png" alt="">
             </div>
 
             <div class="practice-tile practice-tall-b">
-                <img src="https://jorgegbellos.github.io/the-welcome-preview/images/home/vision-vertical-1.png" alt="">
+                <img src="https://jorgegbellos.github.io/the-welcome-preview/images/expertise/commerce-3.png" alt="">
             </div>
         </div>
 
@@ -922,13 +983,50 @@
 <!--[if ENDBLOCK]><![endif]-->        </div>
     </div>
 </section>
-    <!--[if ENDBLOCK]><![endif]--></div>
+    <!--[if ENDBLOCK]><![endif]-->
+    <section class="section-sheet px-4 py-14 sm:px-5 sm:py-16 lg:py-20">
+    <div class="section-inner">
+        <h2 class="type-s2 text-center text-black-500">
+            How we work together
+        </h2>
+
+        <div class="together-row mt-8 sm:mt-10">
+            <article class="together-card">
+                <h3 class="type-s2 text-black-500">Defined-scope projects</h3>
+                <p class="type-b2 mt-2 text-black-400">
+                    A clear objective, an agreed scope and defined deliverables. They may involve one practice or several.
+                </p>
+            </article>
+
+            <img
+                src="https://jorgegbellos.github.io/the-welcome-preview/images/svg/Logotipo (1).svg"
+                alt=""
+                class="h-6 w-auto lg:h-7"
+            >
+
+            <article class="together-card">
+                <h3 class="type-s2 text-black-500">Monthly operating agreements</h3>
+                <p class="type-b2 mt-2 text-black-400">
+                    Ongoing support to run, measure and optimize what we build together.
+                </p>
+            </article>
+        </div>
+
+        <p class="type-b2 mx-auto mt-8 max-w-3xl text-center text-black-500 sm:mt-10">
+            <span class="font-semibold">When a project calls for it, we collaborate with specialists</span>
+            in hotel operations consulting, editorial, publishing, specialized technology tools and legal advice.
+            <span class="font-semibold">There is no need to engage all four practices.</span>
+            Each proposal is shaped around what the business truly needs.
+        </p>
+    </div>
+</section>
+</div>
         </main>
 
         <footer class="bg-paper-100">
     
         <div class="px-4 py-16 sm:px-5 sm:py-20 lg:py-24">
-        <div class="mx-auto flex max-w-2xl flex-col items-center px-10 text-center">
+        <div class="mx-auto flex max-w-2xl flex-col items-center px-2 text-center sm:px-10">
             <h2 class="type-h3 text-black-500">Let’s build what comes next</h2>
             <p class="type-b2 mt-3 max-w-md text-black-400 sm:mt-4">
                 Every project begins by understanding the business, its challenges and its possibilities.
@@ -950,7 +1048,7 @@
     
     
     <div class="px-4 pb-4 sm:px-5 sm:pb-5">
-        <div class="site-footer-panel px-8 py-10 sm:px-10 lg:py-10">
+        <div class="site-footer-panel px-6 py-8 sm:px-10 lg:py-10">
 
             
             <div class="site-footer-desktop hidden h-full lg:grid">

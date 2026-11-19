@@ -3,15 +3,11 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="csrf-token" content="nz9Taj6CUIacIpKSaSR87e0kuMchQNiBUuO1r8Fv">
+        <meta name="csrf-token" content="ltKMsiHMiwU6TUk4nU60n5EnMy60RffDcGfXdIsT">
 
         <title>Contact — The Welcome</title>
 
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-        <link rel="preload" as="style" href="https://jorgegbellos.github.io/the-welcome-preview/build/assets/app-CHDn_atc.css" /><link rel="modulepreload" as="script" href="https://jorgegbellos.github.io/the-welcome-preview/build/assets/app-Bwn9szyo.js" /><link rel="stylesheet" href="https://jorgegbellos.github.io/the-welcome-preview/build/assets/app-CHDn_atc.css" data-navigate-track="reload" /><script type="module" src="https://jorgegbellos.github.io/the-welcome-preview/build/assets/app-Bwn9szyo.js" data-navigate-track="reload"></script>        
+        <link rel="preload" as="style" href="https://jorgegbellos.github.io/the-welcome-preview/build/assets/app-qTP58QPY.css" /><link rel="modulepreload" as="script" href="https://jorgegbellos.github.io/the-welcome-preview/build/assets/app-Bwn9szyo.js" /><link rel="stylesheet" href="https://jorgegbellos.github.io/the-welcome-preview/build/assets/app-qTP58QPY.css" data-navigate-track="reload" /><script type="module" src="https://jorgegbellos.github.io/the-welcome-preview/build/assets/app-Bwn9szyo.js" data-navigate-track="reload"></script>        
         <script>
     try {
         if (sessionStorage.getItem('tw-welcomed') === '1') {
@@ -86,17 +82,56 @@
 
     <div class="relative flex min-h-dvh flex-col px-5 py-6 sm:px-8 sm:py-8">
         <div class="flex justify-end">
-            <button
-                type="button"
-                class="inline-flex size-11 items-center justify-center rounded-full transition-opacity hover:opacity-70"
-                aria-label="Language"
-            >
-                <img
-                    src="https://jorgegbellos.github.io/the-welcome-preview/images/svg/Idioma_B.svg"
-                    alt=""
-                    class="size-9 brightness-0 invert"
-                >
-            </button>
+            <div
+    class="flex items-center"
+    x-data="{ langOpen: false }"
+    @keydown.escape.window="langOpen = false"
+    @click.outside="langOpen = false"
+>
+    <button
+        type="button"
+        class="inline-flex size-9 shrink-0 items-center justify-center rounded-full transition-opacity hover:opacity-70 sm:size-10 lg:size-11"
+        @click="langOpen = ! langOpen"
+        :aria-expanded="langOpen.toString()"
+        aria-controls="language-options-light"
+        aria-label="Language"
+    >
+        <img
+            src="https://jorgegbellos.github.io/the-welcome-preview/images/svg/Idioma_B.svg"
+            alt=""
+            class="size-8 brightness-0 invert sm:size-9"
+        >
+    </button>
+
+    <div
+        id="language-options-light"
+        class="lang-switcher-options"
+        :class="langOpen && 'is-open'"
+        role="listbox"
+        aria-label="Language"
+    >
+        <div>
+            <div class="flex min-w-max items-center gap-2 pl-1.5">
+                                                        <a
+                        href="https://jorgegbellos.github.io/the-welcome-preview/locale/es"
+                        role="option"
+                        aria-selected="false"
+                        class="lang-chip type-button-3 uppercase lang-chip--light"
+                    >
+                        ES
+                    </a>
+                                                        <a
+                        href="https://jorgegbellos.github.io/the-welcome-preview/locale/en"
+                        role="option"
+                        aria-selected="true"
+                        class="lang-chip type-button-3 uppercase lang-chip--light is-active"
+                    >
+                        EN
+                    </a>
+                            </div>
+        </div>
+    </div>
+</div>
         </div>
 
         <div class="mx-auto flex w-full max-w-lg flex-1 flex-col items-center justify-center py-8 text-center">
@@ -205,7 +240,7 @@
         class="btn btn-2 btn-solid-white w-full rounded-xl" @click="goContact()"
     >
         
-        <span>Let’s talk</span>
+        <span>Let&#039;s talk</span>
 
             </button>
 
@@ -246,7 +281,7 @@
     x-init="onScroll(); window.addEventListener('scroll', () => onScroll(), { passive: true })"
 >
     <div
-        class="site-header-bar box-border flex h-14 items-center justify-between rounded-full px-5 shadow-sm sm:h-16 sm:px-6 lg:grid lg:h-20 lg:grid-cols-[1fr_auto_1fr] lg:gap-4 lg:rounded-2xl lg:px-10 lg:py-4"
+        class="site-header-bar box-border flex h-14 items-center justify-between rounded-2xl px-4 shadow-sm sm:h-16 sm:px-6 lg:grid lg:h-20 lg:grid-cols-[1fr_auto_1fr] lg:gap-4 lg:px-10 lg:py-4"
         :class="scrolled && 'is-frosted'"
     >
         <a href="https://jorgegbellos.github.io/the-welcome-preview/" class="justify-self-start shrink-0" aria-label="The Welcome">
@@ -289,31 +324,57 @@
                 </a>
                     </nav>
 
-        <div class="flex items-center justify-self-end gap-4 sm:gap-5">
-            <button
-                type="button"
-                class="inline-flex size-10 shrink-0 items-center justify-center rounded-full text-black-500 transition-opacity hover:opacity-70 lg:size-11"
-                aria-label="Language"
-            >
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke-width="1.5"
-                    stroke="currentColor"
-                    class="size-7 lg:hidden"
-                    aria-hidden="true"
-                >
-                    <circle cx="12" cy="12" r="8.25" />
-                    <ellipse cx="12" cy="12" rx="3.25" ry="8.25" />
-                    <path stroke-linecap="round" d="M3.75 12h16.5" />
-                </svg>
-                <img
-                    src="https://jorgegbellos.github.io/the-welcome-preview/images/svg/Idioma_B.svg"
-                    alt=""
-                    class="hidden size-10 lg:block"
-                >
-            </button>
+        <div class="flex items-center justify-self-end gap-1.5 sm:gap-4 lg:gap-5">
+            <div
+    class="flex items-center"
+    x-data="{ langOpen: false }"
+    @keydown.escape.window="langOpen = false"
+    @click.outside="langOpen = false"
+>
+    <button
+        type="button"
+        class="inline-flex size-9 shrink-0 items-center justify-center rounded-full transition-opacity hover:opacity-70 sm:size-10 lg:size-11"
+        @click="langOpen = ! langOpen"
+        :aria-expanded="langOpen.toString()"
+        aria-controls="language-options-default"
+        aria-label="Language"
+    >
+        <img
+            src="https://jorgegbellos.github.io/the-welcome-preview/images/svg/Idioma_B.svg"
+            alt=""
+            class="size-6 sm:size-7 lg:size-10"
+        >
+    </button>
+
+    <div
+        id="language-options-default"
+        class="lang-switcher-options"
+        :class="langOpen && 'is-open'"
+        role="listbox"
+        aria-label="Language"
+    >
+        <div>
+            <div class="flex min-w-max items-center gap-2 pl-1.5">
+                                                        <a
+                        href="https://jorgegbellos.github.io/the-welcome-preview/locale/es"
+                        role="option"
+                        aria-selected="false"
+                        class="lang-chip type-button-3 uppercase"
+                    >
+                        ES
+                    </a>
+                                                        <a
+                        href="https://jorgegbellos.github.io/the-welcome-preview/locale/en"
+                        role="option"
+                        aria-selected="true"
+                        class="lang-chip type-button-3 uppercase is-active"
+                    >
+                        EN
+                    </a>
+                            </div>
+        </div>
+    </div>
+</div>
 
             <div class="hidden lg:block">
                 <a
@@ -321,7 +382,7 @@
         class="btn btn-2 btn-solid-black !h-12 !rounded-xl !py-0"=""
     >
         
-        <span>Let's talk</span>
+        <span>Let&#039;s talk</span>
 
                     <span class="btn-icon">    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
         <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
@@ -331,7 +392,7 @@
 
             <button
                 type="button"
-                class="inline-flex size-10 shrink-0 items-center justify-center rounded-full text-black-500 transition-opacity hover:opacity-70 lg:hidden"
+                class="inline-flex size-9 shrink-0 items-center justify-center rounded-full text-black-500 transition-opacity hover:opacity-70 sm:size-10 lg:hidden"
                 @click="open = ! open"
                 :aria-expanded="open.toString()"
                 aria-controls="mobile-nav"
@@ -410,7 +471,7 @@
         class="btn btn-2 btn-solid-black rounded-xl"=""
     >
         
-        <span>Let's talk</span>
+        <span>Let&#039;s talk</span>
 
                     <span class="btn-icon">    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
         <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
@@ -423,8 +484,8 @@
     <div class="site-header-spacer" aria-hidden="true"></div>
 
             <main class="contact-main">
-                <div wire:snapshot="{&quot;data&quot;:[],&quot;memo&quot;:{&quot;id&quot;:&quot;vAYF8ombpStKQpGSc3iS&quot;,&quot;name&quot;:&quot;pages.contact&quot;,&quot;path&quot;:&quot;contact&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;release&quot;:&quot;a-a-a&quot;,&quot;children&quot;:[],&quot;scripts&quot;:[],&quot;assets&quot;:[],&quot;errors&quot;:[],&quot;locale&quot;:&quot;en&quot;,&quot;islands&quot;:[]},&quot;checksum&quot;:&quot;4048dc8ee5f06c03092bb9fb42d1f9afce2cd0b7c9b9cb288650f657b14b87d1&quot;}" wire:effects="{&quot;partials&quot;:[]}" wire:id="vAYF8ombpStKQpGSc3iS" wire:name="pages.contact" class="px-4 py-4 sm:px-5 sm:py-5">
-    <div class="mx-auto max-w-xl px-10 text-center">
+                <div wire:snapshot="{&quot;data&quot;:[],&quot;memo&quot;:{&quot;id&quot;:&quot;QLCUiDh6ReLsH48hLraY&quot;,&quot;name&quot;:&quot;pages.contact&quot;,&quot;path&quot;:&quot;contact&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;release&quot;:&quot;a-a-a&quot;,&quot;children&quot;:[],&quot;scripts&quot;:[],&quot;assets&quot;:[],&quot;errors&quot;:[],&quot;locale&quot;:&quot;en&quot;,&quot;islands&quot;:[]},&quot;checksum&quot;:&quot;118be395bf19a42c14f1f4d9309b8c256de7fb5d570f6154adf2fef7624c7e15&quot;}" wire:effects="{&quot;partials&quot;:[]}" wire:id="QLCUiDh6ReLsH48hLraY" wire:name="pages.contact" class="px-4 py-4 sm:px-5 sm:py-5">
+    <div class="mx-auto max-w-xl px-1 text-center sm:px-6">
         <img
             src="https://jorgegbellos.github.io/the-welcome-preview/images/svg/Logotipo.svg"
             alt="The Welcome"
@@ -433,12 +494,11 @@
         >
         <h1 class="type-h4 mt-3 text-[#FFFFFF] sm:mt-4">Let’s talk about your project</h1>
         <p class="type-b2 mx-auto mt-2 max-w-md text-[#FFFFFF]/80">
-            Tell us what you’re building, transforming or looking to improve.
-            We’d like to hear about your project.
+            Tell us what you’re building, transforming or looking to improve. We’d like to hear about your project.
         </p>
 
         <form class="mt-4 space-y-1.5 text-left sm:mt-5" action="#" method="post">
-            <input type="hidden" name="_token" value="nz9Taj6CUIacIpKSaSR87e0kuMchQNiBUuO1r8Fv" autocomplete="off">
+            <input type="hidden" name="_token" value="ltKMsiHMiwU6TUk4nU60n5EnMy60RffDcGfXdIsT" autocomplete="off">
             <label class="sr-only" for="contact-name">Full name</label>
             <input
                 id="contact-name"
@@ -567,7 +627,7 @@
     
     
     <div class="px-4 pb-4 sm:px-5 sm:pb-5 pt-4 sm:pt-5">
-        <div class="site-footer-panel px-8 py-10 sm:px-10 lg:py-10">
+        <div class="site-footer-panel px-6 py-8 sm:px-10 lg:py-10">
 
             
             <div class="site-footer-desktop hidden h-full lg:grid">

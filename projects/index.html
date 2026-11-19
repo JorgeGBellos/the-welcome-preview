@@ -3,15 +3,11 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="csrf-token" content="nz9Taj6CUIacIpKSaSR87e0kuMchQNiBUuO1r8Fv">
+        <meta name="csrf-token" content="ltKMsiHMiwU6TUk4nU60n5EnMy60RffDcGfXdIsT">
 
         <title>Work — The Welcome</title>
 
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-        <link rel="preload" as="style" href="https://jorgegbellos.github.io/the-welcome-preview/build/assets/app-CHDn_atc.css" /><link rel="modulepreload" as="script" href="https://jorgegbellos.github.io/the-welcome-preview/build/assets/app-Bwn9szyo.js" /><link rel="stylesheet" href="https://jorgegbellos.github.io/the-welcome-preview/build/assets/app-CHDn_atc.css" data-navigate-track="reload" /><script type="module" src="https://jorgegbellos.github.io/the-welcome-preview/build/assets/app-Bwn9szyo.js" data-navigate-track="reload"></script>        
+        <link rel="preload" as="style" href="https://jorgegbellos.github.io/the-welcome-preview/build/assets/app-qTP58QPY.css" /><link rel="modulepreload" as="script" href="https://jorgegbellos.github.io/the-welcome-preview/build/assets/app-Bwn9szyo.js" /><link rel="stylesheet" href="https://jorgegbellos.github.io/the-welcome-preview/build/assets/app-qTP58QPY.css" data-navigate-track="reload" /><script type="module" src="https://jorgegbellos.github.io/the-welcome-preview/build/assets/app-Bwn9szyo.js" data-navigate-track="reload"></script>        
         <script>
     try {
         if (sessionStorage.getItem('tw-welcomed') === '1') {
@@ -80,17 +76,56 @@
 
     <div class="relative flex min-h-dvh flex-col px-5 py-6 sm:px-8 sm:py-8">
         <div class="flex justify-end">
-            <button
-                type="button"
-                class="inline-flex size-11 items-center justify-center rounded-full transition-opacity hover:opacity-70"
-                aria-label="Language"
-            >
-                <img
-                    src="https://jorgegbellos.github.io/the-welcome-preview/images/svg/Idioma_B.svg"
-                    alt=""
-                    class="size-9 brightness-0 invert"
-                >
-            </button>
+            <div
+    class="flex items-center"
+    x-data="{ langOpen: false }"
+    @keydown.escape.window="langOpen = false"
+    @click.outside="langOpen = false"
+>
+    <button
+        type="button"
+        class="inline-flex size-9 shrink-0 items-center justify-center rounded-full transition-opacity hover:opacity-70 sm:size-10 lg:size-11"
+        @click="langOpen = ! langOpen"
+        :aria-expanded="langOpen.toString()"
+        aria-controls="language-options-light"
+        aria-label="Language"
+    >
+        <img
+            src="https://jorgegbellos.github.io/the-welcome-preview/images/svg/Idioma_B.svg"
+            alt=""
+            class="size-8 brightness-0 invert sm:size-9"
+        >
+    </button>
+
+    <div
+        id="language-options-light"
+        class="lang-switcher-options"
+        :class="langOpen && 'is-open'"
+        role="listbox"
+        aria-label="Language"
+    >
+        <div>
+            <div class="flex min-w-max items-center gap-2 pl-1.5">
+                                                        <a
+                        href="https://jorgegbellos.github.io/the-welcome-preview/locale/es"
+                        role="option"
+                        aria-selected="false"
+                        class="lang-chip type-button-3 uppercase lang-chip--light"
+                    >
+                        ES
+                    </a>
+                                                        <a
+                        href="https://jorgegbellos.github.io/the-welcome-preview/locale/en"
+                        role="option"
+                        aria-selected="true"
+                        class="lang-chip type-button-3 uppercase lang-chip--light is-active"
+                    >
+                        EN
+                    </a>
+                            </div>
+        </div>
+    </div>
+</div>
         </div>
 
         <div class="mx-auto flex w-full max-w-lg flex-1 flex-col items-center justify-center py-8 text-center">
@@ -199,7 +234,7 @@
         class="btn btn-2 btn-solid-white w-full rounded-xl" @click="goContact()"
     >
         
-        <span>Let’s talk</span>
+        <span>Let&#039;s talk</span>
 
             </button>
 
@@ -228,7 +263,7 @@
 </div>
 
         <main>
-            <div wire:snapshot="{&quot;data&quot;:[],&quot;memo&quot;:{&quot;id&quot;:&quot;9XrQtsjONaDkft7F9VFL&quot;,&quot;name&quot;:&quot;pages.projects&quot;,&quot;path&quot;:&quot;projects&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;release&quot;:&quot;a-a-a&quot;,&quot;children&quot;:[],&quot;scripts&quot;:[],&quot;assets&quot;:[],&quot;errors&quot;:[],&quot;locale&quot;:&quot;en&quot;,&quot;islands&quot;:[]},&quot;checksum&quot;:&quot;20e11d5ab93eccd5e6d1eab6eeb71f19f9143db80c913245a6e51c22390fab03&quot;}" wire:effects="{&quot;partials&quot;:[]}" wire:id="9XrQtsjONaDkft7F9VFL" wire:name="pages.projects" class="min-h-screen bg-beige-100">
+            <div wire:snapshot="{&quot;data&quot;:[],&quot;memo&quot;:{&quot;id&quot;:&quot;l1bs9iDVd4Z4Au2hJEb3&quot;,&quot;name&quot;:&quot;pages.projects&quot;,&quot;path&quot;:&quot;projects&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;release&quot;:&quot;a-a-a&quot;,&quot;children&quot;:[],&quot;scripts&quot;:[],&quot;assets&quot;:[],&quot;errors&quot;:[],&quot;locale&quot;:&quot;en&quot;,&quot;islands&quot;:[]},&quot;checksum&quot;:&quot;9e00f6af284a812e42065b195d284a4ad92151ca287385ab1f2d187e042d9c46&quot;}" wire:effects="{&quot;partials&quot;:[]}" wire:id="l1bs9iDVd4Z4Au2hJEb3" wire:name="pages.projects" class="min-h-screen bg-beige-100">
     <header
     class="fixed inset-x-0 top-0 z-[200] px-4 pt-4 sm:px-5 sm:pt-5 animate-[fade-in_0.6s_ease-out]"
     x-data="{
@@ -241,7 +276,7 @@
     x-init="onScroll(); window.addEventListener('scroll', () => onScroll(), { passive: true })"
 >
     <div
-        class="site-header-bar box-border flex h-14 items-center justify-between rounded-full px-5 shadow-sm sm:h-16 sm:px-6 lg:grid lg:h-20 lg:grid-cols-[1fr_auto_1fr] lg:gap-4 lg:rounded-2xl lg:px-10 lg:py-4"
+        class="site-header-bar box-border flex h-14 items-center justify-between rounded-2xl px-4 shadow-sm sm:h-16 sm:px-6 lg:grid lg:h-20 lg:grid-cols-[1fr_auto_1fr] lg:gap-4 lg:px-10 lg:py-4"
         :class="scrolled && 'is-frosted'"
     >
         <a href="https://jorgegbellos.github.io/the-welcome-preview/" class="justify-self-start shrink-0" aria-label="The Welcome">
@@ -284,31 +319,57 @@
                 </a>
             <!--[if ENDBLOCK]><![endif]-->        </nav>
 
-        <div class="flex items-center justify-self-end gap-4 sm:gap-5">
-            <button
-                type="button"
-                class="inline-flex size-10 shrink-0 items-center justify-center rounded-full text-black-500 transition-opacity hover:opacity-70 lg:size-11"
-                aria-label="Language"
-            >
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke-width="1.5"
-                    stroke="currentColor"
-                    class="size-7 lg:hidden"
-                    aria-hidden="true"
-                >
-                    <circle cx="12" cy="12" r="8.25" />
-                    <ellipse cx="12" cy="12" rx="3.25" ry="8.25" />
-                    <path stroke-linecap="round" d="M3.75 12h16.5" />
-                </svg>
-                <img
-                    src="https://jorgegbellos.github.io/the-welcome-preview/images/svg/Idioma_B.svg"
-                    alt=""
-                    class="hidden size-10 lg:block"
-                >
-            </button>
+        <div class="flex items-center justify-self-end gap-1.5 sm:gap-4 lg:gap-5">
+            <div
+    class="flex items-center"
+    x-data="{ langOpen: false }"
+    @keydown.escape.window="langOpen = false"
+    @click.outside="langOpen = false"
+>
+    <button
+        type="button"
+        class="inline-flex size-9 shrink-0 items-center justify-center rounded-full transition-opacity hover:opacity-70 sm:size-10 lg:size-11"
+        @click="langOpen = ! langOpen"
+        :aria-expanded="langOpen.toString()"
+        aria-controls="language-options-default"
+        aria-label="Language"
+    >
+        <img
+            src="https://jorgegbellos.github.io/the-welcome-preview/images/svg/Idioma_B.svg"
+            alt=""
+            class="size-6 sm:size-7 lg:size-10"
+        >
+    </button>
+
+    <div
+        id="language-options-default"
+        class="lang-switcher-options"
+        :class="langOpen && 'is-open'"
+        role="listbox"
+        aria-label="Language"
+    >
+        <div>
+            <div class="flex min-w-max items-center gap-2 pl-1.5">
+                <!--[if BLOCK]><![endif]-->                                        <a
+                        href="https://jorgegbellos.github.io/the-welcome-preview/locale/es"
+                        role="option"
+                        aria-selected="false"
+                        class="lang-chip type-button-3 uppercase"
+                    >
+                        ES
+                    </a>
+                                                        <a
+                        href="https://jorgegbellos.github.io/the-welcome-preview/locale/en"
+                        role="option"
+                        aria-selected="true"
+                        class="lang-chip type-button-3 uppercase is-active"
+                    >
+                        EN
+                    </a>
+                <!--[if ENDBLOCK]><![endif]-->            </div>
+        </div>
+    </div>
+</div>
 
             <div class="hidden lg:block">
                 <!--[if BLOCK]><![endif]-->    <a
@@ -316,7 +377,7 @@
         class="btn btn-2 btn-solid-black !h-12 !rounded-xl !py-0"=""
     >
         <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->
-        <span>Let's talk</span>
+        <span>Let&#039;s talk</span>
 
         <!--[if BLOCK]><![endif]-->            <span class="btn-icon">    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
         <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
@@ -326,7 +387,7 @@
 
             <button
                 type="button"
-                class="inline-flex size-10 shrink-0 items-center justify-center rounded-full text-black-500 transition-opacity hover:opacity-70 lg:hidden"
+                class="inline-flex size-9 shrink-0 items-center justify-center rounded-full text-black-500 transition-opacity hover:opacity-70 sm:size-10 lg:hidden"
                 @click="open = ! open"
                 :aria-expanded="open.toString()"
                 aria-controls="mobile-nav"
@@ -405,7 +466,7 @@
         class="btn btn-2 btn-solid-black rounded-xl"=""
     >
         <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->
-        <span>Let's talk</span>
+        <span>Let&#039;s talk</span>
 
         <!--[if BLOCK]><![endif]-->            <span class="btn-icon">    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
         <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
@@ -419,7 +480,7 @@
     <section class="px-4 sm:px-5">
         <div class="site-header-spacer" aria-hidden="true"></div>
 
-        <div class="flex min-h-[20rem] items-start justify-between gap-8 px-10 pb-24 pt-8 sm:min-h-[24rem] lg:min-h-[28rem] lg:pb-32 lg:pt-10">
+        <div class="flex items-start justify-between gap-8 px-1 pb-10 pt-6 sm:px-6 sm:pb-16 lg:min-h-[28rem] lg:px-10 lg:pb-32 lg:pt-10">
             <div class="max-w-xl">
                 <p class="type-label-l text-black-500">OUR WORK</p>
                 <h1 class="type-h3 mt-2 text-black-500">
@@ -439,7 +500,7 @@
         class="px-4 pb-16 sm:px-5 sm:pb-20 lg:pb-24"
         x-data="{ filter: 'all' }"
     >
-        <div class="flex flex-col gap-8 px-10 lg:flex-row lg:items-start lg:gap-10 xl:gap-14">
+        <div class="flex flex-col gap-8 px-1 lg:flex-row lg:items-start lg:gap-10 lg:px-10 xl:gap-14">
             <aside class="lg:w-44 lg:shrink-0 xl:w-52">
                 <nav
                     class="flex gap-2 overflow-x-auto pb-1 lg:sticky lg:top-32 lg:flex-col lg:gap-1 lg:overflow-visible lg:pb-0"
@@ -831,7 +892,7 @@
         <footer class="bg-paper-100">
     
         <div class="px-4 py-16 sm:px-5 sm:py-20 lg:py-24">
-        <div class="mx-auto flex max-w-2xl flex-col items-center px-10 text-center">
+        <div class="mx-auto flex max-w-2xl flex-col items-center px-2 text-center sm:px-10">
             <h2 class="type-h3 text-black-500">Let’s build what comes next</h2>
             <p class="type-b2 mt-3 max-w-md text-black-400 sm:mt-4">
                 Every project begins by understanding the business, its challenges and its possibilities.
@@ -853,7 +914,7 @@
     
     
     <div class="px-4 pb-4 sm:px-5 sm:pb-5">
-        <div class="site-footer-panel px-8 py-10 sm:px-10 lg:py-10">
+        <div class="site-footer-panel px-6 py-8 sm:px-10 lg:py-10">
 
             
             <div class="site-footer-desktop hidden h-full lg:grid">

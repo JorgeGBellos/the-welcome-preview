@@ -1,8 +1,44 @@
 {
   "resources/css/app.css": {
-    "file": "assets/app-CHDn_atc.css",
+    "file": "assets/app-qTP58QPY.css",
     "src": "resources/css/app.css",
     "isEntry": true
+  },
+  "resources/fonts/groto/Groto-5No100Th.otf": {
+    "file": "assets/Groto-5No100Th-CwP5fQv_.otf",
+    "src": "resources/fonts/groto/Groto-5No100Th.otf"
+  },
+  "resources/fonts/groto/Groto-5No200ExLt.otf": {
+    "file": "assets/Groto-5No200ExLt-B6WisQ3C.otf",
+    "src": "resources/fonts/groto/Groto-5No200ExLt.otf"
+  },
+  "resources/fonts/groto/Groto-5No300Lt.otf": {
+    "file": "assets/Groto-5No300Lt-C_OFKo5Z.otf",
+    "src": "resources/fonts/groto/Groto-5No300Lt.otf"
+  },
+  "resources/fonts/groto/Groto-5No400Rg.otf": {
+    "file": "assets/Groto-5No400Rg-CQJ9PEml.otf",
+    "src": "resources/fonts/groto/Groto-5No400Rg.otf"
+  },
+  "resources/fonts/groto/Groto-5No500Md.otf": {
+    "file": "assets/Groto-5No500Md-BOcUd-an.otf",
+    "src": "resources/fonts/groto/Groto-5No500Md.otf"
+  },
+  "resources/fonts/groto/Groto-5No600SmBd.otf": {
+    "file": "assets/Groto-5No600SmBd-CY-LZZ9a.otf",
+    "src": "resources/fonts/groto/Groto-5No600SmBd.otf"
+  },
+  "resources/fonts/groto/Groto-5No700Bd.otf": {
+    "file": "assets/Groto-5No700Bd-Cn-aISdg.otf",
+    "src": "resources/fonts/groto/Groto-5No700Bd.otf"
+  },
+  "resources/fonts/groto/Groto-5No800ExBd.otf": {
+    "file": "assets/Groto-5No800ExBd-BVAeyNyA.otf",
+    "src": "resources/fonts/groto/Groto-5No800ExBd.otf"
+  },
+  "resources/fonts/groto/Groto-5No900Blk.otf": {
+    "file": "assets/Groto-5No900Blk-rWDpSkd1.otf",
+    "src": "resources/fonts/groto/Groto-5No900Blk.otf"
   },
   "resources/js/app.js": {
     "file": "assets/app-Bwn9szyo.js",

@@ -3,15 +3,11 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="csrf-token" content="nz9Taj6CUIacIpKSaSR87e0kuMchQNiBUuO1r8Fv">
+        <meta name="csrf-token" content="ltKMsiHMiwU6TUk4nU60n5EnMy60RffDcGfXdIsT">
 
         <title>Home — The Welcome</title>
 
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-        <link rel="preload" as="style" href="https://jorgegbellos.github.io/the-welcome-preview/build/assets/app-CHDn_atc.css" /><link rel="modulepreload" as="script" href="https://jorgegbellos.github.io/the-welcome-preview/build/assets/app-Bwn9szyo.js" /><link rel="stylesheet" href="https://jorgegbellos.github.io/the-welcome-preview/build/assets/app-CHDn_atc.css" data-navigate-track="reload" /><script type="module" src="https://jorgegbellos.github.io/the-welcome-preview/build/assets/app-Bwn9szyo.js" data-navigate-track="reload"></script>        <!-- Livewire Styles --><style >[wire\:loading][wire\:loading], [wire\:loading\.delay][wire\:loading\.delay], [wire\:loading\.list-item][wire\:loading\.list-item], [wire\:loading\.inline-block][wire\:loading\.inline-block], [wire\:loading\.inline][wire\:loading\.inline], [wire\:loading\.block][wire\:loading\.block], [wire\:loading\.flex][wire\:loading\.flex], [wire\:loading\.table][wire\:loading\.table], [wire\:loading\.grid][wire\:loading\.grid], [wire\:loading\.inline-flex][wire\:loading\.inline-flex] {display: none;}[wire\:loading\.delay\.none][wire\:loading\.delay\.none], [wire\:loading\.delay\.shortest][wire\:loading\.delay\.shortest], [wire\:loading\.delay\.shorter][wire\:loading\.delay\.shorter], [wire\:loading\.delay\.short][wire\:loading\.delay\.short], [wire\:loading\.delay\.default][wire\:loading\.delay\.default], [wire\:loading\.delay\.long][wire\:loading\.delay\.long], [wire\:loading\.delay\.longer][wire\:loading\.delay\.longer], [wire\:loading\.delay\.longest][wire\:loading\.delay\.longest] {display: none;}[wire\:offline][wire\:offline] {display: none;}[wire\:dirty]:not(textarea):not(input):not(select) {display: none;}:root {--livewire-progress-bar-color: #2299dd;}[x-cloak="x-cloak"],[x-cloak=""] {display: none !important;}[wire\:cloak="wire:cloak"],[wire\:cloak=""] {display: none !important;}dialog#livewire-error::backdrop {background-color: rgba(0, 0, 0, .6);}</style>
+        <link rel="preload" as="style" href="https://jorgegbellos.github.io/the-welcome-preview/build/assets/app-qTP58QPY.css" /><link rel="modulepreload" as="script" href="https://jorgegbellos.github.io/the-welcome-preview/build/assets/app-Bwn9szyo.js" /><link rel="stylesheet" href="https://jorgegbellos.github.io/the-welcome-preview/build/assets/app-qTP58QPY.css" data-navigate-track="reload" /><script type="module" src="https://jorgegbellos.github.io/the-welcome-preview/build/assets/app-Bwn9szyo.js" data-navigate-track="reload"></script>        <!-- Livewire Styles --><style >[wire\:loading][wire\:loading], [wire\:loading\.delay][wire\:loading\.delay], [wire\:loading\.list-item][wire\:loading\.list-item], [wire\:loading\.inline-block][wire\:loading\.inline-block], [wire\:loading\.inline][wire\:loading\.inline], [wire\:loading\.block][wire\:loading\.block], [wire\:loading\.flex][wire\:loading\.flex], [wire\:loading\.table][wire\:loading\.table], [wire\:loading\.grid][wire\:loading\.grid], [wire\:loading\.inline-flex][wire\:loading\.inline-flex] {display: none;}[wire\:loading\.delay\.none][wire\:loading\.delay\.none], [wire\:loading\.delay\.shortest][wire\:loading\.delay\.shortest], [wire\:loading\.delay\.shorter][wire\:loading\.delay\.shorter], [wire\:loading\.delay\.short][wire\:loading\.delay\.short], [wire\:loading\.delay\.default][wire\:loading\.delay\.default], [wire\:loading\.delay\.long][wire\:loading\.delay\.long], [wire\:loading\.delay\.longer][wire\:loading\.delay\.longer], [wire\:loading\.delay\.longest][wire\:loading\.delay\.longest] {display: none;}[wire\:offline][wire\:offline] {display: none;}[wire\:dirty]:not(textarea):not(input):not(select) {display: none;}:root {--livewire-progress-bar-color: #2299dd;}[x-cloak="x-cloak"],[x-cloak=""] {display: none !important;}[wire\:cloak="wire:cloak"],[wire\:cloak=""] {display: none !important;}dialog#livewire-error::backdrop {background-color: rgba(0, 0, 0, .6);}</style>
         <script>
     try {
         if (sessionStorage.getItem('tw-welcomed') === '1') {
@@ -80,17 +76,56 @@
 
     <div class="relative flex min-h-dvh flex-col px-5 py-6 sm:px-8 sm:py-8">
         <div class="flex justify-end">
-            <button
-                type="button"
-                class="inline-flex size-11 items-center justify-center rounded-full transition-opacity hover:opacity-70"
-                aria-label="Language"
-            >
-                <img
-                    src="https://jorgegbellos.github.io/the-welcome-preview/images/svg/Idioma_B.svg"
-                    alt=""
-                    class="size-9 brightness-0 invert"
-                >
-            </button>
+            <div
+    class="flex items-center"
+    x-data="{ langOpen: false }"
+    @keydown.escape.window="langOpen = false"
+    @click.outside="langOpen = false"
+>
+    <button
+        type="button"
+        class="inline-flex size-9 shrink-0 items-center justify-center rounded-full transition-opacity hover:opacity-70 sm:size-10 lg:size-11"
+        @click="langOpen = ! langOpen"
+        :aria-expanded="langOpen.toString()"
+        aria-controls="language-options-light"
+        aria-label="Language"
+    >
+        <img
+            src="https://jorgegbellos.github.io/the-welcome-preview/images/svg/Idioma_B.svg"
+            alt=""
+            class="size-8 brightness-0 invert sm:size-9"
+        >
+    </button>
+
+    <div
+        id="language-options-light"
+        class="lang-switcher-options"
+        :class="langOpen && 'is-open'"
+        role="listbox"
+        aria-label="Language"
+    >
+        <div>
+            <div class="flex min-w-max items-center gap-2 pl-1.5">
+                                                        <a
+                        href="https://jorgegbellos.github.io/the-welcome-preview/locale/es"
+                        role="option"
+                        aria-selected="false"
+                        class="lang-chip type-button-3 uppercase lang-chip--light"
+                    >
+                        ES
+                    </a>
+                                                        <a
+                        href="https://jorgegbellos.github.io/the-welcome-preview/locale/en"
+                        role="option"
+                        aria-selected="true"
+                        class="lang-chip type-button-3 uppercase lang-chip--light is-active"
+                    >
+                        EN
+                    </a>
+                            </div>
+        </div>
+    </div>
+</div>
         </div>
 
         <div class="mx-auto flex w-full max-w-lg flex-1 flex-col items-center justify-center py-8 text-center">
@@ -199,7 +234,7 @@
         class="btn btn-2 btn-solid-white w-full rounded-xl" @click="goContact()"
     >
         
-        <span>Let’s talk</span>
+        <span>Let&#039;s talk</span>
 
             </button>
 
@@ -228,7 +263,7 @@
 </div>
 
         <main>
-            <div wire:snapshot="{&quot;data&quot;:[],&quot;memo&quot;:{&quot;id&quot;:&quot;9WZ6dOL4J2JIxordNWss&quot;,&quot;name&quot;:&quot;pages.home&quot;,&quot;path&quot;:&quot;\/&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;release&quot;:&quot;a-a-a&quot;,&quot;children&quot;:[],&quot;scripts&quot;:[],&quot;assets&quot;:[],&quot;errors&quot;:[],&quot;locale&quot;:&quot;en&quot;,&quot;islands&quot;:[]},&quot;checksum&quot;:&quot;2f2880f9f2a1eeb74578b53bc8c241935d5289bd2b7546caaf1cf4f92a1bfed7&quot;}" wire:effects="{&quot;partials&quot;:[]}" wire:id="9WZ6dOL4J2JIxordNWss" wire:name="pages.home">
+            <div wire:snapshot="{&quot;data&quot;:[],&quot;memo&quot;:{&quot;id&quot;:&quot;RX3FMeHfIpvLhc7wCRtr&quot;,&quot;name&quot;:&quot;pages.home&quot;,&quot;path&quot;:&quot;\/&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;release&quot;:&quot;a-a-a&quot;,&quot;children&quot;:[],&quot;scripts&quot;:[],&quot;assets&quot;:[],&quot;errors&quot;:[],&quot;locale&quot;:&quot;en&quot;,&quot;islands&quot;:[]},&quot;checksum&quot;:&quot;b14c623ad0ed4235b75eed6f9b9130f76b1f1043ab2a33cee59a7b805c3943d7&quot;}" wire:effects="{&quot;partials&quot;:[]}" wire:id="RX3FMeHfIpvLhc7wCRtr" wire:name="pages.home">
     <header
     class="fixed inset-x-0 top-0 z-[200] px-4 pt-4 sm:px-5 sm:pt-5 animate-[fade-in_0.6s_ease-out]"
     x-data="{
@@ -241,7 +276,7 @@
     x-init="onScroll(); window.addEventListener('scroll', () => onScroll(), { passive: true })"
 >
     <div
-        class="site-header-bar box-border flex h-14 items-center justify-between rounded-full px-5 shadow-sm sm:h-16 sm:px-6 lg:grid lg:h-20 lg:grid-cols-[1fr_auto_1fr] lg:gap-4 lg:rounded-2xl lg:px-10 lg:py-4"
+        class="site-header-bar box-border flex h-14 items-center justify-between rounded-2xl px-4 shadow-sm sm:h-16 sm:px-6 lg:grid lg:h-20 lg:grid-cols-[1fr_auto_1fr] lg:gap-4 lg:px-10 lg:py-4"
         :class="scrolled && 'is-frosted'"
     >
         <a href="https://jorgegbellos.github.io/the-welcome-preview/" class="justify-self-start shrink-0" aria-label="The Welcome">
@@ -284,31 +319,57 @@
                 </a>
             <!--[if ENDBLOCK]><![endif]-->        </nav>
 
-        <div class="flex items-center justify-self-end gap-4 sm:gap-5">
-            <button
-                type="button"
-                class="inline-flex size-10 shrink-0 items-center justify-center rounded-full text-black-500 transition-opacity hover:opacity-70 lg:size-11"
-                aria-label="Language"
-            >
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke-width="1.5"
-                    stroke="currentColor"
-                    class="size-7 lg:hidden"
-                    aria-hidden="true"
-                >
-                    <circle cx="12" cy="12" r="8.25" />
-                    <ellipse cx="12" cy="12" rx="3.25" ry="8.25" />
-                    <path stroke-linecap="round" d="M3.75 12h16.5" />
-                </svg>
-                <img
-                    src="https://jorgegbellos.github.io/the-welcome-preview/images/svg/Idioma_B.svg"
-                    alt=""
-                    class="hidden size-10 lg:block"
-                >
-            </button>
+        <div class="flex items-center justify-self-end gap-1.5 sm:gap-4 lg:gap-5">
+            <div
+    class="flex items-center"
+    x-data="{ langOpen: false }"
+    @keydown.escape.window="langOpen = false"
+    @click.outside="langOpen = false"
+>
+    <button
+        type="button"
+        class="inline-flex size-9 shrink-0 items-center justify-center rounded-full transition-opacity hover:opacity-70 sm:size-10 lg:size-11"
+        @click="langOpen = ! langOpen"
+        :aria-expanded="langOpen.toString()"
+        aria-controls="language-options-default"
+        aria-label="Language"
+    >
+        <img
+            src="https://jorgegbellos.github.io/the-welcome-preview/images/svg/Idioma_B.svg"
+            alt=""
+            class="size-6 sm:size-7 lg:size-10"
+        >
+    </button>
+
+    <div
+        id="language-options-default"
+        class="lang-switcher-options"
+        :class="langOpen && 'is-open'"
+        role="listbox"
+        aria-label="Language"
+    >
+        <div>
+            <div class="flex min-w-max items-center gap-2 pl-1.5">
+                <!--[if BLOCK]><![endif]-->                                        <a
+                        href="https://jorgegbellos.github.io/the-welcome-preview/locale/es"
+                        role="option"
+                        aria-selected="false"
+                        class="lang-chip type-button-3 uppercase"
+                    >
+                        ES
+                    </a>
+                                                        <a
+                        href="https://jorgegbellos.github.io/the-welcome-preview/locale/en"
+                        role="option"
+                        aria-selected="true"
+                        class="lang-chip type-button-3 uppercase is-active"
+                    >
+                        EN
+                    </a>
+                <!--[if ENDBLOCK]><![endif]-->            </div>
+        </div>
+    </div>
+</div>
 
             <div class="hidden lg:block">
                 <!--[if BLOCK]><![endif]-->    <a
@@ -316,7 +377,7 @@
         class="btn btn-2 btn-solid-black !h-12 !rounded-xl !py-0"=""
     >
         <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->
-        <span>Let's talk</span>
+        <span>Let&#039;s talk</span>
 
         <!--[if BLOCK]><![endif]-->            <span class="btn-icon">    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
         <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
@@ -326,7 +387,7 @@
 
             <button
                 type="button"
-                class="inline-flex size-10 shrink-0 items-center justify-center rounded-full text-black-500 transition-opacity hover:opacity-70 lg:hidden"
+                class="inline-flex size-9 shrink-0 items-center justify-center rounded-full text-black-500 transition-opacity hover:opacity-70 sm:size-10 lg:hidden"
                 @click="open = ! open"
                 :aria-expanded="open.toString()"
                 aria-controls="mobile-nav"
@@ -405,7 +466,7 @@
         class="btn btn-2 btn-solid-black rounded-xl"=""
     >
         <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->
-        <span>Let's talk</span>
+        <span>Let&#039;s talk</span>
 
         <!--[if BLOCK]><![endif]-->            <span class="btn-icon">    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
         <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
@@ -435,10 +496,10 @@
                     For Experience-Led Businesses.
                 </p>
 
-                <div class="mt-8 flex flex-col items-center justify-center gap-3 sm:mt-10 sm:flex-row sm:gap-4">
+                <div class="mt-8 flex w-full flex-col items-center justify-center gap-3 sm:mt-10 sm:flex-row sm:gap-4">
                     <!--[if BLOCK]><![endif]-->    <a
         href="https://jorgegbellos.github.io/the-welcome-preview/projects/"
-        class="btn btn-2 btn-outline-white rounded-xl"=""
+        class="btn btn-2 btn-outline-white w-full max-w-[17.5rem] rounded-xl sm:w-auto"=""
     >
         <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->
         <span>View our work</span>
@@ -447,7 +508,7 @@
 <!--[if ENDBLOCK]><![endif]-->
                     <!--[if BLOCK]><![endif]-->    <a
         href="https://jorgegbellos.github.io/the-welcome-preview/services/"
-        class="btn btn-2 btn-solid-white rounded-xl"=""
+        class="btn btn-2 btn-solid-white w-full max-w-[17.5rem] rounded-xl sm:w-auto"=""
     >
         <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->
         <span>Explore our services</span>
@@ -459,7 +520,7 @@
     </section>
 
     <section class="section-sheet px-4 py-12 sm:px-5 sm:py-14 lg:py-16">
-    <div class="px-10">
+    <div class="section-inner">
 
         
         <div class="flex flex-col gap-8 lg:flex-row lg:items-start lg:justify-between lg:gap-12">
@@ -477,7 +538,7 @@
             </div>
 
             <p class="type-b2 max-w-md text-black-400 lg:max-w-sm lg:text-right">
-                Brands, experiences and businesses don't work in isolation. Their value depends on the relationship between what they stand for, what they offer and how they operate.
+                Brands, experiences and businesses don&#039;t work in isolation. Their value depends on the relationship between what they stand for, what they offer and how they operate.
             </p>
         </div>
 
@@ -530,23 +591,14 @@
             </p>
 
             <div class="mt-10 flex justify-center sm:mt-12">
-                <div class="flex origin-center scale-[0.58] flex-nowrap items-center justify-center gap-5 sm:scale-75 sm:gap-6 md:scale-90 lg:scale-100">
-                    <!--[if BLOCK]><![endif]-->                        <div
-                            class="flex h-[280px] w-[280px] shrink-0 items-center justify-center rounded-full border border-black-500"
-                            style="width: 280px; height: 280px;"
-                        >
+                <div class="discipline-row">
+                    <!--[if BLOCK]><![endif]-->                        <div class="discipline-circle">
                             <span class="type-label-m text-black-500">Strategy</span>
                         </div>
-                                            <div
-                            class="flex h-[280px] w-[280px] shrink-0 items-center justify-center rounded-full border border-black-500"
-                            style="width: 280px; height: 280px;"
-                        >
+                                            <div class="discipline-circle">
                             <span class="type-label-m text-black-500">Technology</span>
                         </div>
-                                            <div
-                            class="flex h-[280px] w-[280px] shrink-0 items-center justify-center rounded-full border border-black-500"
-                            style="width: 280px; height: 280px;"
-                        >
+                                            <div class="discipline-circle">
                             <span class="type-label-m text-black-500">Design</span>
                         </div>
                     <!--[if ENDBLOCK]><![endif]-->                </div>
@@ -564,7 +616,7 @@
 </section>
 
     <section id="what-we-do" class="bg-paper-100 px-4 py-10 sm:px-5 sm:py-14 lg:py-16">
-    <div class="px-10">
+    <div class="section-inner">
         <div class="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between sm:gap-8">
             <div>
                 <h2 class="type-h3 text-black-500">What we do</h2>
@@ -591,14 +643,14 @@
                         class="practice-card__bg"
                     >
 
-                    <div class="relative z-10 flex h-full flex-col justify-between">
+                    <div class="relative z-10 flex h-full flex-col justify-between gap-10 lg:gap-0">
                         <div class="flex items-start justify-between gap-3">
                             <span class="type-b3 text-black-500">(01)</span>
 
                             <img
                                 src="https://jorgegbellos.github.io/the-welcome-preview/images/svg/leon.svg"
                                 alt=""
-                                class="h-[66px] w-auto"
+                                class="h-12 w-auto lg:h-[66px]"
                             >
                         </div>
 
@@ -629,14 +681,14 @@
                         class="practice-card__bg"
                     >
 
-                    <div class="relative z-10 flex h-full flex-col justify-between">
+                    <div class="relative z-10 flex h-full flex-col justify-between gap-10 lg:gap-0">
                         <div class="flex items-start justify-between gap-3">
                             <span class="type-b3 text-black-500">(02)</span>
 
                             <img
                                 src="https://jorgegbellos.github.io/the-welcome-preview/images/svg/venado.svg"
                                 alt=""
-                                class="h-[66px] w-auto"
+                                class="h-12 w-auto lg:h-[66px]"
                             >
                         </div>
 
@@ -667,14 +719,14 @@
                         class="practice-card__bg"
                     >
 
-                    <div class="relative z-10 flex h-full flex-col justify-between">
+                    <div class="relative z-10 flex h-full flex-col justify-between gap-10 lg:gap-0">
                         <div class="flex items-start justify-between gap-3">
                             <span class="type-b3 text-black-500">(03)</span>
 
                             <img
                                 src="https://jorgegbellos.github.io/the-welcome-preview/images/svg/leon.svg"
                                 alt=""
-                                class="h-[66px] w-auto"
+                                class="h-12 w-auto lg:h-[66px]"
                             >
                         </div>
 
@@ -705,14 +757,14 @@
                         class="practice-card__bg"
                     >
 
-                    <div class="relative z-10 flex h-full flex-col justify-between">
+                    <div class="relative z-10 flex h-full flex-col justify-between gap-10 lg:gap-0">
                         <div class="flex items-start justify-between gap-3">
                             <span class="type-b3 text-black-500">(04)</span>
 
                             <img
                                 src="https://jorgegbellos.github.io/the-welcome-preview/images/svg/venado.svg"
                                 alt=""
-                                class="h-[66px] w-auto"
+                                class="h-12 w-auto lg:h-[66px]"
                             >
                         </div>
 
@@ -744,7 +796,7 @@
     class="section-sheet px-4 py-10 sm:px-5 sm:py-14 lg:py-16"
     x-data="{ active: 0 }"
 >
-    <div class="px-10">
+    <div class="section-inner">
         <div class="grid gap-10 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.55fr)] lg:items-stretch lg:gap-12 xl:gap-16">
             
             <div class="flex flex-col lg:h-full lg:justify-between">
@@ -874,7 +926,7 @@
             </div>
 
             
-            <div class="relative min-h-[22rem] overflow-hidden rounded-[1.75rem] sm:min-h-[28rem] lg:min-h-[32rem] lg:rounded-[2rem]">
+            <div class="relative min-h-[16rem] overflow-hidden rounded-[1.75rem] sm:min-h-[28rem] lg:min-h-[32rem] lg:rounded-[2rem]">
                 <!--[if BLOCK]><![endif]-->                    <div
                         id="industry-panel-0"
                         role="tabpanel"
@@ -976,7 +1028,7 @@
         },
     }"
 >
-    <div class="px-10">
+    <div class="section-inner">
         <div class="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between sm:gap-8">
             <div>
                 <h2 class="type-s2 text-black-500">Our Work</h2>
@@ -1022,9 +1074,9 @@
                                 </span>
                             </div>
 
-                            <div class="work-card-caption flex items-start justify-between gap-3">
+                            <div class="work-card-caption flex flex-col items-stretch gap-3 lg:flex-row lg:items-start lg:justify-between">
                                 <div class="min-w-0">
-                                    <h3 class="type-s3 truncate text-black-500">Tótem interiors</h3>
+                                    <h3 class="type-s3 text-black-500 lg:truncate">Tótem interiors</h3>
                                     <!--[if BLOCK]><![endif]-->                                        <p class="type-b2 mt-1 line-clamp-2 text-black-400">
                                             Identity &amp; Experience
                                         </p>
@@ -1065,9 +1117,9 @@
                                 </span>
                             </div>
 
-                            <div class="work-card-caption flex items-start justify-between gap-3">
+                            <div class="work-card-caption flex flex-col items-stretch gap-3 lg:flex-row lg:items-start lg:justify-between">
                                 <div class="min-w-0">
-                                    <h3 class="type-s3 truncate text-black-500">Water club</h3>
+                                    <h3 class="type-s3 text-black-500 lg:truncate">Water club</h3>
                                     <!--[if BLOCK]><![endif]-->                                        <p class="type-b2 mt-1 line-clamp-2 text-black-400">
                                             Lifestyle
                                         </p>
@@ -1108,9 +1160,9 @@
                                 </span>
                             </div>
 
-                            <div class="work-card-caption flex items-start justify-between gap-3">
+                            <div class="work-card-caption flex flex-col items-stretch gap-3 lg:flex-row lg:items-start lg:justify-between">
                                 <div class="min-w-0">
-                                    <h3 class="type-s3 truncate text-black-500">Pink house</h3>
+                                    <h3 class="type-s3 text-black-500 lg:truncate">Pink house</h3>
                                     <!--[if BLOCK]><![endif]-->                                        <p class="type-b2 mt-1 line-clamp-2 text-black-400">
                                             Identity &amp; Experience
                                         </p>
@@ -1151,9 +1203,9 @@
                                 </span>
                             </div>
 
-                            <div class="work-card-caption flex items-start justify-between gap-3">
+                            <div class="work-card-caption flex flex-col items-stretch gap-3 lg:flex-row lg:items-start lg:justify-between">
                                 <div class="min-w-0">
-                                    <h3 class="type-s3 truncate text-black-500">Anata kitchen</h3>
+                                    <h3 class="type-s3 text-black-500 lg:truncate">Anata kitchen</h3>
                                     <!--[if BLOCK]><![endif]-->                                        <p class="type-b2 mt-1 line-clamp-2 text-black-400">
                                             Identity &amp; Experience
                                         </p>
@@ -1194,9 +1246,9 @@
                                 </span>
                             </div>
 
-                            <div class="work-card-caption flex items-start justify-between gap-3">
+                            <div class="work-card-caption flex flex-col items-stretch gap-3 lg:flex-row lg:items-start lg:justify-between">
                                 <div class="min-w-0">
-                                    <h3 class="type-s3 truncate text-black-500">Guest experience</h3>
+                                    <h3 class="type-s3 text-black-500 lg:truncate">Guest experience</h3>
                                     <!--[if BLOCK]><![endif]-->                                        <p class="type-b2 mt-1 line-clamp-2 text-black-400">
                                             Consulting &amp; Strategy
                                         </p>
@@ -1237,9 +1289,9 @@
                                 </span>
                             </div>
 
-                            <div class="work-card-caption flex items-start justify-between gap-3">
+                            <div class="work-card-caption flex flex-col items-stretch gap-3 lg:flex-row lg:items-start lg:justify-between">
                                 <div class="min-w-0">
-                                    <h3 class="type-s3 truncate text-black-500">Anata Vin Bar</h3>
+                                    <h3 class="type-s3 text-black-500 lg:truncate">Anata Vin Bar</h3>
                                     <!--[if BLOCK]><![endif]-->                                        <p class="type-b2 mt-1 line-clamp-2 text-black-400">
                                             Identity &amp; Experience
                                         </p>
@@ -1280,9 +1332,9 @@
                                 </span>
                             </div>
 
-                            <div class="work-card-caption flex items-start justify-between gap-3">
+                            <div class="work-card-caption flex flex-col items-stretch gap-3 lg:flex-row lg:items-start lg:justify-between">
                                 <div class="min-w-0">
-                                    <h3 class="type-s3 truncate text-black-500">Hotel Kahal</h3>
+                                    <h3 class="type-s3 text-black-500 lg:truncate">Hotel Kahal</h3>
                                     <!--[if BLOCK]><![endif]-->                                        <p class="type-b2 mt-1 line-clamp-2 text-black-400">
                                             Identity &amp; Experience
                                         </p>
@@ -1323,9 +1375,9 @@
                                 </span>
                             </div>
 
-                            <div class="work-card-caption flex items-start justify-between gap-3">
+                            <div class="work-card-caption flex flex-col items-stretch gap-3 lg:flex-row lg:items-start lg:justify-between">
                                 <div class="min-w-0">
-                                    <h3 class="type-s3 truncate text-black-500">Anata identity</h3>
+                                    <h3 class="type-s3 text-black-500 lg:truncate">Anata identity</h3>
                                     <!--[if BLOCK]><![endif]-->                                        <p class="type-b2 mt-1 line-clamp-2 text-black-400">
                                             Identity &amp; Experience · Commerce &amp; Growth
                                         </p>
@@ -1366,9 +1418,9 @@
                                 </span>
                             </div>
 
-                            <div class="work-card-caption flex items-start justify-between gap-3">
+                            <div class="work-card-caption flex flex-col items-stretch gap-3 lg:flex-row lg:items-start lg:justify-between">
                                 <div class="min-w-0">
-                                    <h3 class="type-s3 truncate text-black-500">Coastal lodging</h3>
+                                    <h3 class="type-s3 text-black-500 lg:truncate">Coastal lodging</h3>
                                     <!--[if BLOCK]><![endif]-->                                        <p class="type-b2 mt-1 line-clamp-2 text-black-400">
                                             Lifestyle
                                         </p>
@@ -1409,9 +1461,9 @@
                                 </span>
                             </div>
 
-                            <div class="work-card-caption flex items-start justify-between gap-3">
+                            <div class="work-card-caption flex flex-col items-stretch gap-3 lg:flex-row lg:items-start lg:justify-between">
                                 <div class="min-w-0">
-                                    <h3 class="type-s3 truncate text-black-500">Pool terrace</h3>
+                                    <h3 class="type-s3 text-black-500 lg:truncate">Pool terrace</h3>
                                     <!--[if BLOCK]><![endif]-->                                        <p class="type-b2 mt-1 line-clamp-2 text-black-400">
                                             Commerce &amp; Growth
                                         </p>
@@ -1452,9 +1504,9 @@
                                 </span>
                             </div>
 
-                            <div class="work-card-caption flex items-start justify-between gap-3">
+                            <div class="work-card-caption flex flex-col items-stretch gap-3 lg:flex-row lg:items-start lg:justify-between">
                                 <div class="min-w-0">
-                                    <h3 class="type-s3 truncate text-black-500">Destino Yucatán</h3>
+                                    <h3 class="type-s3 text-black-500 lg:truncate">Destino Yucatán</h3>
                                     <!--[if BLOCK]><![endif]-->                                        <p class="type-b2 mt-1 line-clamp-2 text-black-400">
                                             Consulting &amp; Strategy
                                         </p>
@@ -1495,9 +1547,9 @@
                                 </span>
                             </div>
 
-                            <div class="work-card-caption flex items-start justify-between gap-3">
+                            <div class="work-card-caption flex flex-col items-stretch gap-3 lg:flex-row lg:items-start lg:justify-between">
                                 <div class="min-w-0">
-                                    <h3 class="type-s3 truncate text-black-500">Cigno Hotel</h3>
+                                    <h3 class="type-s3 text-black-500 lg:truncate">Cigno Hotel</h3>
                                     <!--[if BLOCK]><![endif]-->                                        <p class="type-b2 mt-1 line-clamp-2 text-black-400">
                                             Lifestyle
                                         </p>
@@ -1538,9 +1590,9 @@
                                 </span>
                             </div>
 
-                            <div class="work-card-caption flex items-start justify-between gap-3">
+                            <div class="work-card-caption flex flex-col items-stretch gap-3 lg:flex-row lg:items-start lg:justify-between">
                                 <div class="min-w-0">
-                                    <h3 class="type-s3 truncate text-black-500">Uxmal</h3>
+                                    <h3 class="type-s3 text-black-500 lg:truncate">Uxmal</h3>
                                     <!--[if BLOCK]><![endif]-->                                        <p class="type-b2 mt-1 line-clamp-2 text-black-400">
                                             Consulting &amp; Strategy
                                         </p>
@@ -1581,9 +1633,9 @@
                                 </span>
                             </div>
 
-                            <div class="work-card-caption flex items-start justify-between gap-3">
+                            <div class="work-card-caption flex flex-col items-stretch gap-3 lg:flex-row lg:items-start lg:justify-between">
                                 <div class="min-w-0">
-                                    <h3 class="type-s3 truncate text-black-500">Tótem Hotel &amp; Club de Playa</h3>
+                                    <h3 class="type-s3 text-black-500 lg:truncate">Tótem Hotel &amp; Club de Playa</h3>
                                     <!--[if BLOCK]><![endif]-->                                        <p class="type-b2 mt-1 line-clamp-2 text-black-400">
                                             Consulting &amp; Strategy · Identity &amp; Experience
                                         </p>
@@ -1624,9 +1676,9 @@
                                 </span>
                             </div>
 
-                            <div class="work-card-caption flex items-start justify-between gap-3">
+                            <div class="work-card-caption flex flex-col items-stretch gap-3 lg:flex-row lg:items-start lg:justify-between">
                                 <div class="min-w-0">
-                                    <h3 class="type-s3 truncate text-black-500">Casa Lecanda</h3>
+                                    <h3 class="type-s3 text-black-500 lg:truncate">Casa Lecanda</h3>
                                     <!--[if BLOCK]><![endif]-->                                        <p class="type-b2 mt-1 line-clamp-2 text-black-400">
                                             Hospitality
                                         </p>
@@ -1667,9 +1719,9 @@
                                 </span>
                             </div>
 
-                            <div class="work-card-caption flex items-start justify-between gap-3">
+                            <div class="work-card-caption flex flex-col items-stretch gap-3 lg:flex-row lg:items-start lg:justify-between">
                                 <div class="min-w-0">
-                                    <h3 class="type-s3 truncate text-black-500">Grupo Oliva</h3>
+                                    <h3 class="type-s3 text-black-500 lg:truncate">Grupo Oliva</h3>
                                     <!--[if BLOCK]><![endif]-->                                        <p class="type-b2 mt-1 line-clamp-2 text-black-400">
                                             Technology &amp; Digital Systems
                                         </p>
@@ -1710,9 +1762,9 @@
                                 </span>
                             </div>
 
-                            <div class="work-card-caption flex items-start justify-between gap-3">
+                            <div class="work-card-caption flex flex-col items-stretch gap-3 lg:flex-row lg:items-start lg:justify-between">
                                 <div class="min-w-0">
-                                    <h3 class="type-s3 truncate text-black-500">Tótem interiors</h3>
+                                    <h3 class="type-s3 text-black-500 lg:truncate">Tótem interiors</h3>
                                     <!--[if BLOCK]><![endif]-->                                        <p class="type-b2 mt-1 line-clamp-2 text-black-400">
                                             Identity &amp; Experience
                                         </p>
@@ -1753,9 +1805,9 @@
                                 </span>
                             </div>
 
-                            <div class="work-card-caption flex items-start justify-between gap-3">
+                            <div class="work-card-caption flex flex-col items-stretch gap-3 lg:flex-row lg:items-start lg:justify-between">
                                 <div class="min-w-0">
-                                    <h3 class="type-s3 truncate text-black-500">Water club</h3>
+                                    <h3 class="type-s3 text-black-500 lg:truncate">Water club</h3>
                                     <!--[if BLOCK]><![endif]-->                                        <p class="type-b2 mt-1 line-clamp-2 text-black-400">
                                             Lifestyle
                                         </p>
@@ -1796,9 +1848,9 @@
                                 </span>
                             </div>
 
-                            <div class="work-card-caption flex items-start justify-between gap-3">
+                            <div class="work-card-caption flex flex-col items-stretch gap-3 lg:flex-row lg:items-start lg:justify-between">
                                 <div class="min-w-0">
-                                    <h3 class="type-s3 truncate text-black-500">Pink house</h3>
+                                    <h3 class="type-s3 text-black-500 lg:truncate">Pink house</h3>
                                     <!--[if BLOCK]><![endif]-->                                        <p class="type-b2 mt-1 line-clamp-2 text-black-400">
                                             Identity &amp; Experience
                                         </p>
@@ -1839,9 +1891,9 @@
                                 </span>
                             </div>
 
-                            <div class="work-card-caption flex items-start justify-between gap-3">
+                            <div class="work-card-caption flex flex-col items-stretch gap-3 lg:flex-row lg:items-start lg:justify-between">
                                 <div class="min-w-0">
-                                    <h3 class="type-s3 truncate text-black-500">Anata kitchen</h3>
+                                    <h3 class="type-s3 text-black-500 lg:truncate">Anata kitchen</h3>
                                     <!--[if BLOCK]><![endif]-->                                        <p class="type-b2 mt-1 line-clamp-2 text-black-400">
                                             Identity &amp; Experience
                                         </p>
@@ -1882,9 +1934,9 @@
                                 </span>
                             </div>
 
-                            <div class="work-card-caption flex items-start justify-between gap-3">
+                            <div class="work-card-caption flex flex-col items-stretch gap-3 lg:flex-row lg:items-start lg:justify-between">
                                 <div class="min-w-0">
-                                    <h3 class="type-s3 truncate text-black-500">Guest experience</h3>
+                                    <h3 class="type-s3 text-black-500 lg:truncate">Guest experience</h3>
                                     <!--[if BLOCK]><![endif]-->                                        <p class="type-b2 mt-1 line-clamp-2 text-black-400">
                                             Consulting &amp; Strategy
                                         </p>
@@ -1925,9 +1977,9 @@
                                 </span>
                             </div>
 
-                            <div class="work-card-caption flex items-start justify-between gap-3">
+                            <div class="work-card-caption flex flex-col items-stretch gap-3 lg:flex-row lg:items-start lg:justify-between">
                                 <div class="min-w-0">
-                                    <h3 class="type-s3 truncate text-black-500">Anata Vin Bar</h3>
+                                    <h3 class="type-s3 text-black-500 lg:truncate">Anata Vin Bar</h3>
                                     <!--[if BLOCK]><![endif]-->                                        <p class="type-b2 mt-1 line-clamp-2 text-black-400">
                                             Identity &amp; Experience
                                         </p>
@@ -1968,9 +2020,9 @@
                                 </span>
                             </div>
 
-                            <div class="work-card-caption flex items-start justify-between gap-3">
+                            <div class="work-card-caption flex flex-col items-stretch gap-3 lg:flex-row lg:items-start lg:justify-between">
                                 <div class="min-w-0">
-                                    <h3 class="type-s3 truncate text-black-500">Hotel Kahal</h3>
+                                    <h3 class="type-s3 text-black-500 lg:truncate">Hotel Kahal</h3>
                                     <!--[if BLOCK]><![endif]-->                                        <p class="type-b2 mt-1 line-clamp-2 text-black-400">
                                             Identity &amp; Experience
                                         </p>
@@ -2011,9 +2063,9 @@
                                 </span>
                             </div>
 
-                            <div class="work-card-caption flex items-start justify-between gap-3">
+                            <div class="work-card-caption flex flex-col items-stretch gap-3 lg:flex-row lg:items-start lg:justify-between">
                                 <div class="min-w-0">
-                                    <h3 class="type-s3 truncate text-black-500">Anata identity</h3>
+                                    <h3 class="type-s3 text-black-500 lg:truncate">Anata identity</h3>
                                     <!--[if BLOCK]><![endif]-->                                        <p class="type-b2 mt-1 line-clamp-2 text-black-400">
                                             Identity &amp; Experience · Commerce &amp; Growth
                                         </p>
@@ -2054,9 +2106,9 @@
                                 </span>
                             </div>
 
-                            <div class="work-card-caption flex items-start justify-between gap-3">
+                            <div class="work-card-caption flex flex-col items-stretch gap-3 lg:flex-row lg:items-start lg:justify-between">
                                 <div class="min-w-0">
-                                    <h3 class="type-s3 truncate text-black-500">Coastal lodging</h3>
+                                    <h3 class="type-s3 text-black-500 lg:truncate">Coastal lodging</h3>
                                     <!--[if BLOCK]><![endif]-->                                        <p class="type-b2 mt-1 line-clamp-2 text-black-400">
                                             Lifestyle
                                         </p>
@@ -2097,9 +2149,9 @@
                                 </span>
                             </div>
 
-                            <div class="work-card-caption flex items-start justify-between gap-3">
+                            <div class="work-card-caption flex flex-col items-stretch gap-3 lg:flex-row lg:items-start lg:justify-between">
                                 <div class="min-w-0">
-                                    <h3 class="type-s3 truncate text-black-500">Pool terrace</h3>
+                                    <h3 class="type-s3 text-black-500 lg:truncate">Pool terrace</h3>
                                     <!--[if BLOCK]><![endif]-->                                        <p class="type-b2 mt-1 line-clamp-2 text-black-400">
                                             Commerce &amp; Growth
                                         </p>
@@ -2140,9 +2192,9 @@
                                 </span>
                             </div>
 
-                            <div class="work-card-caption flex items-start justify-between gap-3">
+                            <div class="work-card-caption flex flex-col items-stretch gap-3 lg:flex-row lg:items-start lg:justify-between">
                                 <div class="min-w-0">
-                                    <h3 class="type-s3 truncate text-black-500">Destino Yucatán</h3>
+                                    <h3 class="type-s3 text-black-500 lg:truncate">Destino Yucatán</h3>
                                     <!--[if BLOCK]><![endif]-->                                        <p class="type-b2 mt-1 line-clamp-2 text-black-400">
                                             Consulting &amp; Strategy
                                         </p>
@@ -2183,9 +2235,9 @@
                                 </span>
                             </div>
 
-                            <div class="work-card-caption flex items-start justify-between gap-3">
+                            <div class="work-card-caption flex flex-col items-stretch gap-3 lg:flex-row lg:items-start lg:justify-between">
                                 <div class="min-w-0">
-                                    <h3 class="type-s3 truncate text-black-500">Cigno Hotel</h3>
+                                    <h3 class="type-s3 text-black-500 lg:truncate">Cigno Hotel</h3>
                                     <!--[if BLOCK]><![endif]-->                                        <p class="type-b2 mt-1 line-clamp-2 text-black-400">
                                             Lifestyle
                                         </p>
@@ -2226,9 +2278,9 @@
                                 </span>
                             </div>
 
-                            <div class="work-card-caption flex items-start justify-between gap-3">
+                            <div class="work-card-caption flex flex-col items-stretch gap-3 lg:flex-row lg:items-start lg:justify-between">
                                 <div class="min-w-0">
-                                    <h3 class="type-s3 truncate text-black-500">Uxmal</h3>
+                                    <h3 class="type-s3 text-black-500 lg:truncate">Uxmal</h3>
                                     <!--[if BLOCK]><![endif]-->                                        <p class="type-b2 mt-1 line-clamp-2 text-black-400">
                                             Consulting &amp; Strategy
                                         </p>
@@ -2269,9 +2321,9 @@
                                 </span>
                             </div>
 
-                            <div class="work-card-caption flex items-start justify-between gap-3">
+                            <div class="work-card-caption flex flex-col items-stretch gap-3 lg:flex-row lg:items-start lg:justify-between">
                                 <div class="min-w-0">
-                                    <h3 class="type-s3 truncate text-black-500">Tótem Hotel &amp; Club de Playa</h3>
+                                    <h3 class="type-s3 text-black-500 lg:truncate">Tótem Hotel &amp; Club de Playa</h3>
                                     <!--[if BLOCK]><![endif]-->                                        <p class="type-b2 mt-1 line-clamp-2 text-black-400">
                                             Consulting &amp; Strategy · Identity &amp; Experience
                                         </p>
@@ -2312,9 +2364,9 @@
                                 </span>
                             </div>
 
-                            <div class="work-card-caption flex items-start justify-between gap-3">
+                            <div class="work-card-caption flex flex-col items-stretch gap-3 lg:flex-row lg:items-start lg:justify-between">
                                 <div class="min-w-0">
-                                    <h3 class="type-s3 truncate text-black-500">Casa Lecanda</h3>
+                                    <h3 class="type-s3 text-black-500 lg:truncate">Casa Lecanda</h3>
                                     <!--[if BLOCK]><![endif]-->                                        <p class="type-b2 mt-1 line-clamp-2 text-black-400">
                                             Hospitality
                                         </p>
@@ -2355,9 +2407,9 @@
                                 </span>
                             </div>
 
-                            <div class="work-card-caption flex items-start justify-between gap-3">
+                            <div class="work-card-caption flex flex-col items-stretch gap-3 lg:flex-row lg:items-start lg:justify-between">
                                 <div class="min-w-0">
-                                    <h3 class="type-s3 truncate text-black-500">Grupo Oliva</h3>
+                                    <h3 class="type-s3 text-black-500 lg:truncate">Grupo Oliva</h3>
                                     <!--[if BLOCK]><![endif]-->                                        <p class="type-b2 mt-1 line-clamp-2 text-black-400">
                                             Technology &amp; Digital Systems
                                         </p>
@@ -2407,7 +2459,7 @@
 </section>
 
     <section class="section-sheet px-4 py-10 sm:px-5 sm:py-14 lg:py-16">
-    <div class="px-10">
+    <div class="section-inner">
         <div class="mx-auto max-w-2xl text-center">
             <h2 class="type-s2 text-black-500">Who we’ve worked with</h2>
             <p class="type-b2 mt-3 text-black-400">
@@ -2472,7 +2524,7 @@
     class="bg-paper-100 px-4 py-10 sm:px-5 sm:py-14 lg:py-16"
     x-data="{ active: 0 }"
 >
-    <div class="px-10">
+    <div class="section-inner">
         <div class="grid gap-10 lg:grid-cols-[minmax(16rem,0.7fr)_minmax(0,1.6fr)] lg:items-stretch lg:gap-12 xl:gap-16">
             <div class="flex flex-col lg:h-full lg:justify-between">
                 <div>
@@ -2483,7 +2535,7 @@
                 </div>
 
                 <div
-                    class="mt-10 flex flex-col items-start gap-2 lg:mt-0"
+                    class="mt-8 flex flex-row flex-wrap items-center gap-2 lg:mt-0 lg:flex-col lg:items-start"
                     role="tablist"
                     aria-label="Regions"
                 >
@@ -2518,7 +2570,7 @@
                     <!--[if ENDBLOCK]><![endif]-->                </div>
             </div>
 
-            <div class="relative min-h-[22rem] overflow-hidden rounded-[1.75rem] bg-paper sm:min-h-[28rem] lg:min-h-[32rem] lg:rounded-[2rem]">
+            <div class="relative min-h-[16rem] overflow-hidden rounded-[1.75rem] bg-paper sm:min-h-[28rem] lg:min-h-[32rem] lg:rounded-[2rem]">
                 <!--[if BLOCK]><![endif]-->                    <div
                         id="location-panel-0"
                         role="tabpanel"
@@ -2557,16 +2609,15 @@
 </section>
 
     <section class="section-sheet px-4 py-10 sm:px-5 sm:py-14 lg:py-16">
-    <div class="px-10">
+    <div class="section-inner">
         <div class="mx-auto max-w-2xl text-center">
             <h2 class="type-s2 text-black-500">Coherence as a starting point</h2>
             <p class="type-b2 mt-3 text-black-400">
-                An identity needs a strategy. An experience needs systems that make it possible. A commercial strategy needs to understand the business it seeks to grow.
-                Our work is to connect these decisions and build solutions that work as a whole.
+                An identity needs a strategy. An experience needs systems that make it possible. A commercial strategy needs to understand the business it seeks to grow. Our work is to connect these decisions and build solutions that work as a whole.
             </p>
         </div>
 
-        <div class="mt-10 flex justify-center overflow-hidden sm:mt-14">
+        <div class="mt-10 flex justify-center overflow-visible md:overflow-hidden sm:mt-14">
             <div class="process-row">
                 <!--[if BLOCK]><![endif]-->                    <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->
                     <div class="process-circle">
@@ -2613,7 +2664,7 @@
         <footer class="bg-paper-100">
     
         <div class="px-4 py-16 sm:px-5 sm:py-20 lg:py-24">
-        <div class="mx-auto flex max-w-2xl flex-col items-center px-10 text-center">
+        <div class="mx-auto flex max-w-2xl flex-col items-center px-2 text-center sm:px-10">
             <h2 class="type-h3 text-black-500">Let’s build what comes next</h2>
             <p class="type-b2 mt-3 max-w-md text-black-400 sm:mt-4">
                 Every project begins by understanding the business, its challenges and its possibilities.
@@ -2635,7 +2686,7 @@
     
     
     <div class="px-4 pb-4 sm:px-5 sm:pb-5">
-        <div class="site-footer-panel px-8 py-10 sm:px-10 lg:py-10">
+        <div class="site-footer-panel px-6 py-8 sm:px-10 lg:py-10">
 
             
             <div class="site-footer-desktop hidden h-full lg:grid">
