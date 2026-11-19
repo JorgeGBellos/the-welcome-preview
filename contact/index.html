@@ -3,11 +3,11 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="csrf-token" content="ltKMsiHMiwU6TUk4nU60n5EnMy60RffDcGfXdIsT">
+        <meta name="csrf-token" content="WwMXOdRTh8OISKo7mD96nsy6DpIsJ0WrRejKdxW9">
 
         <title>Contact — The Welcome</title>
 
-        <link rel="preload" as="style" href="https://jorgegbellos.github.io/the-welcome-preview/build/assets/app-qTP58QPY.css" /><link rel="modulepreload" as="script" href="https://jorgegbellos.github.io/the-welcome-preview/build/assets/app-Bwn9szyo.js" /><link rel="stylesheet" href="https://jorgegbellos.github.io/the-welcome-preview/build/assets/app-qTP58QPY.css" data-navigate-track="reload" /><script type="module" src="https://jorgegbellos.github.io/the-welcome-preview/build/assets/app-Bwn9szyo.js" data-navigate-track="reload"></script>        
+        <link rel="preload" as="style" href="https://jorgegbellos.github.io/the-welcome-preview/build/assets/app-Jz2DdrfA.css" /><link rel="modulepreload" as="script" href="https://jorgegbellos.github.io/the-welcome-preview/build/assets/app-Bwn9szyo.js" /><link rel="stylesheet" href="https://jorgegbellos.github.io/the-welcome-preview/build/assets/app-Jz2DdrfA.css" data-navigate-track="reload" /><script type="module" src="https://jorgegbellos.github.io/the-welcome-preview/build/assets/app-Bwn9szyo.js" data-navigate-track="reload"></script>        
         <script>
     try {
         if (sessionStorage.getItem('tw-welcomed') === '1') {
@@ -54,6 +54,10 @@
         goContact() {
             this.markEntered()
             window.location.href = 'https:\/\/jorgegbellos.github.io\/the-welcome-preview\/contact'        },
+        goLegal(url) {
+            this.markEntered()
+            window.location.href = url
+        },
     }"
     x-init="
         let seen = document.documentElement.classList.contains('tw-entered')
@@ -261,9 +265,17 @@
         <p class="type-b3 pb-2 text-center text-[#FFFFFF]/40">
             &copy; 2026 The Welcome
             <span class="mx-2">·</span>
-            Privacy Policy
+            <a
+                href="https://jorgegbellos.github.io/the-welcome-preview/aviso-de-privacidad/"
+                class="transition-colors hover:text-[#FFFFFF]"
+                @click.prevent="goLegal('https:\/\/jorgegbellos.github.io\/the-welcome-preview\/aviso-de-privacidad')"
+            >Privacy notice</a>
             <span class="mx-2">·</span>
-            All Rights Reserved
+            <a
+                href="https://jorgegbellos.github.io/the-welcome-preview/terminos/"
+                class="transition-colors hover:text-[#FFFFFF]"
+                @click.prevent="goLegal('https:\/\/jorgegbellos.github.io\/the-welcome-preview\/terminos')"
+            >Terms of use</a>
         </p>
     </div>
 </div>
@@ -484,7 +496,7 @@
     <div class="site-header-spacer" aria-hidden="true"></div>
 
             <main class="contact-main">
-                <div wire:snapshot="{&quot;data&quot;:[],&quot;memo&quot;:{&quot;id&quot;:&quot;QLCUiDh6ReLsH48hLraY&quot;,&quot;name&quot;:&quot;pages.contact&quot;,&quot;path&quot;:&quot;contact&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;release&quot;:&quot;a-a-a&quot;,&quot;children&quot;:[],&quot;scripts&quot;:[],&quot;assets&quot;:[],&quot;errors&quot;:[],&quot;locale&quot;:&quot;en&quot;,&quot;islands&quot;:[]},&quot;checksum&quot;:&quot;118be395bf19a42c14f1f4d9309b8c256de7fb5d570f6154adf2fef7624c7e15&quot;}" wire:effects="{&quot;partials&quot;:[]}" wire:id="QLCUiDh6ReLsH48hLraY" wire:name="pages.contact" class="px-4 py-4 sm:px-5 sm:py-5">
+                <div wire:snapshot="{&quot;data&quot;:[],&quot;memo&quot;:{&quot;id&quot;:&quot;VRVV6aa3Mow7ijZvd0mT&quot;,&quot;name&quot;:&quot;pages.contact&quot;,&quot;path&quot;:&quot;contact&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;release&quot;:&quot;a-a-a&quot;,&quot;children&quot;:[],&quot;scripts&quot;:[],&quot;assets&quot;:[],&quot;errors&quot;:[],&quot;locale&quot;:&quot;en&quot;,&quot;islands&quot;:[]},&quot;checksum&quot;:&quot;c9a17a68f7358411d0a29edbf257f086a0ecb2cbfc77ffdc66c35324fbb9e914&quot;}" wire:effects="{&quot;partials&quot;:[]}" wire:id="VRVV6aa3Mow7ijZvd0mT" wire:name="pages.contact" class="px-4 py-4 sm:px-5 sm:py-5">
     <div class="mx-auto max-w-xl px-1 text-center sm:px-6">
         <img
             src="https://jorgegbellos.github.io/the-welcome-preview/images/svg/Logotipo.svg"
@@ -498,7 +510,7 @@
         </p>
 
         <form class="mt-4 space-y-1.5 text-left sm:mt-5" action="#" method="post">
-            <input type="hidden" name="_token" value="ltKMsiHMiwU6TUk4nU60n5EnMy60RffDcGfXdIsT" autocomplete="off">
+            <input type="hidden" name="_token" value="WwMXOdRTh8OISKo7mD96nsy6DpIsJ0WrRejKdxW9" autocomplete="off">
             <label class="sr-only" for="contact-name">Full name</label>
             <input
                 id="contact-name"
@@ -610,6 +622,14 @@
     </svg></span>
         <!--[if ENDBLOCK]><![endif]-->    </button>
 <!--[if ENDBLOCK]><![endif]-->            </div>
+
+            <p class="type-b3 pt-2 text-center text-[#FFFFFF]/55">
+                By sending this inquiry, you accept our
+                <a
+                    href="https://jorgegbellos.github.io/the-welcome-preview/aviso-de-privacidad/"
+                    class="text-[#FFFFFF] underline-offset-2 hover:underline"
+                >Privacy notice</a>.
+            </p>
         </form>
 
         <p class="type-b3 mt-4 text-[#FFFFFF]/75">
@@ -630,7 +650,7 @@
         <div class="site-footer-panel px-6 py-8 sm:px-10 lg:py-10">
 
             
-            <div class="site-footer-desktop hidden h-full lg:grid">
+            <div class="site-footer-desktop hidden h-full lg:flex">
                 
                 <div class="site-footer-brand">
                     <img
@@ -647,8 +667,9 @@
                     </div>
                 </div>
 
-                
-                <div class="site-footer-discover">
+                <div class="site-footer-info">
+                    
+                    <div class="site-footer-discover">
                     <div>
                         <p class="type-b3 text-[#F9F6F5]/55">Discover</p>
                         <ul class="mt-3 flex flex-col gap-2.5">
@@ -709,14 +730,8 @@
                         </ul>
                     </div>
 
-                    <div class="mt-auto flex flex-wrap items-center gap-x-6 gap-y-2 pt-6">
+                    <div class="mt-auto pt-6">
                         <span class="type-b3 text-[#F9F6F5]/45">All Rights Reserved</span>
-                        <a
-                            href="#"
-                            class="type-b3 text-[#F9F6F5]/45 transition-colors hover:text-[#F9F6F5]"
-                        >
-                            Privacy Policy
-                        </a>
                     </div>
                 </div>
 
@@ -744,15 +759,39 @@
                                                     </ul>
                     </div>
 
-                    <div class="mt-auto flex justify-end pt-6">
-                        <img
-                            src="https://jorgegbellos.github.io/the-welcome-preview/images/svg/Logotipo (2).svg"
-                            alt="The Welcome"
-                            class="site-footer-mark"
-                            width="31"
-                            height="24"
-                        >
+                    <div class="mt-8">
+                        <p class="type-b3 text-[#F9F6F5]/55">Legal</p>
+                        <ul class="mt-3 flex flex-col gap-2.5">
+                                                            <li>
+                                    <a
+                                        href="https://jorgegbellos.github.io/the-welcome-preview/aviso-de-privacidad/"
+                                        class="type-b2 text-[#F9F6F5] transition-opacity hover:opacity-70"
+                                    >
+                                        Privacy notice
+                                    </a>
+                                </li>
+                                                            <li>
+                                    <a
+                                        href="https://jorgegbellos.github.io/the-welcome-preview/terminos/"
+                                        class="type-b2 text-[#F9F6F5] transition-opacity hover:opacity-70"
+                                    >
+                                        Terms of use
+                                    </a>
+                                </li>
+                                                    </ul>
                     </div>
+                </div>
+
+                
+                <div class="site-footer-mark-col">
+                    <img
+                        src="https://jorgegbellos.github.io/the-welcome-preview/images/svg/Logotipo (2).svg"
+                        alt="The Welcome"
+                        class="site-footer-mark"
+                        width="31"
+                        height="24"
+                    >
+                </div>
                 </div>
             </div>
 
@@ -848,14 +887,30 @@
                                             </ul>
                 </div>
 
-                <div class="mt-12 flex w-full items-center justify-between gap-4">
+                <div class="mt-10">
+                    <p class="type-b3 text-[#F9F6F5]/55">Legal</p>
+                    <ul class="mt-3 flex flex-col items-center gap-2.5">
+                                                    <li>
+                                <a
+                                    href="https://jorgegbellos.github.io/the-welcome-preview/aviso-de-privacidad/"
+                                    class="type-b2 font-semibold text-[#F9F6F5] transition-opacity hover:opacity-70"
+                                >
+                                    Privacy notice
+                                </a>
+                            </li>
+                                                    <li>
+                                <a
+                                    href="https://jorgegbellos.github.io/the-welcome-preview/terminos/"
+                                    class="type-b2 font-semibold text-[#F9F6F5] transition-opacity hover:opacity-70"
+                                >
+                                    Terms of use
+                                </a>
+                            </li>
+                                            </ul>
+                </div>
+
+                <div class="mt-12 w-full">
                     <span class="type-b3 text-[#F9F6F5]/45">All Rights Reserved</span>
-                    <a
-                        href="#"
-                        class="type-b3 text-[#F9F6F5]/45 transition-colors hover:text-[#F9F6F5]"
-                    >
-                        Privacy Policy
-                    </a>
                 </div>
             </div>
 

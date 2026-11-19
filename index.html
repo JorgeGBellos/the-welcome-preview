@@ -3,11 +3,11 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="csrf-token" content="ltKMsiHMiwU6TUk4nU60n5EnMy60RffDcGfXdIsT">
+        <meta name="csrf-token" content="WwMXOdRTh8OISKo7mD96nsy6DpIsJ0WrRejKdxW9">
 
         <title>Home — The Welcome</title>
 
-        <link rel="preload" as="style" href="https://jorgegbellos.github.io/the-welcome-preview/build/assets/app-qTP58QPY.css" /><link rel="modulepreload" as="script" href="https://jorgegbellos.github.io/the-welcome-preview/build/assets/app-Bwn9szyo.js" /><link rel="stylesheet" href="https://jorgegbellos.github.io/the-welcome-preview/build/assets/app-qTP58QPY.css" data-navigate-track="reload" /><script type="module" src="https://jorgegbellos.github.io/the-welcome-preview/build/assets/app-Bwn9szyo.js" data-navigate-track="reload"></script>        <!-- Livewire Styles --><style >[wire\:loading][wire\:loading], [wire\:loading\.delay][wire\:loading\.delay], [wire\:loading\.list-item][wire\:loading\.list-item], [wire\:loading\.inline-block][wire\:loading\.inline-block], [wire\:loading\.inline][wire\:loading\.inline], [wire\:loading\.block][wire\:loading\.block], [wire\:loading\.flex][wire\:loading\.flex], [wire\:loading\.table][wire\:loading\.table], [wire\:loading\.grid][wire\:loading\.grid], [wire\:loading\.inline-flex][wire\:loading\.inline-flex] {display: none;}[wire\:loading\.delay\.none][wire\:loading\.delay\.none], [wire\:loading\.delay\.shortest][wire\:loading\.delay\.shortest], [wire\:loading\.delay\.shorter][wire\:loading\.delay\.shorter], [wire\:loading\.delay\.short][wire\:loading\.delay\.short], [wire\:loading\.delay\.default][wire\:loading\.delay\.default], [wire\:loading\.delay\.long][wire\:loading\.delay\.long], [wire\:loading\.delay\.longer][wire\:loading\.delay\.longer], [wire\:loading\.delay\.longest][wire\:loading\.delay\.longest] {display: none;}[wire\:offline][wire\:offline] {display: none;}[wire\:dirty]:not(textarea):not(input):not(select) {display: none;}:root {--livewire-progress-bar-color: #2299dd;}[x-cloak="x-cloak"],[x-cloak=""] {display: none !important;}[wire\:cloak="wire:cloak"],[wire\:cloak=""] {display: none !important;}dialog#livewire-error::backdrop {background-color: rgba(0, 0, 0, .6);}</style>
+        <link rel="preload" as="style" href="https://jorgegbellos.github.io/the-welcome-preview/build/assets/app-Jz2DdrfA.css" /><link rel="modulepreload" as="script" href="https://jorgegbellos.github.io/the-welcome-preview/build/assets/app-Bwn9szyo.js" /><link rel="stylesheet" href="https://jorgegbellos.github.io/the-welcome-preview/build/assets/app-Jz2DdrfA.css" data-navigate-track="reload" /><script type="module" src="https://jorgegbellos.github.io/the-welcome-preview/build/assets/app-Bwn9szyo.js" data-navigate-track="reload"></script>        <!-- Livewire Styles --><style >[wire\:loading][wire\:loading], [wire\:loading\.delay][wire\:loading\.delay], [wire\:loading\.list-item][wire\:loading\.list-item], [wire\:loading\.inline-block][wire\:loading\.inline-block], [wire\:loading\.inline][wire\:loading\.inline], [wire\:loading\.block][wire\:loading\.block], [wire\:loading\.flex][wire\:loading\.flex], [wire\:loading\.table][wire\:loading\.table], [wire\:loading\.grid][wire\:loading\.grid], [wire\:loading\.inline-flex][wire\:loading\.inline-flex] {display: none;}[wire\:loading\.delay\.none][wire\:loading\.delay\.none], [wire\:loading\.delay\.shortest][wire\:loading\.delay\.shortest], [wire\:loading\.delay\.shorter][wire\:loading\.delay\.shorter], [wire\:loading\.delay\.short][wire\:loading\.delay\.short], [wire\:loading\.delay\.default][wire\:loading\.delay\.default], [wire\:loading\.delay\.long][wire\:loading\.delay\.long], [wire\:loading\.delay\.longer][wire\:loading\.delay\.longer], [wire\:loading\.delay\.longest][wire\:loading\.delay\.longest] {display: none;}[wire\:offline][wire\:offline] {display: none;}[wire\:dirty]:not(textarea):not(input):not(select) {display: none;}:root {--livewire-progress-bar-color: #2299dd;}[x-cloak="x-cloak"],[x-cloak=""] {display: none !important;}[wire\:cloak="wire:cloak"],[wire\:cloak=""] {display: none !important;}dialog#livewire-error::backdrop {background-color: rgba(0, 0, 0, .6);}</style>
         <script>
     try {
         if (sessionStorage.getItem('tw-welcomed') === '1') {
@@ -48,6 +48,10 @@
         goContact() {
             this.markEntered()
             window.location.href = 'https:\/\/jorgegbellos.github.io\/the-welcome-preview\/contact'        },
+        goLegal(url) {
+            this.markEntered()
+            window.location.href = url
+        },
     }"
     x-init="
         let seen = document.documentElement.classList.contains('tw-entered')
@@ -255,15 +259,23 @@
         <p class="type-b3 pb-2 text-center text-[#FFFFFF]/40">
             &copy; 2026 The Welcome
             <span class="mx-2">·</span>
-            Privacy Policy
+            <a
+                href="https://jorgegbellos.github.io/the-welcome-preview/aviso-de-privacidad/"
+                class="transition-colors hover:text-[#FFFFFF]"
+                @click.prevent="goLegal('https:\/\/jorgegbellos.github.io\/the-welcome-preview\/aviso-de-privacidad')"
+            >Privacy notice</a>
             <span class="mx-2">·</span>
-            All Rights Reserved
+            <a
+                href="https://jorgegbellos.github.io/the-welcome-preview/terminos/"
+                class="transition-colors hover:text-[#FFFFFF]"
+                @click.prevent="goLegal('https:\/\/jorgegbellos.github.io\/the-welcome-preview\/terminos')"
+            >Terms of use</a>
         </p>
     </div>
 </div>
 
         <main>
-            <div wire:snapshot="{&quot;data&quot;:[],&quot;memo&quot;:{&quot;id&quot;:&quot;RX3FMeHfIpvLhc7wCRtr&quot;,&quot;name&quot;:&quot;pages.home&quot;,&quot;path&quot;:&quot;\/&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;release&quot;:&quot;a-a-a&quot;,&quot;children&quot;:[],&quot;scripts&quot;:[],&quot;assets&quot;:[],&quot;errors&quot;:[],&quot;locale&quot;:&quot;en&quot;,&quot;islands&quot;:[]},&quot;checksum&quot;:&quot;b14c623ad0ed4235b75eed6f9b9130f76b1f1043ab2a33cee59a7b805c3943d7&quot;}" wire:effects="{&quot;partials&quot;:[]}" wire:id="RX3FMeHfIpvLhc7wCRtr" wire:name="pages.home">
+            <div wire:snapshot="{&quot;data&quot;:[],&quot;memo&quot;:{&quot;id&quot;:&quot;xHLioi4xTRRePDRmJOa4&quot;,&quot;name&quot;:&quot;pages.home&quot;,&quot;path&quot;:&quot;\/&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;release&quot;:&quot;a-a-a&quot;,&quot;children&quot;:[],&quot;scripts&quot;:[],&quot;assets&quot;:[],&quot;errors&quot;:[],&quot;locale&quot;:&quot;en&quot;,&quot;islands&quot;:[]},&quot;checksum&quot;:&quot;82587274d0b879a2237596d3a70a806a43f1aca059edb87650a33f7cf7282493&quot;}" wire:effects="{&quot;partials&quot;:[]}" wire:id="xHLioi4xTRRePDRmJOa4" wire:name="pages.home">
     <header
     class="fixed inset-x-0 top-0 z-[200] px-4 pt-4 sm:px-5 sm:pt-5 animate-[fade-in_0.6s_ease-out]"
     x-data="{
@@ -2689,7 +2701,7 @@
         <div class="site-footer-panel px-6 py-8 sm:px-10 lg:py-10">
 
             
-            <div class="site-footer-desktop hidden h-full lg:grid">
+            <div class="site-footer-desktop hidden h-full lg:flex">
                 
                 <div class="site-footer-brand">
                     <img
@@ -2706,8 +2718,9 @@
                     </div>
                 </div>
 
-                
-                <div class="site-footer-discover">
+                <div class="site-footer-info">
+                    
+                    <div class="site-footer-discover">
                     <div>
                         <p class="type-b3 text-[#F9F6F5]/55">Discover</p>
                         <ul class="mt-3 flex flex-col gap-2.5">
@@ -2768,14 +2781,8 @@
                         </ul>
                     </div>
 
-                    <div class="mt-auto flex flex-wrap items-center gap-x-6 gap-y-2 pt-6">
+                    <div class="mt-auto pt-6">
                         <span class="type-b3 text-[#F9F6F5]/45">All Rights Reserved</span>
-                        <a
-                            href="#"
-                            class="type-b3 text-[#F9F6F5]/45 transition-colors hover:text-[#F9F6F5]"
-                        >
-                            Privacy Policy
-                        </a>
                     </div>
                 </div>
 
@@ -2803,15 +2810,39 @@
                                                     </ul>
                     </div>
 
-                    <div class="mt-auto flex justify-end pt-6">
-                        <img
-                            src="https://jorgegbellos.github.io/the-welcome-preview/images/svg/Logotipo (2).svg"
-                            alt="The Welcome"
-                            class="site-footer-mark"
-                            width="31"
-                            height="24"
-                        >
+                    <div class="mt-8">
+                        <p class="type-b3 text-[#F9F6F5]/55">Legal</p>
+                        <ul class="mt-3 flex flex-col gap-2.5">
+                                                            <li>
+                                    <a
+                                        href="https://jorgegbellos.github.io/the-welcome-preview/aviso-de-privacidad/"
+                                        class="type-b2 text-[#F9F6F5] transition-opacity hover:opacity-70"
+                                    >
+                                        Privacy notice
+                                    </a>
+                                </li>
+                                                            <li>
+                                    <a
+                                        href="https://jorgegbellos.github.io/the-welcome-preview/terminos/"
+                                        class="type-b2 text-[#F9F6F5] transition-opacity hover:opacity-70"
+                                    >
+                                        Terms of use
+                                    </a>
+                                </li>
+                                                    </ul>
                     </div>
+                </div>
+
+                
+                <div class="site-footer-mark-col">
+                    <img
+                        src="https://jorgegbellos.github.io/the-welcome-preview/images/svg/Logotipo (2).svg"
+                        alt="The Welcome"
+                        class="site-footer-mark"
+                        width="31"
+                        height="24"
+                    >
+                </div>
                 </div>
             </div>
 
@@ -2907,14 +2938,30 @@
                                             </ul>
                 </div>
 
-                <div class="mt-12 flex w-full items-center justify-between gap-4">
+                <div class="mt-10">
+                    <p class="type-b3 text-[#F9F6F5]/55">Legal</p>
+                    <ul class="mt-3 flex flex-col items-center gap-2.5">
+                                                    <li>
+                                <a
+                                    href="https://jorgegbellos.github.io/the-welcome-preview/aviso-de-privacidad/"
+                                    class="type-b2 font-semibold text-[#F9F6F5] transition-opacity hover:opacity-70"
+                                >
+                                    Privacy notice
+                                </a>
+                            </li>
+                                                    <li>
+                                <a
+                                    href="https://jorgegbellos.github.io/the-welcome-preview/terminos/"
+                                    class="type-b2 font-semibold text-[#F9F6F5] transition-opacity hover:opacity-70"
+                                >
+                                    Terms of use
+                                </a>
+                            </li>
+                                            </ul>
+                </div>
+
+                <div class="mt-12 w-full">
                     <span class="type-b3 text-[#F9F6F5]/45">All Rights Reserved</span>
-                    <a
-                        href="#"
-                        class="type-b3 text-[#F9F6F5]/45 transition-colors hover:text-[#F9F6F5]"
-                    >
-                        Privacy Policy
-                    </a>
                 </div>
             </div>
 

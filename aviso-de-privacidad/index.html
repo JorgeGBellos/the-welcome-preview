@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="csrf-token" content="WwMXOdRTh8OISKo7mD96nsy6DpIsJ0WrRejKdxW9">
+
+        <title>Privacy notice — The Welcome</title>
+
+        <link rel="preload" as="style" href="https://jorgegbellos.github.io/the-welcome-preview/build/assets/app-Jz2DdrfA.css" /><link rel="modulepreload" as="script" href="https://jorgegbellos.github.io/the-welcome-preview/build/assets/app-Bwn9szyo.js" /><link rel="stylesheet" href="https://jorgegbellos.github.io/the-welcome-preview/build/assets/app-Jz2DdrfA.css" data-navigate-track="reload" /><script type="module" src="https://jorgegbellos.github.io/the-welcome-preview/build/assets/app-Bwn9szyo.js" data-navigate-track="reload"></script>        
+        <script>
+    try {
+        if (sessionStorage.getItem('tw-welcomed') === '1') {
+            document.documentElement.classList.add('tw-entered');
+        }
+    } catch (e) {}
+</script>
+            <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js"></script>
+    </head>
+    <body class="min-h-screen bg-paper-100 font-sans text-black-500 antialiased">
+        <div
+    class="welcome-gate"
+    x-data="{
+        open: true,
+        hover: 0,
+        markEntered() {
+            try { sessionStorage.setItem('tw-welcomed', '1') } catch (e) {}
+            document.body.style.overflow = ''
+            this.open = false
+            setTimeout(() => {
+                document.documentElement.classList.add('tw-entered')
+            }, 700)
+        },
+        goPractice(id) {
+            this.markEntered()
+            const el = document.getElementById(id)
+            if (el) {
+                this.$nextTick(() => el.scrollIntoView({ behavior: 'smooth', block: 'start' }))
+                return
+            }
+            window.location.href = 'https:\/\/jorgegbellos.github.io\/the-welcome-preview' + '#' + id
+        },
+        goHome() {
+            this.markEntered()
+            if (! false) {
+                window.location.href = 'https:\/\/jorgegbellos.github.io\/the-welcome-preview'            }
+        },
+        goContact() {
+            this.markEntered()
+            window.location.href = 'https:\/\/jorgegbellos.github.io\/the-welcome-preview\/contact'        },
+        goLegal(url) {
+            this.markEntered()
+            window.location.href = url
+        },
+    }"
+    x-init="
+        let seen = document.documentElement.classList.contains('tw-entered')
+        try { seen = seen || sessionStorage.getItem('tw-welcomed') === '1' } catch (e) {}
+        if (seen) {
+            document.documentElement.classList.add('tw-entered')
+            open = false
+            document.body.style.overflow = ''
+        } else {
+            document.body.style.overflow = 'hidden'
+        }
+    "
+    x-show="open"
+    x-transition:leave="transition ease-out duration-700"
+    x-transition:leave-start="opacity-100"
+    x-transition:leave-end="opacity-0"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="welcome-title"
+>
+    <img
+        src="https://jorgegbellos.github.io/the-welcome-preview/images/home/welcome-gate.png"
+        alt=""
+        class="welcome-gate__image"
+    >
+
+    <div class="relative flex min-h-dvh flex-col px-5 py-6 sm:px-8 sm:py-8">
+        <div class="flex justify-end">
+            <div
+    class="flex items-center"
+    x-data="{ langOpen: false }"
+    @keydown.escape.window="langOpen = false"
+    @click.outside="langOpen = false"
+>
+    <button
+        type="button"
+        class="inline-flex size-9 shrink-0 items-center justify-center rounded-full transition-opacity hover:opacity-70 sm:size-10 lg:size-11"
+        @click="langOpen = ! langOpen"
+        :aria-expanded="langOpen.toString()"
+        aria-controls="language-options-light"
+        aria-label="Language"
+    >
+        <img
+            src="https://jorgegbellos.github.io/the-welcome-preview/images/svg/Idioma_B.svg"
+            alt=""
+            class="size-8 brightness-0 invert sm:size-9"
+        >
+    </button>
+
+    <div
+        id="language-options-light"
+        class="lang-switcher-options"
+        :class="langOpen && 'is-open'"
+        role="listbox"
+        aria-label="Language"
+    >
+        <div>
+            <div class="flex min-w-max items-center gap-2 pl-1.5">
+                                                        <a
+                        href="https://jorgegbellos.github.io/the-welcome-preview/locale/es"
+                        role="option"
+                        aria-selected="false"
+                        class="lang-chip type-button-3 uppercase lang-chip--light"
+                    >
+                        ES
+                    </a>
+                                                        <a
+                        href="https://jorgegbellos.github.io/the-welcome-preview/locale/en"
+                        role="option"
+                        aria-selected="true"
+                        class="lang-chip type-button-3 uppercase lang-chip--light is-active"
+                    >
+                        EN
+                    </a>
+                            </div>
+        </div>
+    </div>
+</div>
+        </div>
+
+        <div class="mx-auto flex w-full max-w-lg flex-1 flex-col items-center justify-center py-8 text-center">
+            <img
+                src="https://jorgegbellos.github.io/the-welcome-preview/images/svg/Escudos.svg"
+                alt=""
+                class="h-24 w-auto sm:h-28"
+                style="filter: brightness(0) invert(1);"
+                width="187"
+                height="141"
+            >
+
+            <h1 id="welcome-title" class="type-h4 mt-8 text-[#FFFFFF] sm:mt-10">
+                Welcome. It’s good to have you here
+            </h1>
+            <p class="type-b2 mt-3 text-[#FFFFFF]/70">
+                Before we begin, how can we help?
+            </p>
+
+            <div class="mt-8 w-full max-w-sm" role="list">
+                                    <button
+                        type="button"
+                        role="listitem"
+                        class="welcome-option type-b2"
+                        :class="hover === 0 && 'is-active'"
+                        @mouseenter="hover = 0"
+                        @focus="hover = 0"
+                        @click="goPractice('practice-consulting')"
+                    >
+                        <span>
+                            <span class="text-[#FFFFFF]/45">01</span>
+                            <span class="ml-2">Consulting &amp; Strategy</span>
+                        </span>
+                        <span class="welcome-option-arrow" aria-hidden="true">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.75" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                            </svg>
+                        </span>
+                    </button>
+                                    <button
+                        type="button"
+                        role="listitem"
+                        class="welcome-option type-b2"
+                        :class="hover === 1 && 'is-active'"
+                        @mouseenter="hover = 1"
+                        @focus="hover = 1"
+                        @click="goPractice('practice-identity')"
+                    >
+                        <span>
+                            <span class="text-[#FFFFFF]/45">02</span>
+                            <span class="ml-2">Identity &amp; Experience</span>
+                        </span>
+                        <span class="welcome-option-arrow" aria-hidden="true">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.75" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                            </svg>
+                        </span>
+                    </button>
+                                    <button
+                        type="button"
+                        role="listitem"
+                        class="welcome-option type-b2"
+                        :class="hover === 2 && 'is-active'"
+                        @mouseenter="hover = 2"
+                        @focus="hover = 2"
+                        @click="goPractice('practice-technology')"
+                    >
+                        <span>
+                            <span class="text-[#FFFFFF]/45">03</span>
+                            <span class="ml-2">Technology &amp; Digital Systems</span>
+                        </span>
+                        <span class="welcome-option-arrow" aria-hidden="true">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.75" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                            </svg>
+                        </span>
+                    </button>
+                                    <button
+                        type="button"
+                        role="listitem"
+                        class="welcome-option type-b2"
+                        :class="hover === 3 && 'is-active'"
+                        @mouseenter="hover = 3"
+                        @focus="hover = 3"
+                        @click="goPractice('practice-commerce')"
+                    >
+                        <span>
+                            <span class="text-[#FFFFFF]/45">04</span>
+                            <span class="ml-2">Commerce &amp; Growth</span>
+                        </span>
+                        <span class="welcome-option-arrow" aria-hidden="true">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.75" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                            </svg>
+                        </span>
+                    </button>
+                            </div>
+
+            <p class="type-label-s mt-10 tracking-[0.18em] text-[#FFFFFF]/45">
+                NOT SURE YET?
+            </p>
+
+            <div class="mt-4 flex w-full max-w-sm flex-col gap-3">
+                <button
+        type="button"
+        class="btn btn-2 btn-solid-white w-full rounded-xl" @click="goContact()"
+    >
+        
+        <span>Let&#039;s talk</span>
+
+            </button>
+
+                <button
+        type="button"
+        class="btn btn-2 btn-outline-white w-full rounded-xl" @click="goHome()"
+    >
+        
+        <span>Explore the full site</span>
+
+                    <span class="btn-icon">    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+    </svg></span>
+            </button>
+            </div>
+        </div>
+
+        <p class="type-b3 pb-2 text-center text-[#FFFFFF]/40">
+            &copy; 2026 The Welcome
+            <span class="mx-2">·</span>
+            <a
+                href="https://jorgegbellos.github.io/the-welcome-preview/aviso-de-privacidad/"
+                class="transition-colors hover:text-[#FFFFFF]"
+                @click.prevent="goLegal('https:\/\/jorgegbellos.github.io\/the-welcome-preview\/aviso-de-privacidad')"
+            >Privacy notice</a>
+            <span class="mx-2">·</span>
+            <a
+                href="https://jorgegbellos.github.io/the-welcome-preview/terminos/"
+                class="transition-colors hover:text-[#FFFFFF]"
+                @click.prevent="goLegal('https:\/\/jorgegbellos.github.io\/the-welcome-preview\/terminos')"
+            >Terms of use</a>
+        </p>
+    </div>
+</div>
+
+        <main>
+            <div wire:snapshot="{&quot;data&quot;:{&quot;document&quot;:&quot;privacy&quot;},&quot;memo&quot;:{&quot;id&quot;:&quot;gXoUoloQ0rLTRClki6kr&quot;,&quot;name&quot;:&quot;pages.privacy&quot;,&quot;path&quot;:&quot;aviso-de-privacidad&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;release&quot;:&quot;a-a-a&quot;,&quot;children&quot;:[],&quot;scripts&quot;:[],&quot;assets&quot;:[],&quot;errors&quot;:[],&quot;locale&quot;:&quot;en&quot;,&quot;islands&quot;:[]},&quot;checksum&quot;:&quot;b9e9f3b0ec6979d4b7968e4bf29caf85d48fe0db419eb5541422b1a462f40f28&quot;}" wire:effects="{&quot;partials&quot;:[]}" wire:id="gXoUoloQ0rLTRClki6kr" wire:name="pages.privacy">
+    <header
+    class="fixed inset-x-0 top-0 z-[200] px-4 pt-4 sm:px-5 sm:pt-5 animate-[fade-in_0.6s_ease-out]"
+    x-data="{
+        open: false,
+        scrolled: false,
+        onScroll() {
+            this.scrolled = window.scrollY > 8
+        },
+    }"
+    x-init="onScroll(); window.addEventListener('scroll', () => onScroll(), { passive: true })"
+>
+    <div
+        class="site-header-bar box-border flex h-14 items-center justify-between rounded-2xl px-4 shadow-sm sm:h-16 sm:px-6 lg:grid lg:h-20 lg:grid-cols-[1fr_auto_1fr] lg:gap-4 lg:px-10 lg:py-4"
+        :class="scrolled && 'is-frosted'"
+    >
+        <a href="https://jorgegbellos.github.io/the-welcome-preview/" class="justify-self-start shrink-0" aria-label="The Welcome">
+            <img
+                src="https://jorgegbellos.github.io/the-welcome-preview/images/svg/Logotipo (1).svg"
+                alt=""
+                class="h-6 w-auto lg:hidden"
+            >
+            <img
+                src="https://jorgegbellos.github.io/the-welcome-preview/images/svg/Logotipo.svg"
+                alt="The Welcome"
+                class="hidden h-6 w-auto lg:block"
+            >
+        </a>
+
+        <nav class="hidden items-center gap-6 lg:flex xl:gap-8" aria-label="Primary">
+            <!--[if BLOCK]><![endif]-->                <a
+                    href="https://jorgegbellos.github.io/the-welcome-preview/services/"
+                    class="type-button-3 transition-colors text-black-500 hover:text-orange-500"
+                >
+                    Expertise
+                </a>
+                            <a
+                    href="https://jorgegbellos.github.io/the-welcome-preview/projects/"
+                    class="type-button-3 transition-colors text-black-500 hover:text-orange-500"
+                >
+                    Work
+                </a>
+                            <a
+                    href="https://jorgegbellos.github.io/the-welcome-preview/about/"
+                    class="type-button-3 transition-colors text-black-500 hover:text-orange-500"
+                >
+                    About us
+                </a>
+                            <a
+                    href="https://jorgegbellos.github.io/the-welcome-preview/contact/"
+                    class="type-button-3 transition-colors text-black-500 hover:text-orange-500"
+                >
+                    Contact
+                </a>
+            <!--[if ENDBLOCK]><![endif]-->        </nav>
+
+        <div class="flex items-center justify-self-end gap-1.5 sm:gap-4 lg:gap-5">
+            <div
+    class="flex items-center"
+    x-data="{ langOpen: false }"
+    @keydown.escape.window="langOpen = false"
+    @click.outside="langOpen = false"
+>
+    <button
+        type="button"
+        class="inline-flex size-9 shrink-0 items-center justify-center rounded-full transition-opacity hover:opacity-70 sm:size-10 lg:size-11"
+        @click="langOpen = ! langOpen"
+        :aria-expanded="langOpen.toString()"
+        aria-controls="language-options-default"
+        aria-label="Language"
+    >
+        <img
+            src="https://jorgegbellos.github.io/the-welcome-preview/images/svg/Idioma_B.svg"
+            alt=""
+            class="size-6 sm:size-7 lg:size-10"
+        >
+    </button>
+
+    <div
+        id="language-options-default"
+        class="lang-switcher-options"
+        :class="langOpen && 'is-open'"
+        role="listbox"
+        aria-label="Language"
+    >
+        <div>
+            <div class="flex min-w-max items-center gap-2 pl-1.5">
+                <!--[if BLOCK]><![endif]-->                                        <a
+                        href="https://jorgegbellos.github.io/the-welcome-preview/locale/es"
+                        role="option"
+                        aria-selected="false"
+                        class="lang-chip type-button-3 uppercase"
+                    >
+                        ES
+                    </a>
+                                                        <a
+                        href="https://jorgegbellos.github.io/the-welcome-preview/locale/en"
+                        role="option"
+                        aria-selected="true"
+                        class="lang-chip type-button-3 uppercase is-active"
+                    >
+                        EN
+                    </a>
+                <!--[if ENDBLOCK]><![endif]-->            </div>
+        </div>
+    </div>
+</div>
+
+            <div class="hidden lg:block">
+                <!--[if BLOCK]><![endif]-->    <a
+        href="https://jorgegbellos.github.io/the-welcome-preview/contact/"
+        class="btn btn-2 btn-solid-black !h-12 !rounded-xl !py-0"=""
+    >
+        <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->
+        <span>Let&#039;s talk</span>
+
+        <!--[if BLOCK]><![endif]-->            <span class="btn-icon">    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+    </svg></span>
+        <!--[if ENDBLOCK]><![endif]-->    </a>
+<!--[if ENDBLOCK]><![endif]-->            </div>
+
+            <button
+                type="button"
+                class="inline-flex size-9 shrink-0 items-center justify-center rounded-full text-black-500 transition-opacity hover:opacity-70 sm:size-10 lg:hidden"
+                @click="open = ! open"
+                :aria-expanded="open.toString()"
+                aria-controls="mobile-nav"
+                aria-label="Menu"
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.75"
+                    stroke="currentColor"
+                    class="size-7"
+                    aria-hidden="true"
+                    x-show="! open"
+                >
+                    <path stroke-linecap="round" d="M4 7.5h16M4 12h16M4 16.5h16" />
+                </svg>
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.75"
+                    stroke="currentColor"
+                    class="size-7"
+                    aria-hidden="true"
+                    x-cloak
+                    x-show="open"
+                >
+                    <path stroke-linecap="round" d="M6 18 18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <nav
+        id="mobile-nav"
+        class="site-header-panel mt-2 rounded-2xl px-5 py-4 shadow-sm lg:hidden"
+        :class="scrolled && 'is-frosted'"
+        x-show="open"
+        x-cloak
+        x-transition
+        aria-label="Mobile"
+    >
+        <div class="flex flex-col gap-4">
+            <!--[if BLOCK]><![endif]-->                <a
+                    href="https://jorgegbellos.github.io/the-welcome-preview/services/"
+                    class="type-button-3 text-black-500"
+                    @click="open = false"
+                >
+                    Expertise
+                </a>
+                            <a
+                    href="https://jorgegbellos.github.io/the-welcome-preview/projects/"
+                    class="type-button-3 text-black-500"
+                    @click="open = false"
+                >
+                    Work
+                </a>
+                            <a
+                    href="https://jorgegbellos.github.io/the-welcome-preview/about/"
+                    class="type-button-3 text-black-500"
+                    @click="open = false"
+                >
+                    About us
+                </a>
+                            <a
+                    href="https://jorgegbellos.github.io/the-welcome-preview/contact/"
+                    class="type-button-3 text-black-500"
+                    @click="open = false"
+                >
+                    Contact
+                </a>
+            <!--[if ENDBLOCK]><![endif]-->
+            <!--[if BLOCK]><![endif]-->    <a
+        href="https://jorgegbellos.github.io/the-welcome-preview/contact/"
+        class="btn btn-2 btn-solid-black rounded-xl"=""
+    >
+        <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->
+        <span>Let&#039;s talk</span>
+
+        <!--[if BLOCK]><![endif]-->            <span class="btn-icon">    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+    </svg></span>
+        <!--[if ENDBLOCK]><![endif]-->    </a>
+<!--[if ENDBLOCK]><![endif]-->        </div>
+    </nav>
+</header>
+
+<!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->
+    <section class="px-4 sm:px-5">
+        <div class="site-header-spacer" aria-hidden="true"></div>
+
+        <div class="px-1 pb-8 pt-6 sm:px-6 lg:px-10 lg:pb-12 lg:pt-10">
+            <p class="type-label-l text-black-500">Legal</p>
+            <h1 class="type-h3 mt-2 text-black-500">
+                Privacy notice
+            </h1>
+            <p class="type-b2 mt-3 max-w-2xl text-black-400">
+                This is The Welcome’s comprehensive privacy notice, in line with Mexico’s Federal Law on the Protection of Personal Data Held by Private Parties and its Regulations.
+            </p>
+            <p class="type-b3 mt-2 text-black-300">
+                Last updated: November 19, 2026
+            </p>
+        </div>
+    </section>
+
+    <section class="section-sheet relative z-[2] px-4 py-12 sm:px-5 sm:py-16 lg:py-20">
+        <div class="section-inner mx-auto max-w-3xl">
+            <div class="space-y-10">
+                <!--[if BLOCK]><![endif]-->                    <article>
+                        <h2 class="type-s2 text-black-500">
+                            1. Identity of the controller
+                        </h2>
+
+                        <!--[if BLOCK]><![endif]-->                            <p class="type-b2 mt-3 text-black-400">
+                                The Welcome, a hospitality intelligence studio, is the controller of personal data collected through this website.
+                            </p>
+                                                    <p class="type-b2 mt-3 text-black-400">
+                                To exercise ARCO rights, withdraw consent, or ask a privacy question, write to us from the Contact page or call +52 (999) 903 1257. If you need the controller’s address for those purposes, request it through the same channels and we will provide it.
+                            </p>
+                        <!--[if ENDBLOCK]><![endif]-->
+                        <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->                    </article>
+                                    <article>
+                        <h2 class="type-s2 text-black-500">
+                            2. Personal data we collect
+                        </h2>
+
+                        <!--[if BLOCK]><![endif]-->                            <p class="type-b2 mt-3 text-black-400">
+                                We collect data directly when you contact us, and technical data needed to operate the site.
+                            </p>
+                        <!--[if ENDBLOCK]><![endif]-->
+                        <!--[if BLOCK]><![endif]-->                            <ul class="legal-list">
+                                <!--[if BLOCK]><![endif]-->                                    <li class="type-b2 text-black-400">Identity and contact: name, email, phone, company, and role.</li>
+                                                                    <li class="type-b2 text-black-400">Project information: service of interest, estimated timeline, project description, and meeting date.</li>
+                                                                    <li class="type-b2 text-black-400">Technical data: preferred language, session identifiers and, when the server records them in the ordinary course, IP address and browser type.</li>
+                                <!--[if ENDBLOCK]><![endif]-->                            </ul>
+                        <!--[if ENDBLOCK]><![endif]-->                    </article>
+                                    <article>
+                        <h2 class="type-s2 text-black-500">
+                            3. Purposes of processing
+                        </h2>
+
+                        <!--[if BLOCK]><![endif]-->                            <p class="type-b2 mt-3 text-black-400">
+                                Primary purposes (needed for the relationship you request):
+                            </p>
+                        <!--[if ENDBLOCK]><![endif]-->
+                        <!--[if BLOCK]><![endif]-->                            <ul class="legal-list">
+                                <!--[if BLOCK]><![endif]-->                                    <li class="type-b2 text-black-400">Respond to inquiries, schedule meetings, and follow up on projects.</li>
+                                                                    <li class="type-b2 text-black-400">Identify the service and context of your request.</li>
+                                                                    <li class="type-b2 text-black-400">Contact you by email, phone, or other means you provide.</li>
+                                                                    <li class="type-b2 text-black-400">Keep the site language and session.</li>
+                                <!--[if ENDBLOCK]><![endif]-->                            </ul>
+                        <!--[if ENDBLOCK]><![endif]-->                    </article>
+                                    <article>
+                        <h2 class="type-s2 text-black-500">
+                            Secondary purposes
+                        </h2>
+
+                        <!--[if BLOCK]><![endif]-->                            <p class="type-b2 mt-3 text-black-400">
+                                With your consent, we may also use your data to send information about our services or hospitality-related invitations. If you disagree, tell us when you contact us or in a later message. Refusing secondary purposes does not prevent us from handling your inquiry.
+                            </p>
+                        <!--[if ENDBLOCK]><![endif]-->
+                        <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->                    </article>
+                                    <article>
+                        <h2 class="type-s2 text-black-500">
+                            4. Transfers
+                        </h2>
+
+                        <!--[if BLOCK]><![endif]-->                            <p class="type-b2 mt-3 text-black-400">
+                                We do not sell your personal data. We may share it with providers that help us operate the site, email, or infrastructure, only for the purposes described and under confidentiality obligations.
+                            </p>
+                                                    <p class="type-b2 mt-3 text-black-400">
+                                Apart from those processors, we do not transfer data to third parties unless we have your consent, a legal obligation, or another exception provided by law.
+                            </p>
+                        <!--[if ENDBLOCK]><![endif]-->
+                        <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->                    </article>
+                                    <article>
+                        <h2 class="type-s2 text-black-500">
+                            5. ARCO rights and withdrawal of consent
+                        </h2>
+
+                        <!--[if BLOCK]><![endif]-->                            <p class="type-b2 mt-3 text-black-400">
+                                You may access, rectify, cancel, or object to the processing of your data, and withdraw consent, by sending a request from Contact or by phone.
+                            </p>
+                                                    <p class="type-b2 mt-3 text-black-400">
+                                The request should include your name, a way to notify you of the response, a clear description of the data and the right you are exercising, and a document proving your identity or representation. We will respond within the timeframes set by law.
+                            </p>
+                        <!--[if ENDBLOCK]><![endif]-->
+                        <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->                    </article>
+                                    <article>
+                        <h2 class="type-s2 text-black-500">
+                            6. Cookies and local storage
+                        </h2>
+
+                        <!--[if BLOCK]><![endif]-->                            <p class="type-b2 mt-3 text-black-400">
+                                This site uses a language cookie (tw_locale), the Laravel session, and sessionStorage (tw-welcomed) to remember whether you have already seen the welcome overlay. We do not use analytics or advertising cookies.
+                            </p>
+                                                    <p class="type-b2 mt-3 text-black-400">
+                                You can clear cookies and site data in your browser. If you do, the language or welcome screen may appear again.
+                            </p>
+                        <!--[if ENDBLOCK]><![endif]-->
+                        <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->                    </article>
+                                    <article>
+                        <h2 class="type-s2 text-black-500">
+                            7. Security measures
+                        </h2>
+
+                        <!--[if BLOCK]><![endif]-->                            <p class="type-b2 mt-3 text-black-400">
+                                We apply reasonable administrative and technical measures to protect personal data. No system is infallible; if we detect a breach that must be disclosed, we will do so as required by law.
+                            </p>
+                        <!--[if ENDBLOCK]><![endif]-->
+                        <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->                    </article>
+                                    <article>
+                        <h2 class="type-s2 text-black-500">
+                            8. Changes to this notice
+                        </h2>
+
+                        <!--[if BLOCK]><![endif]-->                            <p class="type-b2 mt-3 text-black-400">
+                                Any material change will be published on this page, with the update date. Continued use of the site after that date means you are aware of the current version.
+                            </p>
+                        <!--[if ENDBLOCK]><![endif]-->
+                        <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->                    </article>
+                                    <article>
+                        <h2 class="type-s2 text-black-500">
+                            9. Consent
+                        </h2>
+
+                        <!--[if BLOCK]><![endif]-->                            <p class="type-b2 mt-3 text-black-400">
+                                By browsing the site you accept the processing of the technical data described. By submitting the contact form you represent that the information is yours or that you are authorized to share it, and you consent to processing for the primary purposes in this notice.
+                            </p>
+                        <!--[if ENDBLOCK]><![endif]-->
+                        <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->                    </article>
+                <!--[if ENDBLOCK]><![endif]-->            </div>
+
+            <div class="mt-12 flex flex-col gap-3 border-t border-paper-300 pt-8 sm:flex-row sm:items-center sm:justify-between">
+                <a
+                    href="https://jorgegbellos.github.io/the-welcome-preview/terminos/"
+                    class="type-b2 text-black-400 underline decoration-black-300 underline-offset-4 transition-colors hover:text-black-500"
+                >
+                    Terms of use
+                </a>
+
+                <!--[if BLOCK]><![endif]-->    <a
+        href="https://jorgegbellos.github.io/the-welcome-preview/contact/"
+        class="btn btn-2 btn-solid-black rounded-xl"=""
+    >
+        <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->
+        <span>Go to Contact</span>
+
+        <!--[if BLOCK]><![endif]-->            <span class="btn-icon">    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+    </svg></span>
+        <!--[if ENDBLOCK]><![endif]-->    </a>
+<!--[if ENDBLOCK]><![endif]-->            </div>
+        </div>
+    </section>
+</div>
+        </main>
+
+        <footer class="bg-paper-100">
+    
+        <div class="px-4 py-16 sm:px-5 sm:py-20 lg:py-24">
+        <div class="mx-auto flex max-w-2xl flex-col items-center px-2 text-center sm:px-10">
+            <h2 class="type-h3 text-black-500">Let’s build what comes next</h2>
+            <p class="type-b2 mt-3 max-w-md text-black-400 sm:mt-4">
+                Every project begins by understanding the business, its challenges and its possibilities.
+            </p>
+
+            <a
+        href="https://jorgegbellos.github.io/the-welcome-preview/contact/"
+        class="btn btn-2 btn-solid-orange mt-8 shrink-0 rounded-xl sm:mt-10"=""
+    >
+        
+        <span>Schedule a Meeting</span>
+
+                    <span class="btn-icon">    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+    </svg></span>
+            </a>
+        </div>
+    </div>
+    
+    
+    <div class="px-4 pb-4 sm:px-5 sm:pb-5">
+        <div class="site-footer-panel px-6 py-8 sm:px-10 lg:py-10">
+
+            
+            <div class="site-footer-desktop hidden h-full lg:flex">
+                
+                <div class="site-footer-brand">
+                    <img
+                        src="https://jorgegbellos.github.io/the-welcome-preview/images/svg/Escudos.svg"
+                        alt=""
+                        class="site-footer-crest"
+                        width="186"
+                        height="140"
+                    >
+
+                    <div>
+                        <p class="type-s1 text-[#F9F6F5]">The Welcome</p>
+                        <p class="type-b2 mt-1 text-[#F9F6F5]/65">Hospitality Intelligence Services</p>
+                    </div>
+                </div>
+
+                <div class="site-footer-info">
+                    
+                    <div class="site-footer-discover">
+                    <div>
+                        <p class="type-b3 text-[#F9F6F5]/55">Discover</p>
+                        <ul class="mt-3 flex flex-col gap-2.5">
+                                                            <li>
+                                    <a
+                                        href="https://jorgegbellos.github.io/the-welcome-preview/"
+                                        class="type-b2 text-[#F9F6F5] transition-opacity hover:opacity-70"
+                                    >
+                                        Home
+                                    </a>
+                                </li>
+                                                            <li>
+                                    <a
+                                        href="https://jorgegbellos.github.io/the-welcome-preview/services/"
+                                        class="type-b2 text-[#F9F6F5] transition-opacity hover:opacity-70"
+                                    >
+                                        Expertise
+                                    </a>
+                                </li>
+                                                            <li>
+                                    <a
+                                        href="https://jorgegbellos.github.io/the-welcome-preview/projects/"
+                                        class="type-b2 text-[#F9F6F5] transition-opacity hover:opacity-70"
+                                    >
+                                        Works
+                                    </a>
+                                </li>
+                                                            <li>
+                                    <a
+                                        href="https://jorgegbellos.github.io/the-welcome-preview/about/"
+                                        class="type-b2 text-[#F9F6F5] transition-opacity hover:opacity-70"
+                                    >
+                                        About us
+                                    </a>
+                                </li>
+                                                    </ul>
+                    </div>
+
+                    <div class="mt-8">
+                        <p class="type-b3 text-[#F9F6F5]/55">Contact</p>
+                        <ul class="mt-3 flex flex-col gap-2.5">
+                            <li>
+                                <a
+                                    href="tel:+529999031257"
+                                    class="type-b2 text-[#F9F6F5] transition-opacity hover:opacity-70"
+                                >
+                                    +52 (999) 903 1257
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    href="https://jorgegbellos.github.io/the-welcome-preview/contact/"
+                                    class="type-b2 text-[#F9F6F5] transition-opacity hover:opacity-70"
+                                >
+                                    Mail
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="mt-auto pt-6">
+                        <span class="type-b3 text-[#F9F6F5]/45">All Rights Reserved</span>
+                    </div>
+                </div>
+
+                
+                <div class="site-footer-social">
+                    <div>
+                        <p class="type-b3 text-[#F9F6F5]/55">Social</p>
+                        <ul class="mt-3 flex flex-col gap-2.5">
+                                                            <li>
+                                    <a
+                                        href="#"
+                                         target="_blank" rel="noopener noreferrer"                                         class="type-b2 text-[#F9F6F5] transition-opacity hover:opacity-70"
+                                    >
+                                        Instagram
+                                    </a>
+                                </li>
+                                                            <li>
+                                    <a
+                                        href="#"
+                                         target="_blank" rel="noopener noreferrer"                                         class="type-b2 text-[#F9F6F5] transition-opacity hover:opacity-70"
+                                    >
+                                        LinkedIn
+                                    </a>
+                                </li>
+                                                    </ul>
+                    </div>
+
+                    <div class="mt-8">
+                        <p class="type-b3 text-[#F9F6F5]/55">Legal</p>
+                        <ul class="mt-3 flex flex-col gap-2.5">
+                                                            <li>
+                                    <a
+                                        href="https://jorgegbellos.github.io/the-welcome-preview/aviso-de-privacidad/"
+                                        class="type-b2 text-[#F9F6F5] transition-opacity hover:opacity-70"
+                                    >
+                                        Privacy notice
+                                    </a>
+                                </li>
+                                                            <li>
+                                    <a
+                                        href="https://jorgegbellos.github.io/the-welcome-preview/terminos/"
+                                        class="type-b2 text-[#F9F6F5] transition-opacity hover:opacity-70"
+                                    >
+                                        Terms of use
+                                    </a>
+                                </li>
+                                                    </ul>
+                    </div>
+                </div>
+
+                
+                <div class="site-footer-mark-col">
+                    <img
+                        src="https://jorgegbellos.github.io/the-welcome-preview/images/svg/Logotipo (2).svg"
+                        alt="The Welcome"
+                        class="site-footer-mark"
+                        width="31"
+                        height="24"
+                    >
+                </div>
+                </div>
+            </div>
+
+            
+            <div class="flex flex-col items-center text-center lg:hidden">
+                <img
+                    src="https://jorgegbellos.github.io/the-welcome-preview/images/svg/Escudos.svg"
+                    alt=""
+                    class="site-footer-crest"
+                    width="186"
+                    height="140"
+                >
+
+                <div class="mt-10">
+                    <p class="type-b3 text-[#F9F6F5]/55">Discover</p>
+                    <ul class="mt-3 flex flex-col items-center gap-2.5">
+                                                    <li>
+                                <a
+                                    href="https://jorgegbellos.github.io/the-welcome-preview/"
+                                    class="type-b2 font-semibold text-[#F9F6F5] transition-opacity hover:opacity-70"
+                                >
+                                    Home
+                                </a>
+                            </li>
+                                                    <li>
+                                <a
+                                    href="https://jorgegbellos.github.io/the-welcome-preview/services/"
+                                    class="type-b2 font-semibold text-[#F9F6F5] transition-opacity hover:opacity-70"
+                                >
+                                    Expertise
+                                </a>
+                            </li>
+                                                    <li>
+                                <a
+                                    href="https://jorgegbellos.github.io/the-welcome-preview/projects/"
+                                    class="type-b2 font-semibold text-[#F9F6F5] transition-opacity hover:opacity-70"
+                                >
+                                    Works
+                                </a>
+                            </li>
+                                                    <li>
+                                <a
+                                    href="https://jorgegbellos.github.io/the-welcome-preview/about/"
+                                    class="type-b2 font-semibold text-[#F9F6F5] transition-opacity hover:opacity-70"
+                                >
+                                    About us
+                                </a>
+                            </li>
+                                            </ul>
+                </div>
+
+                <div class="mt-10">
+                    <p class="type-b3 text-[#F9F6F5]/55">Contact</p>
+                    <ul class="mt-3 flex flex-col items-center gap-2.5">
+                        <li>
+                            <a
+                                href="tel:+529999031257"
+                                class="type-b2 font-semibold text-[#F9F6F5] transition-opacity hover:opacity-70"
+                            >
+                                +52 (999) 903 1257
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                href="https://jorgegbellos.github.io/the-welcome-preview/contact/"
+                                class="type-b2 font-semibold text-[#F9F6F5] transition-opacity hover:opacity-70"
+                            >
+                                Mail
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="mt-10">
+                    <p class="type-b3 text-[#F9F6F5]/55">Social</p>
+                    <ul class="mt-3 flex flex-col items-center gap-2.5">
+                                                    <li>
+                                <a
+                                    href="#"
+                                     target="_blank" rel="noopener noreferrer"                                     class="type-b2 font-semibold text-[#F9F6F5] transition-opacity hover:opacity-70"
+                                >
+                                    Instagram
+                                </a>
+                            </li>
+                                                    <li>
+                                <a
+                                    href="#"
+                                     target="_blank" rel="noopener noreferrer"                                     class="type-b2 font-semibold text-[#F9F6F5] transition-opacity hover:opacity-70"
+                                >
+                                    LinkedIn
+                                </a>
+                            </li>
+                                            </ul>
+                </div>
+
+                <div class="mt-10">
+                    <p class="type-b3 text-[#F9F6F5]/55">Legal</p>
+                    <ul class="mt-3 flex flex-col items-center gap-2.5">
+                                                    <li>
+                                <a
+                                    href="https://jorgegbellos.github.io/the-welcome-preview/aviso-de-privacidad/"
+                                    class="type-b2 font-semibold text-[#F9F6F5] transition-opacity hover:opacity-70"
+                                >
+                                    Privacy notice
+                                </a>
+                            </li>
+                                                    <li>
+                                <a
+                                    href="https://jorgegbellos.github.io/the-welcome-preview/terminos/"
+                                    class="type-b2 font-semibold text-[#F9F6F5] transition-opacity hover:opacity-70"
+                                >
+                                    Terms of use
+                                </a>
+                            </li>
+                                            </ul>
+                </div>
+
+                <div class="mt-12 w-full">
+                    <span class="type-b3 text-[#F9F6F5]/45">All Rights Reserved</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</footer>
+
+        
+    </body>
+</html>
